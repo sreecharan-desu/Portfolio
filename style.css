@@ -1,0 +1,1178 @@
+html{
+  scroll-behavior:smooth;
+}
+
+a{
+  text-decoration:none;
+}
+
+/* Mobile Phones (Portrait) */
+
+@media only screen and (max-width: 767px) {
+    h1 { font-size: 24px; }
+
+    h2 { font-size: 22px; }
+
+    h3 { font-size: 20px; }
+
+    h4 { font-size: 18px; }
+
+    h5 { font-size: 16px; }
+
+    h6 { font-size: 14px; }
+
+    p { 
+      font-size:12px; 
+    }
+
+    body{
+      background-color:#0d1117;
+    }
+
+    .menu-bar{
+      width:300px;
+      height:40px;
+      background-color:white;
+      border-radius:50px;
+      margin:50px 0px -100px 50px;
+      padding:5px;
+
+
+      display:flex;
+      flex-direction:row;
+      justify-content:space-around;
+      align-items:center;  
+
+      top:0px;
+      position:sticky;
+
+    }
+
+    .menu-element img{
+      border-radius:50%;
+      margin:-2px 0px -2px 0px;
+    }
+
+    main{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;
+      align-items:center;  
+      margin:100px;
+    }
+
+    section{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+
+    section p{
+      font-family: "Poppins", sans-serif;
+      font-weight:200;
+      font-style: normal;
+      text-transform:uppercase;
+      color:white;
+      padding:100px 0px 0px 5px;
+      font-size:18px;
+    }
+
+    section p::first-letter{
+      font-size:24px;
+      color:white;
+      font-weight:500;
+    }
+
+    cell{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;
+      align-items:flex-start;
+      padding:0px 0px 0px 0px;
+    }
+
+    profile img{
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      margin:100px 0px -100px 0px;
+      box-shadow:5px -50px -50px rgba(245, 245, 245,0.2);
+      border:4px solid rgba(245, 245, 245,0.2);
+    }
+
+    name{
+      font-size: 18px;
+      color:orange;
+      font-weight:500;
+      margin-bottom:-300px;
+    }
+
+    #name{
+      font-size: 18px;
+      color:orange;
+      font-weight:500;
+      font-family: "Poppins", sans-serif;
+      font-weight:200;
+      font-style: normal;
+      text-transform:uppercase;
+      font-weight:500;
+      opacity:0;
+    }
+
+    .about{
+      color:white;
+      text-align:center;
+      padding:0px 10px 0px 10px;
+      font-family: "Cabin Condensed", sans-serif;
+      font-style:oblique;
+    }
+
+    .about::first-letter{
+      font-size:30px;
+    }
+
+    .vertical-name{
+      writing-mode: vertical-rl; /* vertical right-to-left */
+      text-orientation: mixed; /* optional, to control the orientation of characters */
+      transform: rotate(360deg); /* optional, additional rotation if needed */
+      letter-spacing:30px;
+      color:rgba(255, 255, 255,0.4);
+      font-size:22px;
+      margin-left:100px;
+    }
+
+    .vertical-name::first-letter{
+      margin-top:100px;
+      font-weight:200;
+      font-size:22px;
+      color:rgba(255, 255, 255,0.4);
+    }
+
+
+    .vertical-name{
+      display:none;
+    }
+
+    .logo{
+      opacity:0.1;
+      margin:10px 100px 100px 110px;
+    }
+
+    .info{
+      opacity:0;
+      display:flex;
+      flex-direction:row;
+      justify-content:space-around;
+      align-items:center;
+      color:whitesmoke;
+      margin-top:-60px;
+
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+
+    .info_cv{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+    }
+
+    #cvbtn{
+      background-color:whitesmoke;
+      color:#0d1117;
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight:200;
+      font-size:18px;
+      font-style: normal;
+      border-radius:30px;
+      padding:5px;
+      width:150px;
+      height:40px;
+      border:2px solid #0d1113;
+    
+    }
+
+    .logo{
+      display:block;
+      margin-top:-400px;
+    }
+
+
+    .boxes{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      margin:20px;
+    }
+
+    .box-row{
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .box{
+
+      width:150px;
+      height:150px;
+      background-color:#0d1113;
+      border:0.2px solid rgba(255, 255, 255,0.1);
+      margin:20px;
+      color:rgba(244, 159, 2,0.8);
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight:200;
+      font-size:14px;
+      text-transform:uppercase;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+    }
+
+    .box h1{
+      margin:10px 50px 0px 30px;
+      font-size:48px;
+    }
+
+    .box p{
+      margin:10px 20px;
+      font-size:18px;
+      text-align:center;
+      color:white;
+    }
+
+    .skills h1{
+
+
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight:200;
+      text-transform:uppercase;
+      color:white;
+      font-size:20px;
+      text-align:left;
+      margin:0px 0px 0px -150px;
+      letter-spacing:1.5px;
+
+    }
+
+    .skills h1::first-letter{
+      font-size:32px;
+    }
+
+
+    .box img{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      border:2px solid white;
+      background-color:white;
+      padding:10px;
+    }
+
+    .experience .exp h1{
+
+
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight:200;
+      text-transform:uppercase;
+      color:white;
+      font-size:20px;
+      text-align:left;
+      margin:20px 0px 0px 0px;
+      letter-spacing:1px;
+
+    }
+
+    .experience .exp h1::first-letter{
+      font-size:32px;
+    }
+
+
+
+    .exp-box img{
+      width:25px;
+      height:25px;
+      padding:10px;
+      border-radius:50%;
+      background-color:orange;
+      margin:7px 5px;
+    }
+
+    .exp-box{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      margin:90px 0px 0px 90px;
+      color:white;
+    }
+
+
+    .exp-info{
+      width:200px;
+      height:62px;
+      background-color:white;
+      border-radius:10px;
+      margin-left:45px;
+      display:flex;
+      flex-direction:row;
+      justify-content:space-evenly;
+      align-items:center;
+    }
+
+    .information{
+      width: auto;
+      height: auto;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-evenly;
+      align-items:center;
+    }
+
+    .time-line{
+       color: black;
+       background-color:rgba(128, 128, 128,0.5);
+       border-radius:10px;
+       padding:1px 5px 1px 5px;
+       font-size:9px;
+       font-family: "Cabin Condensed", sans-serif;
+       font-weight:100;
+       text-transform:uppercase;
+       margin:2px 0px 0px 0px;
+       margin-left:-80px;
+       padding:0px 5px 1px 5px;
+    }
+
+
+    .qualification{
+      font-size:9px;
+      background-color:transparent;
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight:900;
+      text-transform:uppercase;
+      margin:4px 0px 0px -35px;
+      color:black;
+    }
+
+    .place{
+      width:auto;
+      height:auto;
+      font-size:8px;
+      background-color:transparent;
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight:500;
+      text-transform:uppercase;
+      margin:4px 2px 0px 3px;
+      color:black;
+    }
+
+    .exp-info-reverse{
+      width:203px;
+      height:64px;
+      background-color:white;
+      border-radius:10px;
+      margin-left:-250px;
+    }
+
+    .exp-info-reverse img{
+      width:25px;
+      height:25px;
+      padding:10px;
+      border-radius:50%;
+      background-color:orange;
+      margin:6px 100px 5px 155px;
+    }
+
+    .exp-info-reverse .time-line{
+      color: black;
+      background-color:rgba(128, 128, 128,0.5);
+      border-radius:10px;
+      padding:1px 5px 1px 5px;
+      font-size:9px;
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight:100;
+      text-transform:uppercase;
+      margin:-55px 60px 0px 0px;
+      margin-left:-80px;
+      padding:0px 5px 1px 5px;
+   }
+
+
+   .exp-info-reverse .qualification{
+     font-size:9px;
+     background-color:transparent;
+     font-family: "Cabin Condensed", sans-serif;
+     font-weight:900;
+     text-transform:uppercase;
+     margin:4px 20px 0px -35px;
+     color:black;
+   }
+
+   .exp-info-reverse .place{
+     width:auto;
+     height:auto;
+     font-size:8px;
+     background-color:transparent;
+     font-family: "Cabin Condensed", sans-serif;
+     font-weight:500;
+     text-transform:uppercase;
+     margin:4px 50px 0px 10px;
+     color:black;
+   }
+
+
+    .line{
+      width:5px;
+      height:100px;
+      margin:0px 0px 0px -90px;
+      border-left:2px solid white;
+    }
+    
+
+    .projects{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      margin-top:-1000px;
+      margin-bottom:400px;
+    }
+
+    .project-box{
+      width:350px;
+      height:200px;
+      background-color:rgba(0, 0, 0,0.2);
+      margin:20px;
+      background-size:cover;
+      opacity:0.8;
+      text-align:center;
+      display:flex;
+      flex-direction:row;
+      justify-content:space-evenly;
+      align-items:center;
+      color:black;
+      font-weight:800;
+      font-family: "Cabin Condensed", sans-serif;
+      padding:20px;
+      border-radius:10px;
+    }
+
+
+
+
+    .project-box .number{
+      background-color:orange;
+      color:black;
+      border-radius:50%;
+      width:50px;
+      height:50px;
+      font-size:38px;
+      padding:10px;
+      text-align: center;
+    }
+
+    .project-box h1{
+      font-size:49px;
+    }
+
+    .contact{
+      color:white;
+      font-family: "Cabin Condensed", sans-serif;
+      font-weight:200;
+      text-transform:uppercase;
+      font-size:16px;
+      margin:-990px 0px 0px 30px;
+
+    }
+
+    .contact p{
+      text-transform:capitalize;
+      margin-top:-10px;
+      font-size:13px;
+      text-align:justify;
+      margin-right:20px;
+      line-height:15px;
+    }
+
+    .social-icons{
+      width:100px;
+      height:200px;
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      align-items:center;
+      margin-left:90px;
+      margin-top:-20px;
+    }
+
+    .social-icons img{
+      width:32px;
+      height:32px;
+      background-color:rgba(128, 128, 128,0.5);
+      margin:10px;
+      border-radius:50%;
+      padding:5px;
+    }
+
+    .social-icons a:visited img{
+      background-color:lightgreen;
+    }   
+
+    .social-icons a:hover{
+      background-color:grey;
+    } 
+
+
+  }
+  
+  /* Mobile Phones (Landscape) */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    h1 { font-size: 28px; }
+
+    h2 { font-size: 26px; }
+
+    h3 { font-size: 24px; }
+
+    h4 { font-size: 22px; }
+
+    h5 { font-size: 20px; }
+
+    h6 { font-size: 18px; }
+
+    p { font-size: 18px; }
+
+    body{
+      background-color:#0d1117;
+    }
+
+
+    section{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    section p{
+      font-family: "Poppins", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      text-transform:uppercase;
+      color:white;
+      padding:200px;
+    }
+
+    section p::first-letter{
+      font-size:48px;
+      color:white;
+      font-weight:500;
+    }
+
+    name{
+      font-size: 32px;
+      color:white;
+      font-weight:500;
+    }
+
+
+    .vertical-name{
+        display:none;
+    }
+
+    profile img{
+      display:none;
+    }
+
+        
+    .about{
+      display:none;
+    }
+
+    .menu-bar{
+      display:none;
+    }
+
+
+    .info_cv{
+      display:none;
+    }
+
+    #cvbtn{
+      display:none;
+    }
+
+    .logo{
+      display:none;
+    }
+
+    #name{
+      display:none;
+    }
+
+    .info{
+      display:none;
+    }
+
+
+    #cvbtn{
+
+      display:none;
+    
+    }
+  }
+  
+  /* Tablets (Portrait) */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    h1 { font-size: 32px; }
+
+    h2 { font-size: 30px; }
+
+    h3 { font-size: 28px; }
+
+    h4 { font-size: 26px; }
+
+    h5 { font-size: 24px; }
+
+    h6 { font-size: 22px; }
+
+    p { font-size: 18px; }
+
+    body{
+      background-color:#0d1117;
+    }
+
+
+    section{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    section p{
+      font-family: "Poppins", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      text-transform:uppercase;
+      color:white;
+      padding:200px;
+    }
+
+    section p::first-letter{
+      font-size:48px;
+      color:white;
+      font-weight:500;
+    }
+
+    name{
+      font-size: 32px;
+      color:white;
+      font-weight:500;
+    }
+
+    .vertical-name{
+      display:none;
+  }
+
+  profile img{
+    display:none;
+  }
+
+  .about{
+    display:none;
+  }
+
+  .menu-bar{
+    display:none;
+  }
+  .logo{
+    display:none;
+  }
+  #name{
+    display:none;
+  }
+  .info{
+    display:none;
+  }
+
+
+  #cvbtn{
+  
+    display:none;
+  
+  }
+
+
+
+  }
+  
+  /* Tablets (Landscape) */
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    h1 { font-size: 36px; }
+
+    h2 { font-size: 34px; }
+
+    h3 { font-size: 32px; }
+
+    h4 { font-size: 30px; }
+
+    h5 { font-size: 28px; }
+
+    h6 { font-size: 26px; }
+
+    p { font-size: 20px; }
+
+    body{
+      background-color:#0d1117;
+    }
+
+
+    section{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    section p{
+      font-family: "Poppins", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      text-transform:uppercase;
+    }
+
+    .vertical-name{
+      display:none;
+  }
+
+  profile img{
+    display:none;
+  }
+
+  .about{
+    display:none;
+  }
+
+  .menu-bar{
+    display:none;
+  }
+
+  .logo{
+    display:none;
+  }
+  #name{
+    display:none;
+  }
+
+  .info{
+    display:none;
+  }
+
+
+  #cvbtn{
+    display:none;
+  }
+  
+
+
+  }
+  
+  /* Small Desktops */
+  @media only screen and (min-width: 1200px) and (max-width: 1439px) {
+    h1 { font-size: 40px; }
+
+    h2 { font-size: 38px; }
+
+    h3 { font-size: 36px; }
+
+    h4 { font-size: 34px; }
+
+    h5 { font-size: 32px; }
+
+    h6 { font-size: 30px; }
+
+    p {
+       font-size: 24px;
+        font-weight:200;
+      }
+
+    body{
+      background-color:#0d1117;
+    }
+
+
+
+    section{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    section p{
+      font-family: "Poppins", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      text-transform:uppercase;
+      color:white;
+      padding:200px;
+    }
+
+    section p::first-letter{
+      font-size:48px;
+      color:white;
+      font-weight:500;
+    }
+
+    name{
+      font-size: 32px;
+      color:white;
+      font-weight:500;
+    }
+
+
+    .vertical-name{
+      display:none;
+  }
+
+  profile img{
+    display:none;
+  }
+
+  .about{
+    display:none;
+  }
+
+  .menu-bar{
+    display:none;
+  }
+  .logo{
+    display:none;
+  }
+  #name{
+    display:none;
+  }
+  .info{
+    display:none;
+  }
+  #cvbtn{
+    display:none;
+  }
+
+
+
+  }
+  
+  /* Medium Desktops */
+  @media only screen and (min-width: 1440px) and (max-width: 1919px) {
+    h1 { font-size: 44px; }
+
+    h2 { font-size: 42px; }
+
+    h3 { font-size: 40px; }
+
+    h4 { font-size: 38px; }
+
+    h5 { font-size: 36px; }
+
+    h6 { font-size: 34px; }
+
+    p { font-size: 26px; }
+
+    body{
+      background-color:#0d1117;
+    }
+
+
+
+    section{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    section p{
+      font-family: "Poppins", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      text-transform:uppercase;
+      color:white;
+      padding:200px;
+    }
+
+    section p::first-letter{
+      font-size:48px;
+      color:white;
+      font-weight:500;
+    }
+
+    name{
+      font-size: 32px;
+      color:white;
+      font-weight:500;
+    }
+
+
+    .vertical-name{
+      display:none;
+  }
+
+  profile img{
+    display:none;
+  }
+
+  .about{
+    display:none;
+  }
+
+  .menu-bar{
+    display:none;
+  }
+
+  .logo{
+    display:none;
+  }
+  #name{
+    display:none;
+  }
+  .info{
+    display:none;
+  }
+  #cvbtn{
+    display:none;
+  }
+
+
+
+  }
+  
+  /* Large Desktops */
+  @media only screen and (min-width: 1920px) {
+    h1 { font-size: 48px; }
+
+    h2 { font-size: 46px; }
+
+    h3 { font-size: 44px; }
+
+    h4 { font-size: 42px; }
+
+    h5 { font-size: 40px; }
+
+    h6 { font-size: 38px; }
+
+    p { font-size: 28px; }
+
+    body{
+      background-color:#0d1117;
+    }
+
+
+
+    section{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    section p{
+      font-family: "Poppins", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      text-transform:uppercase;
+      color:white;
+      padding:200px;
+    }
+
+    section p::first-letter{
+      font-size:48px;
+      color:white;
+      font-weight:500;
+    }
+
+    name{
+      font-size: 32px;
+      color:white;
+      font-weight:500;
+    }
+
+
+    .vertical-name{
+      display:none;
+  }
+
+  profile img{
+    display:none;
+  }
+
+  .about{
+    display:none;
+  }
+
+  .menu-bar{
+    display:none;
+  }
+
+  .logo{
+    display:none;
+  }
+
+  #name{
+    display:none;
+  }
+  .info{
+    display:none;
+  }
+
+  #cvbtn{
+    display:none;
+  }
+
+
+
+  }
+  
+
+  .poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+
+  .cabin-condensed-regular {
+    font-family: "Cabin Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .cabin-condensed-medium {
+    font-family: "Cabin Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .cabin-condensed-semibold {
+    font-family: "Cabin Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .cabin-condensed-bold {
+    font-family: "Cabin Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
