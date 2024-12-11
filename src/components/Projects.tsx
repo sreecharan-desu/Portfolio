@@ -42,31 +42,31 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     <motion.div
       ref={cardRef}
       style={{ opacity, x }}
-      className={`flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-16 
-                 p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-white/20 
-                 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300
+      className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-20 
+                 p-8 rounded-3xl bg-white/90 backdrop-blur-md border border-white/30 
+                 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500
                  relative overflow-hidden group ${
                    isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
                  }`}
     >
-      {/* Add subtle gradient on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-orange-100/50 
-                    opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Enhanced gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-transparent to-orange-100/50 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      {/* Project Image - Enhanced hover effects */}
+      {/* Project Image - Enhanced animation */}
       <motion.div 
-        className="w-full lg:w-3/5 perspective-1000 mb-6 lg:mb-0"
+        className="w-full lg:w-3/5 perspective-1500 mb-8 lg:mb-0"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
         <motion.div
-          className="relative group rounded-xl shadow-2xl transform-gpu overflow-hidden
-                     aspect-[16/9] sm:aspect-[16/10]"
+          className="relative group rounded-2xl shadow-2xl transform-gpu overflow-hidden
+                     aspect-video sm:aspect-[16/10]"
           animate={{
-            rotateY: isHovered ? (isEven ? 5 : -5) : 0,
-            scale: isHovered ? 1.02 : 1,
+            rotateY: isHovered ? (isEven ? 8 : -8) : 0,
+            scale: isHovered ? 1.03 : 1,
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <img
             src={project.image}
@@ -75,11 +75,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                       transform transition-transform duration-500 group-hover:scale-110"
           />
 
-          {/* Project Links Overlay */}
+          {/* Enhanced Project Links Overlay */}
           <motion.div 
-            className="absolute inset-0 bg-black/60 backdrop-blur-[2px] 
-                      flex items-center justify-center gap-6 opacity-0 
-                      group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm 
+                      flex items-center justify-center gap-8 opacity-0 
+                      group-hover:opacity-100 transition-all duration-500"
           >
             <motion.a
               href={project.liveUrl}
@@ -107,22 +107,23 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         </motion.div>
       </motion.div>
 
-      {/* Project Info - Enhanced typography and spacing */}
+      {/* Enhanced Project Info Section */}
       <motion.div 
-        className="w-full lg:w-2/5 space-y-6 sm:space-y-8"
+        className="w-full lg:w-2/5 space-y-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
       >
         <motion.h3 
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center lg:text-left 
-                     bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center lg:text-left 
+                     bg-gradient-to-br from-orange-500 via-orange-600 to-orange-500 bg-clip-text text-transparent
+                     tracking-tight leading-tight"
           whileHover={{ scale: 1.02 }}
         >
           {project.title}
         </motion.h3>
         
-        <p className="text-gray-600 text-lg leading-relaxed">
+        <p className="text-gray-600 text-lg leading-relaxed font-medium">
           {project.description}
         </p>
         
@@ -131,16 +132,17 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           className="flex flex-wrap gap-3"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.4 }}
         >
           {project.tech.map((tech, index) => (
             <motion.span
               key={index}
-              className="px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 
-                       rounded-full text-sm font-medium text-orange-600
-                       border border-orange-200/50 shadow-sm"
-              whileHover={{ scale: 1.05, y: -2 }}
-              initial={{ opacity: 0, y: 10 }}
+              className="px-5 py-2.5 bg-gradient-to-br from-orange-50 via-white to-orange-100 
+                       rounded-full text-sm font-semibold text-orange-600
+                       border border-orange-200/50 shadow-lg shadow-orange-100/50
+                       hover:shadow-orange-200/50 transition-all duration-300"
+              whileHover={{ scale: 1.08, y: -3 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
@@ -214,19 +216,18 @@ const Projects = () => {
   ]
 
   return (
-    <Element name="projects" className="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      {/* Ambient Gradient Orbs */}
+    <Element name="projects" className="min-h-screen py-32 bg-gradient-to-br from-white via-orange-50/30 to-white relative overflow-hidden">
+      {/* Enhanced Ambient Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Orange Gradient */}
         <motion.div
-          className="absolute -top-32 -right-32 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"
+          className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
-            x: [0, 50, 0],
-            y: [0, 30, 0],
+            x: [0, 100, 0],
+            y: [0, 50, 0],
           }}
           transition={{
-            duration: 8,
+            duration: 15,
             repeat: Infinity,
             repeatType: "reverse",
           }}
@@ -263,27 +264,26 @@ const Projects = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-6 relative">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-5xl md:text-6xl font-bold text-center mb-24 
-                   bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent
-                   relative z-10"
+          transition={{ duration: 0.7 }}
+          className="text-6xl md:text-7xl font-bold text-center mb-32 
+                   bg-gradient-to-br from-orange-500 via-orange-600 to-orange-500 bg-clip-text text-transparent
+                   tracking-tight relative z-10"
         >
           Projects
           <motion.div 
-            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 
-                      bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"
+            className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-32 h-1.5 
+                      bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full"
             initial={{ width: 0 }}
-            whileInView={{ width: '6rem' }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            whileInView={{ width: '8rem' }}
+            transition={{ duration: 1, delay: 0.3 }}
           />
         </motion.h2>
 
-        {/* Update ProjectCard container */}
-        <div className="space-y-32 md:space-y-48 relative z-10">
+        <div className="space-y-40 md:space-y-56 relative z-10">
           {projects.map((project, index) => (
             <ProjectCard 
               key={project.title} 
@@ -294,8 +294,8 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Glass Effect Overlay */}
-      <div className="absolute inset-0 bg-white/50 backdrop-blur-[100px] pointer-events-none" />
+      {/* Enhanced Glass Effect Overlay */}
+      <div className="absolute inset-0 bg-white/30 backdrop-blur-[150px] pointer-events-none" />
     </Element>
   )
 }
