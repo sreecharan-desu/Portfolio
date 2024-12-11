@@ -22,8 +22,7 @@ const Timeline = () => {
       date: "2023 - 2027",
       achievements: [
         "First Prize in Hackathon 2024",
-        "Core Team Member of Tech Club",
-        "Active Open Source Contributor"
+        "Active learner"
       ],
       icon: <HiAcademicCap className="text-3xl" />,
       image: "/rgukt.jpg",
@@ -35,7 +34,6 @@ const Timeline = () => {
       date: "2021 - 2023",
       achievements: [
         "Top 5% in Entrance Examination",
-        "Mathematics Club Coordinator",
         "98.5% Academic Score"
       ],
       icon: <FaGraduationCap className="text-3xl" />,
@@ -46,8 +44,8 @@ const Timeline = () => {
       subtitle: "Secondary School Education",
       date: "2020 - 2021",
       achievements: [
-        "District Level Chess Champion",
-        "School First in Mathematics",
+        "Chess Champion",
+        "Consistent first ranker",
         "Perfect Attendance Award"
       ],
       icon: <FaChessKnight className="text-2xl sm:text-3xl" />,
