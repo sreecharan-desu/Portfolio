@@ -43,11 +43,16 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       ref={cardRef}
       style={{ opacity, x }}
       className={`flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-16 
-                 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-gray-100 
-                 hover:shadow-xl transition-shadow duration-300 ${
+                 p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-white/20 
+                 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300
+                 relative overflow-hidden group ${
                    isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
                  }`}
     >
+      {/* Add subtle gradient on hover */}
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-orange-100/50 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
       {/* Project Image - Enhanced hover effects */}
       <motion.div 
         className="w-full lg:w-3/5 perspective-1000 mb-6 lg:mb-0"
@@ -209,27 +214,88 @@ const Projects = () => {
   ]
 
   return (
-    <Element name="projects" className="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">
+    <Element name="projects" className="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Ambient Gradient Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Orange Gradient */}
+        <motion.div
+          className="absolute -top-32 -right-32 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+        
+        {/* Secondary Gradient */}
+        <motion.div
+          className="absolute -bottom-32 -left-32 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            x: [0, -30, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+
+        {/* Accent Gradient */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                     w-[500px] h-[500px] bg-orange-300/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.1, 1],
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-5xl md:text-6xl font-bold text-center mb-24 
                    bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent
-                   relative"
+                   relative z-10"
         >
           Projects
-          <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 
-                        bg-gradient-to-r from-orange-500 to-orange-600 rounded-full" />
+          <motion.div 
+            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 
+                      bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"
+            initial={{ width: 0 }}
+            whileInView={{ width: '6rem' }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          />
         </motion.h2>
 
-        <div className="space-y-32 md:space-y-48">
+        {/* Update ProjectCard container */}
+        <div className="space-y-32 md:space-y-48 relative z-10">
           {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+            <ProjectCard 
+              key={project.title} 
+              project={project} 
+              index={index} 
+            />
           ))}
         </div>
       </div>
+
+      {/* Glass Effect Overlay */}
+      <div className="absolute inset-0 bg-white/50 backdrop-blur-[100px] pointer-events-none" />
     </Element>
   )
 }
