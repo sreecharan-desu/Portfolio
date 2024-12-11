@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { Element } from 'react-scroll'
 import { motion } from 'framer-motion'
-import { FaReact, FaNodeJs, FaPython, FaGit, FaDocker, FaAws } from 'react-icons/fa'
-import { SiNextdotjs, SiTypescript, SiJavascript, SiMongodb, SiPostgresql, SiTailwindcss } from 'react-icons/si'
+import { FaReact, FaNodeJs, FaPython, FaGit } from 'react-icons/fa'
+import { SiNextdotjs, SiTypescript, SiJavascript, SiPostgresql, SiTailwindcss } from 'react-icons/si'
 import { 
   SiHtml5, SiCss3, SiBootstrap, SiVercel, SiPrisma, 
   SiMysql, SiExpress, SiFlask, SiNetlify, SiC 

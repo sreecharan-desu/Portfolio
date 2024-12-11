@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Element } from 'react-scroll'
-import { FaGithub, FaStar, FaCodeBranch, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub, FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 import { BiGitRepoForked } from 'react-icons/bi'
 import { IoMdPulse } from 'react-icons/io'
 
@@ -26,8 +27,8 @@ interface GitHubStats {
 const GitHubSection = () => {
   const [repos, setRepos] = useState<Repository[]>([])
   const [stats, setStats] = useState<GitHubStats | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [selectedRepo, setSelectedRepo] = useState<Repository | null>(null)
+  const [_loading, setLoading] = useState(true)
+  const [_selectedRepo, setSelectedRepo] = useState<Repository | null>(null)
   const [filter, setFilter] = useState<string>('all')
   const username = 'sreecharan-desu'
 
@@ -113,7 +114,7 @@ const GitHubSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="grid grid-cols-3 gap-4 mb-12 max-w-3xl mx-auto"
           >
-            {Object.entries(stats).map(([key, value], index) => (
+            {Object.entries(stats).map(([key, value]) => (
               <motion.div
                 key={key}
                 className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer"
@@ -177,7 +178,7 @@ const GitHubSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           <AnimatePresence>
-            {filteredRepos.map((repo, index) => (
+            {filteredRepos.map((repo) => (
               <motion.div
                 key={repo.id}
                 layout

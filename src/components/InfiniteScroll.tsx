@@ -4,13 +4,11 @@ import Hero from './Hero'
 import About from './About'
 import Skills from './Skills'
 import Projects from './Projects'
-import Contact from './Contact'
 
 const InfiniteScroll = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [contentHeight, setContentHeight] = useState(0)
-  const sectionHeight = window.innerHeight
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -21,7 +19,7 @@ const InfiniteScroll = () => {
     useTransform(scrollYProgress, [0, 1], [0, -contentHeight/2]),
     { damping: 15, stiffness: 150 }
   )
-
+  console.log(scrollPosition)
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return
@@ -67,7 +65,7 @@ const InfiniteScroll = () => {
     <About key="about" />,
     <Skills key="skills" />,
     <Projects key="projects" />,
-    <Contact key="contact" />
+    // <Contact key="contact" />
   ]
 
   // Create multiple copies of sections for infinite effect
@@ -98,7 +96,7 @@ const InfiniteScroll = () => {
       <div className="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none z-50" />
       <div className="fixed bottom-0 left-0 w-full h-32 bg-gradient-to-t from-dark to-transparent pointer-events-none z-50" />
 
-      <style jsx>{`
+      <style>{`
         ::-webkit-scrollbar {
           width: 0;
           background: transparent;

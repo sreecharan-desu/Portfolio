@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Element } from 'react-scroll'
-import { FaGraduationCap, FaCode, FaTrophy, FaLanguage } from 'react-icons/fa'
+import { FaCode, FaTrophy, FaLanguage } from 'react-icons/fa'
 import { HiAcademicCap } from 'react-icons/hi'
 import { IoSchool } from 'react-icons/io5'
 
