@@ -1,42 +1,61 @@
 import { motion } from 'framer-motion'
 import { Element } from 'react-scroll'
-import { SiTypescript, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiC, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress } from 'react-icons/si'
+import { SiTypescript, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiC, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiJest, SiJenkins, SiGithubactions, SiKubernetes, SiRedis, SiRedux, SiVuedotjs, SiMongodb, SiGraphql, SiDjango, , SiMuiSiDocker, SiCypress, SiApachekafka } from 'react-icons/si'
 import { FaGit, FaPython, FaNode } from 'react-icons/fa'
-import { BiLogoJava } from 'react-icons/bi'
 
 const Skills = () => {
   const skills = [
    // Frontend Core + Popular Frameworks
-   { name: "React", icon: SiReact       , color: "#61DAFB", delay: 0.2 },
+   { name: "React", icon: SiReact, color: "#61DAFB", delay: 0.2 },
    { name: "Next.js", icon: SiNextdotjs, color: "#000000", delay: 0.3 },
    { name: "TypeScript", icon: SiTypescript, color: "#3178C6", delay: 0.4 },
    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", delay: 0.5 },
+   { name: "Redux", icon: SiRedux, color: "#764ABC", delay: 0.6 },
+   { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D", delay: 0.7 },
    
-   // Backend Technologies
-   { name: "Node.js", icon: FaNode, color: "#339933", delay: 0.6 },
-   { name: "Express", icon: SiExpress, color: "#000000", delay: 0.7 },
-   { name: "Python", icon: FaPython, color: "#3776AB", delay: 0.8 },
-   { name: "Flask", icon: SiFlask, color: "#000000", delay: 0.9 },
+   // Backend Technologies  
+   { name: "Node.js", icon: FaNode, color: "#339933", delay: 0.8 },
+   { name: "Express", icon: SiExpress, color: "#000000", delay: 0.9 },
+   { name: "Python", icon: FaPython, color: "#3776AB", delay: 1.0 },
+   { name: "Django", icon:  SiDjango, color: "#092E20", delay: 1.1 },
+   { name: "Flask", icon: SiFlask, color: "#000000", delay: 1.2 },
+   { name: "GraphQL", icon: SiGraphql, color: "#E10098", delay: 1.3 },
+   
    // Databases & ORM
-   { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", delay: 1.0 },
-   { name: "MySQL", icon: SiMysql, color: "#4479A1", delay: 1.1 },
-   { name: "Prisma", icon: SiPrisma, color: "#2D3748", delay: 1.2 },
+   { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", delay: 1.4 },
+   { name: "MongoDB", icon: SiMongodb, color: "#47A248", delay: 1.5 },
+   { name: "MySQL", icon: SiMysql, color: "#4479A1", delay: 1.6 },
+   { name: "Redis", icon: SiRedis, color: "#DC382D", delay: 1.7 },
+   { name: "Prisma", icon: SiPrisma, color: "#2D3748", delay: 1.8 },
    
-   // Core Web Technologies
-   { name: "HTML", icon: SiHtml5, color: "#E34F26", delay: 1.3 },
-   { name: "CSS", icon: SiCss3, color: "#1572B6", delay: 1.4 },
-   { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4", delay: 1.5 },
-   { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3", delay: 1.6 },
+   // DevOps & Cloud
+  //  { name: "Docker", icon: SiDocker, color: "#2496ED", delay: 1.9 },
+   { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", delay: 2.0 },
+  //  { name: "AWS", icon: SiAmazonaws, color: "#232F3E", delay: 2.1 },
+  //  { name: "Azure", icon: SiMicrosoftazure, color: "#0078D4", delay: 2.2 },
+   { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.3 },
+   { name: "Jenkins", icon: SiJenkins, color: "#D24939", delay: 2.4 },
+   // Web Technologies & UI
+   { name: "HTML", icon: SiHtml5, color: "#E34F26", delay: 2.5 },
+   { name: "CSS", icon: SiCss3, color: "#1572B6", delay: 2.6 },
+   { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4", delay: 2.7 },
+  //  { name: "Material UI", icon: SiMui, color: "#0081CB", delay: 2.8 },
+   { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3", delay: 2.9 },
    
-   // Programming Languages
-   { name: "Java", icon: BiLogoJava, color: "#007396", delay: 1.7 },
-   { name: "C", icon: SiC, color: "#A8B9CC", delay: 1.8 },
+   // Testing & Quality
+   { name: "Jest", icon: SiJest, color: "#C21325", delay: 3.0 },
+   { name: "Cypress", icon: SiCypress, color: "#17202C", delay: 3.1 },
    
-   // Development Tools & Deployment
-   { name: "Git", icon: FaGit, color: "#F05032", delay: 1.9 },
-   { name: "RESTful APIs", icon: SiPostman, color: "#FF6C37", delay: 2.0 },
-   { name: "Vercel", icon: SiVercel, color: "#000000", delay: 2.1 },
-   { name: "Netlify", icon: SiNetlify, color: "#00C7B7", delay: 2.2 }
+   // Version Control & Tools
+   { name: "Git", icon: FaGit, color: "#F05032", delay: 3.2 },
+   { name: "RESTful APIs", icon: SiPostman, color: "#FF6C37", delay: 3.3 },
+   { name: "Vercel", icon: SiVercel, color: "#000000", delay: 3.4 },
+   { name: "Netlify", icon: SiNetlify, color: "#00C7B7", delay: 3.5 },
+   
+   // System Design & Architecture
+   { name: "System Design", icon: SiApachekafka, color: "#FFA500", delay: 3.6 },
+   { name: "Microservices", icon: SiApachekafka, color: "#0078D4", delay: 3.7 },
+   { name: "Design Patterns", icon: SiApachekafka, color: "#231F20", delay: 3.8 }
   ]
 
   return (
