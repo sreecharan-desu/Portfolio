@@ -7,29 +7,29 @@ const Skills = () => {
   const skills = [
    // Frontend Core + Popular Frameworks
    { name: "React", icon: SiReact, color: "#61DAFB", delay: 0.2 },
-   { name: "Next.js", icon: SiNextdotjs, color: "#000000", delay: 0.3 },
+  //  { name: "Next.js", icon: SiNextdotjs, color: "#000000", delay: 0.3 },
    { name: "TypeScript", icon: SiTypescript, color: "#3178C6", delay: 0.4 },
    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", delay: 0.5 },
-   { name: "Redux", icon: SiRedux, color: "#764ABC", delay: 0.6 },
-   { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D", delay: 0.7 },
+  //  { name: "Redux", icon: SiRedux, color: "#764ABC", delay: 0.6 },
+  //  { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D", delay: 0.7 },
    
    // Backend Technologies  
    { name: "Node.js", icon: FaNode, color: "#339933", delay: 0.8 },
    { name: "Express", icon: SiExpress, color: "#000000", delay: 0.9 },
    { name: "Python", icon: FaPython, color: "#3776AB", delay: 1.0 },
-   { name: "Django", icon:  SiDjango, color: "#092E20", delay: 1.1 },
+  //  { name: "Django", icon:  SiDjango, color: "#092E20", delay: 1.1 },
    { name: "Flask", icon: SiFlask, color: "#000000", delay: 1.2 },
-   { name: "GraphQL", icon: SiGraphql, color: "#E10098", delay: 1.3 },
+  //  { name: "GraphQL", icon: SiGraphql, color: "#E10098", delay: 1.3 },
    
    // Databases & ORM
    { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", delay: 1.4 },
    { name: "MongoDB", icon: SiMongodb, color: "#47A248", delay: 1.5 },
    { name: "MySQL", icon: SiMysql, color: "#4479A1", delay: 1.6 },
-   { name: "Redis", icon: SiRedis, color: "#DC382D", delay: 1.7 },
+  //  { name: "Redis", icon: SiRedis, color: "#DC382D", delay: 1.7 },
    { name: "Prisma", icon: SiPrisma, color: "#2D3748", delay: 1.8 },
    
    // DevOps & Cloud
-   { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", delay: 1.9 },
+  //  { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", delay: 1.9 },
   //  { name: "AWS", icon: SiAws, color: "#232F3E", delay: 2.0 },
   //  { name: "Azure", icon: SiAzure, color: "#0078D4", delay: 2.1 },
    { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.2 },
@@ -42,8 +42,8 @@ const Skills = () => {
    { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3", delay: 2.9 },
    
    // Testing & Quality
-   { name: "Jest", icon: SiJest, color: "#C21325", delay: 3.0 },
-   { name: "Cypress", icon: SiCypress, color: "#17202C", delay: 3.1 },
+  //  { name: "Jest", icon: SiJest, color: "#C21325", delay: 3.0 },
+  //  { name: "Cypress", icon: SiCypress, color: "#17202C", delay: 3.1 },
    
    // Version Control & Tools
    { name: "Git", icon: FaGit, color: "#F05032", delay: 3.2 },
@@ -52,9 +52,9 @@ const Skills = () => {
    { name: "Netlify", icon: SiNetlify, color: "#00C7B7", delay: 3.5 },
    
    // System Design & Architecture
-   { name: "System Design", icon: SiApachekafka, color: "#FFA500", delay: 3.6 },
-   { name: "Microservices", icon: SiApachekafka, color: "#0078D4", delay: 3.7 },
-   { name: "Design Patterns", icon: SiApachekafka, color: "#231F20", delay: 3.8 }
+  //  { name: "System Design", icon: SiApachekafka, color: "#FFA500", delay: 3.6 },
+  //  { name: "Microservices", icon: SiApachekafka, color: "#0078D4", delay: 3.7 },
+  //  { name: "Design Patterns", icon: SiApachekafka, color: "#231F20", delay: 3.8 }
   ]
 
   return (
