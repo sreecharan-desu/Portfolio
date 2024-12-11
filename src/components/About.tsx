@@ -112,7 +112,7 @@ const About = () => {
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 mt-1">•</span>
                   <p className="text-gray-700">
-                    Organized and managed coding workshops at RGUKT
+                    Actively participated in various hackathons and coding competitions worshops and consistently stood in the top.
                   </p>
                 </li>
               </ul>
