@@ -74,24 +74,39 @@ const GitHubSection = () => {
     : repos.filter(repo => repo.language === filter)
 
   return (
-    <Element name="github" className="py-16 bg-gradient-to-b from-orange-50 to-white relative overflow-hidden">
-      {/* Background Animation */}
-      <motion.div 
-        className="absolute inset-0 opacity-10"
-        animate={{ 
-          backgroundPosition: ['0% 0%', '100% 100%'],
-        }}
-        transition={{ 
-          duration: 20,
-          repeat: Infinity,
-          repeatType: 'reverse'
-        }}
-        style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
-        }}
-      />
+    <Element name="github" className="py-32 relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-orange-50">
+      {/* Background Animations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/5 to-yellow-500/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+        
+        <motion.div
+          className="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-gradient-to-tr from-orange-400/5 to-pink-500/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            x: [0, -30, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+      </div>
 
-      <div className="max-w-6xl mx-auto px-4 relative">
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -271,6 +286,9 @@ const GitHubSection = () => {
           </motion.a>
         </motion.div>
       </div>
+
+      {/* Subtle glass effect overlay */}
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-[100px] pointer-events-none" />
     </Element>
   )
 }

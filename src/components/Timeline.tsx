@@ -56,29 +56,43 @@ const Timeline = () => {
   ]
 
   return (
-    <Element name="education" className="relative min-h-screen py-12 sm:py-16 md:py-20 overflow-hidden 
-                                     bg-gradient-to-br from-white to-gray-50">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-50/10 to-transparent" />
-  
-      <div className="relative w-full max-w-[95%] sm:max-w-[90%] xl:max-w-[1400px] mx-auto px-3 sm:px-4 z-10">
-        {/* Enhanced Title Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+    <Element name="education" className="py-32 relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-orange-50">
+      {/* Background Animations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/5 to-yellow-500/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12 sm:mb-16 md:mb-20"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-orange-800 to-gray-900 
-                       bg-clip-text text-transparent pb-2">
+          <h2 className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-500 bg-clip-text text-transparent tracking-tight relative">
             Educational Journey
+            <motion.div 
+              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-2 
+                        bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: '8rem' }}
+              transition={{ duration: 1, delay: 0.3 }}
+            />
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-2 max-w-2xl mx-auto">
-            A timeline of academic achievements and milestones that have shaped my path in technology
-          </p>
         </motion.div>
-  
+
         <motion.div className="space-y-12 sm:space-y-16 md:space-y-24 relative">
           {/* Central Timeline Line - Enhanced for desktop */}
           <div className="absolute left-[21px] md:left-1/2 top-0 h-full md:-translate-x-1/2">
@@ -179,6 +193,9 @@ const Timeline = () => {
           ))}
         </motion.div>
       </div>
+
+      {/* Glass Effect Overlay */}
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-[100px] pointer-events-none" />
     </Element>
   )
 }

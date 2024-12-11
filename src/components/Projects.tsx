@@ -1,8 +1,7 @@
-// @ts-nocheck
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Element } from 'react-scroll'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { FaGithub, FaExternalLinkAlt, FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 interface GitHubData {
   stargazers_count: number;
@@ -43,19 +42,24 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       ref={cardRef}
       style={{ opacity, x }}
       className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-20 
-                 p-8 rounded-3xl bg-white/90 backdrop-blur-md border border-white/30 
-                 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500
-                 relative overflow-hidden group ${
-                   isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                 }`}
+                 p-8 rounded-3xl bg-gradient-to-br from-white/95 via-white/90 to-white/95
+                 backdrop-blur-xl border border-white/40 
+                 hover:shadow-2xl hover:shadow-orange-500/30 
+                 hover:border-orange-200/50
+                 transition-all duration-500 relative overflow-hidden group 
+                 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
     >
-      {/* Enhanced gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-transparent to-orange-100/50 
+      {/* Enhanced Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/30 via-transparent to-orange-100/30 
                     opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      {/* Project Image - Enhanced animation */}
+      {/* Animated Border Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-yellow-500/20 to-orange-500/20 
+                    opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
+
+      {/* Project Image Section */}
       <motion.div 
-        className="w-full lg:w-3/5 perspective-1500 mb-8 lg:mb-0"
+        className="w-full lg:w-3/5 perspective-2000 mb-8 lg:mb-0"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
@@ -63,45 +67,45 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           className="relative group rounded-2xl shadow-2xl transform-gpu overflow-hidden
                      aspect-video sm:aspect-[16/10]"
           animate={{
-            rotateY: isHovered ? (isEven ? 8 : -8) : 0,
-            scale: isHovered ? 1.03 : 1,
+            rotateY: isHovered ? (isEven ? 12 : -12) : 0,
+            scale: isHovered ? 1.05 : 1,
           }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
         >
           <img
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover object-center rounded-xl 
-                      transform transition-transform duration-500 group-hover:scale-110"
+                      transform transition-transform duration-700 group-hover:scale-110"
           />
 
           {/* Enhanced Project Links Overlay */}
           <motion.div 
-            className="absolute inset-0 bg-black/70 backdrop-blur-sm 
-                      flex items-center justify-center gap-8 opacity-0 
+            className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/80
+                      backdrop-blur-sm flex items-center justify-center gap-8 opacity-0 
                       group-hover:opacity-100 transition-all duration-500"
           >
             <motion.a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 bg-white rounded-full text-gray-900 hover:text-orange-500 
-                        transition-colors duration-300"
+              className="p-4 bg-white/90 rounded-full text-gray-900 hover:text-orange-500 
+                        hover:bg-white transition-all duration-300 transform-gpu"
             >
-              <FaExternalLinkAlt className="text-lg sm:text-xl" />
+              <FaExternalLinkAlt className="text-xl sm:text-2xl" />
             </motion.a>
             <motion.a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 bg-white rounded-full text-gray-900 hover:text-orange-500 
-                        transition-colors duration-300"
+              className="p-4 bg-white/90 rounded-full text-gray-900 hover:text-orange-500 
+                        hover:bg-white transition-all duration-300 transform-gpu"
             >
-              <FaGithub className="text-lg sm:text-xl" />
+              <FaGithub className="text-xl sm:text-2xl" />
             </motion.a>
           </motion.div>
         </motion.div>
@@ -115,9 +119,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         transition={{ duration: 0.7, delay: 0.3 }}
       >
         <motion.h3 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center lg:text-left 
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center lg:text-left 
                      bg-gradient-to-br from-orange-500 via-orange-600 to-orange-500 bg-clip-text text-transparent
-                     tracking-tight leading-tight"
+                     tracking-tight leading-none"
           whileHover={{ scale: 1.02 }}
         >
           {project.title}
@@ -137,11 +141,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           {project.tech.map((tech, index) => (
             <motion.span
               key={index}
-              className="px-5 py-2.5 bg-gradient-to-br from-orange-50 via-white to-orange-100 
+              className="px-6 py-3 bg-gradient-to-br from-orange-50 via-white to-orange-100 
                        rounded-full text-sm font-semibold text-orange-600
                        border border-orange-200/50 shadow-lg shadow-orange-100/50
-                       hover:shadow-orange-200/50 transition-all duration-300"
-              whileHover={{ scale: 1.08, y: -3 }}
+                       hover:shadow-orange-300/50 hover:border-orange-300/50
+                       transition-all duration-300"
+              whileHover={{ scale: 1.1, y: -5 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
@@ -160,10 +165,11 @@ const Projects = () => {
     {
       title: "UniZ",
       description: "Emerging university management system with advanced Outpass Management features.",
-      liveUrl: "https://sreesuniz.vercel.app/student",
+      liveUrl: "https://sreesuniz.vercel.app/student", 
       githubUrl: "https://github.com/sreecharan-desu/uniZ",
       tech: ["TypeScript", "Prisma", "React", "Node.js"],
-      image: "/project-images/uniZ.png"
+      image: "/project-images/uniZ.png",
+      repoName: "uniZ"
     },
     {
       title: "reX",
@@ -171,15 +177,17 @@ const Projects = () => {
       liveUrl: "https://rex-beige.vercel.app/",
       githubUrl: "https://github.com/sreecharan-desu/reX",
       tech: ["TypeScript", "React", "Express", "MongoDB"],
-      image: "/project-images/reX.png"
+      image: "/project-images/reX.png",
+      repoName: "reX"
     },
     {
-      title: "TaskMaster",
+      title: "TaskMaster", 
       description: "A full-stack todo application with real-time updates and secure authentication.",
       liveUrl: "https://task-master-black.vercel.app/",
       githubUrl: "https://github.com/sreecharan-desu/TaskMaster",
       tech: ["React", "Node.js", "MongoDB", "JWT"],
-      image: "/project-images/taskmaster.png"
+      image: "/project-images/taskmaster.png",
+      repoName: "TaskMaster"
     },
     {
       title: "ChromaPost",
@@ -187,15 +195,17 @@ const Projects = () => {
       liveUrl: "https://chromapost.vercel.app/",
       githubUrl: "https://github.com/sreecharan-desu/ChromaPost",
       tech: ["React", "TypeScript", "Vite", "TailwindCSS"],
-      image: "/project-images/chromapost.png"
+      image: "/project-images/chromapost.png",
+      repoName: "ChromaPost"
     },
     {
-      title: "StudySpace",
+      title: "StudySpace", 
       description: "Platform for students to join study groups and collaborate offline.",
       liveUrl: "https://studyspace-exp.vercel.app/",
       githubUrl: "https://github.com/sreecharan-desu/Studyspace",
       tech: ["TypeScript", "React", "Recoil", "TailwindCSS"],
-      image: "/project-images/studyspace.png"
+      image: "/project-images/studyspace.png",
+      repoName: "Studyspace"
     },
     {
       title: "GradeLite",
@@ -203,79 +213,85 @@ const Projects = () => {
       liveUrl: "https://sreecharan-desu.github.io/Gradelite/#GradeLite",
       githubUrl: "https://github.com/sreecharan-desu/Gradelite",
       tech: ["JavaScript", "HTML", "CSS"],
-      image: "/project-images/gradelite.png"
+      image: "/project-images/gradelite.png",
+      repoName: "Gradelite"
     },
     {
-      title: "EdgeAI",
+      title: "EdgeAI", 
       description: "AI-powered web application.",
       liveUrl: "https://edgeai.vercel.app/",
       githubUrl: "https://github.com/sreecharan-desu/EdgeAI",
       tech: ["React", "AI/ML", "TailwindCSS"],
-      image: "/project-images/edgeai.png"
+      image: "/project-images/edgeai.png",
+      repoName: "EdgeAI"
     }
   ]
 
   return (
-    <Element name="projects" className="min-h-screen py-32 bg-gradient-to-br from-white via-orange-50/30 to-white relative overflow-hidden">
+    <Element name="projects" className="min-h-screen py-32 relative overflow-hidden bg-gradient-to-br from-orange-50/50 via-white to-orange-100/30">
+      {/* Enhanced Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-orange-50/30 to-white" />
+      
       {/* Enhanced Ambient Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl"
+          className="absolute -top-32 -right-32 w-[800px] h-[800px] 
+                     bg-gradient-to-br from-orange-500/10 to-yellow-500/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 100, 0],
             y: [0, 50, 0],
           }}
           transition={{
-            duration: 15,
+            duration: 20,
             repeat: Infinity,
             repeatType: "reverse",
           }}
         />
         
-        {/* Secondary Gradient */}
         <motion.div
-          className="absolute -bottom-32 -left-32 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl"
+          className="absolute -bottom-32 -left-32 w-[600px] h-[600px] 
+                     bg-gradient-to-tr from-orange-400/10 to-pink-500/10 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             x: [0, -30, 0],
             y: [0, 50, 0],
           }}
           transition={{
-            duration: 10,
+            duration: 15,
             repeat: Infinity,
             repeatType: "reverse",
           }}
         />
 
-        {/* Accent Gradient */}
         <motion.div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                     w-[500px] h-[500px] bg-orange-300/10 rounded-full blur-3xl"
+                     w-[700px] h-[700px] bg-gradient-to-r from-orange-300/10 to-yellow-300/10 
+                     rounded-full blur-3xl"
           animate={{
             scale: [1, 1.1, 1],
             rotate: [0, 360],
           }}
           transition={{
-            duration: 15,
+            duration: 25,
             repeat: Infinity,
             repeatType: "reverse",
           }}
         />
       </div>
 
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-6xl md:text-7xl font-bold text-center mb-32 
-                   bg-gradient-to-br from-orange-500 via-orange-600 to-orange-500 bg-clip-text text-transparent
-                   tracking-tight relative z-10"
+          className="text-7xl md:text-8xl font-bold text-center mb-32 
+                     bg-gradient-to-br from-orange-500 via-orange-600 to-orange-500 
+                     bg-clip-text text-transparent tracking-tight relative z-10"
         >
           Projects
           <motion.div 
-            className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-32 h-1.5 
+            className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-32 h-2 
                       bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: '8rem' }}
@@ -283,7 +299,7 @@ const Projects = () => {
           />
         </motion.h2>
 
-        <div className="space-y-40 md:space-y-56 relative z-10">
+        <div className="space-y-48 md:space-y-64 relative z-10">
           {projects.map((project, index) => (
             <ProjectCard 
               key={project.title} 
@@ -295,7 +311,7 @@ const Projects = () => {
       </div>
 
       {/* Enhanced Glass Effect Overlay */}
-      <div className="absolute inset-0 bg-white/30 backdrop-blur-[150px] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-[100px] pointer-events-none" />
     </Element>
   )
 }
