@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Element } from 'react-scroll'
-import { SiTypescript, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiC, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiJest, SiJenkins, SiGithubactions, SiKubernetes, SiRedis, SiRedux, SiVuedotjs, SiMongodb, SiGraphql, SiDjango, , SiMuiSiDocker, SiCypress, SiApachekafka } from 'react-icons/si'
+import { SiTypescript, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiJest, SiJenkins, SiGithubactions, SiKubernetes, SiRedis, SiRedux, SiVuedotjs, SiMongodb, SiGraphql, SiDjango, SiCypress, SiApachekafka } from 'react-icons/si'
 import { FaGit, FaPython, FaNode } from 'react-icons/fa'
 
 const Skills = () => {
@@ -29,11 +29,10 @@ const Skills = () => {
    { name: "Prisma", icon: SiPrisma, color: "#2D3748", delay: 1.8 },
    
    // DevOps & Cloud
-  //  { name: "Docker", icon: SiDocker, color: "#2496ED", delay: 1.9 },
-   { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", delay: 2.0 },
-  //  { name: "AWS", icon: SiAmazonaws, color: "#232F3E", delay: 2.1 },
-  //  { name: "Azure", icon: SiMicrosoftazure, color: "#0078D4", delay: 2.2 },
-   { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.3 },
+   { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", delay: 1.9 },
+  //  { name: "AWS", icon: SiAws, color: "#232F3E", delay: 2.0 },
+  //  { name: "Azure", icon: SiAzure, color: "#0078D4", delay: 2.1 },
+   { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.2 },
    { name: "Jenkins", icon: SiJenkins, color: "#D24939", delay: 2.4 },
    // Web Technologies & UI
    { name: "HTML", icon: SiHtml5, color: "#E34F26", delay: 2.5 },
