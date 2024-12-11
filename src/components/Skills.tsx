@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Element } from 'react-scroll'
-import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiJenkins, SiGithubactions, SiMongodb} from 'react-icons/si'
+import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiMongodb} from 'react-icons/si'
 import { FaGit, FaPython, FaNode } from 'react-icons/fa'
 
 const Skills = () => {
@@ -32,8 +32,8 @@ const Skills = () => {
   //  { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", delay: 1.9 },
   //  { name: "AWS", icon: SiAws, color: "#232F3E", delay: 2.0 },
   //  { name: "Azure", icon: SiAzure, color: "#0078D4", delay: 2.1 },
-   { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.2 },
-   { name: "Jenkins", icon: SiJenkins, color: "#D24939", delay: 2.4 },
+  //  { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.2 },
+  //  { name: "Jenkins", icon: SiJenkins, color: "#D24939", delay: 2.4 },
    // Web Technologies & UI
    { name: "HTML", icon: SiHtml5, color: "#E34F26", delay: 2.5 },
    { name: "CSS", icon: SiCss3, color: "#1572B6", delay: 2.6 },
