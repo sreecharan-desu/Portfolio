@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Element } from 'react-scroll'
-import { SiTypescript, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiJest, SiJenkins, SiGithubactions, SiKubernetes, SiRedis, SiRedux, SiVuedotjs, SiMongodb, SiGraphql, SiDjango, SiCypress, SiApachekafka } from 'react-icons/si'
+import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiJenkins, SiGithubactions, SiMongodb} from 'react-icons/si'
 import { FaGit, FaPython, FaNode } from 'react-icons/fa'
 
 const Skills = () => {
