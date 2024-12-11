@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import ErrorBoundary from './components/ErrorBoundary'
 import LoadingScreen from './components/LoadingScreen'
 import ResumeButton from './components/ResumeButton'
 import Hero from './components/Hero'
@@ -14,7 +15,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate loading time or check actual resources
     const timer = setTimeout(() => {
       setIsLoading(false)
     }, 2000)
@@ -23,7 +23,7 @@ const App = () => {
   }, [])
 
   return (
-    <>
+    <ErrorBoundary>
       <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen />}
       </AnimatePresence>
@@ -35,11 +35,12 @@ const App = () => {
           <Skills />
           <Projects />
           <Timeline />
+          <Contact />
           <Footer />
           <ResumeButton />
         </>
       )}
-    </>
+    </ErrorBoundary>
   )
 }
 

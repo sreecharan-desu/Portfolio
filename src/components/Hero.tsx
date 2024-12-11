@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { HiArrowDown } from 'react-icons/hi'
+import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
 import { RiTwitterXFill } from 'react-icons/ri'
 
 const Hero = () => {
   return (
-    <div name="home" className="relative w-full min-h-[100svh] overflow-hidden bg-gradient-to-br from-white to-gray-100">
+    <div id="home" className="relative w-full min-h-[100svh] overflow-hidden bg-gradient-to-br from-white to-gray-100 px-4 sm:px-6 lg:px-8">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -15,7 +14,7 @@ const Hero = () => {
             rotate: [0, 90, 0],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-1/4 -right-16 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl"
+          className="absolute top-1/4 -right-16 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl px-4 py-2 md:px-6 md:py-3"
         />
         <motion.div
           animate={{
@@ -23,7 +22,7 @@ const Hero = () => {
             rotate: [0, -90, 0],
           }}
           transition={{ duration: 15, repeat: Infinity }}
-          className="absolute bottom-1/4 -left-16 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 -left-16 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl px-4 py-2 md:px-6 md:py-3"
         />
       </div>
 
@@ -32,16 +31,16 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent 
                       clip-diagonal transform -rotate-3 scale-110" />
 
-        <div className="max-w-[95%] sm:max-w-[90%] lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="w-full sm:max-w-2xl lg:max-w-full xl:max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="relative z-10 space-y-6 md:space-y-8">
             {/* Greeting */}
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-xl md:text-2xl text-gray-600 font-medium"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-600 font-medium"
             >
-              Hello, I'm
+              They call me
             </motion.div>
 
             {/* Name */}
@@ -49,9 +48,9 @@ const Hero = () => {
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
             >
-              SREECHARAN DESU
+              <span className="text-orange-500">SREECHARAN</span>
             </motion.h1>
 
             {/* Role */}
@@ -63,11 +62,11 @@ const Hero = () => {
             >
               <TypeAnimation
                 sequence={[
-                  'Full Stack Developer',
-                  2000,
+                  'Full Stack Developer & DevOps engineer',
+                  3000,
                   'CS Sophomore at RGUKT',
                   2000,
-                  'Web Development Enthusiast',
+                  'Exploring new Technologies',
                   2000,
                 ]}
                 wrapper="span"
@@ -82,10 +81,12 @@ const Hero = () => {
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-base sm:text-lg md:text-xl max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] text-gray-600"
+              className="py-4 text-gray-600 text-lg sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl"
             >
-              Dedicated and detail-oriented Computer Science sophomore specializing in full-stack web development. 
-              Passionate about creating innovative solutions with modern technologies and clean design principles.
+              Full-stack developer passionate about creating impactful digital solutions. 
+              Bringing a unique blend of technical expertise and creative problem-solving 
+              to every project. Currently exploring DevOps and cloud technologies while 
+              pursuing my CS degree at RGUKT.
             </motion.p>
 
             {/* Location */}
@@ -104,7 +105,7 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 max-w-xs sm:max-w-none mx-auto sm:mx-0"
             >
               <motion.a
                 href="mailto:sreecharan309@gmail.com"
@@ -112,17 +113,19 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-orange-500 text-white rounded-full font-medium
                          hover:bg-orange-600 transition-colors duration-300 shadow-lg
-                         hover:shadow-orange-500/25 text-center"
+                         hover:shadow-orange-500/25 text-center w-full sm:w-auto"
               >
                 Get in Touch
               </motion.a>
+              
+              {/* Call Me button - only visible on mobile */}
               <motion.a
                 href="tel:+916300625861"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-white text-orange-500 rounded-full font-medium
+                className="sm:hidden px-8 py-3 bg-white text-orange-500 rounded-full font-medium
                          border-2 border-orange-500 hover:bg-orange-50 transition-colors duration-300
-                         text-center"
+                         text-center w-full"
               >
                 Call Me
               </motion.a>
@@ -133,12 +136,13 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="flex gap-4 sm:gap-6 pt-4"
+              className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6 pt-4"
             >
               {[
                 { icon: FaGithub, link: "https://github.com/sreecharan-desu", label: "GitHub" },
                 { icon: FaLinkedin, link: "https://linkedin.com/in/sreecharan-desu", label: "LinkedIn" },
-                { icon: RiTwitterXFill, link: "https://x.com/sreecharandesu", label: "X (Twitter)" }
+                { icon: RiTwitterXFill, link: "https://x.com/sreecharandesu", label: "X (Twitter)" },
+                { icon: FaYoutube, link: "https://www.youtube.com/@mrsreecharan", label: "YouTube" }
               ].map((social, index) => (
                 <motion.a
                   key={index}

@@ -1,87 +1,89 @@
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 const LoadingScreen = () => {
-  const circleVariants = {
-    animate: {
-      scale: [1, 1.2, 1],
-      rotate: [0, 180, 360],
-      borderRadius: ["50%", "30%", "50%"],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  }
+  const [count, setCount] = useState(3)
 
-  const dotVariants = {
-    animate: (i: number) => ({
-      y: [0, -15, 0],
-      transition: {
-        duration: 0.6,
-        repeat: Infinity,
-        delay: i * 0.2,
-        ease: "easeInOut"
-      }
-    })
-  }
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCount((prev) => (prev > 0 ? prev - 1 : 0))
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <motion.div
-      initial={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-white"
+      className="fixed inset-0 bg-gradient-to-br from-orange-50 via-white to-orange-100 flex flex-col items-center justify-center z-50"
     >
-      <div className="relative">
-        {/* Animated background circle */}
-        <motion.div
-          variants={circleVariants}
-          animate="animate"
-          className="absolute -inset-8 bg-gradient-to-r from-orange-200 to-orange-100 opacity-30 rounded-full"
-        />
+      <div className="max-w-2xl w-full px-4 text-center space-y-8">
+        {/* Minimal Loading Text */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-gray-400 text-sm"
+        >
+          connecting to sreecharan in {count}
+        </motion.p>
 
-        {/* Main loading container */}
-        <div className="relative flex flex-col items-center">
-          {/* Animated dots */}
-          <div className="flex gap-3 mb-8">
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                variants={dotVariants}
-                animate="animate"
-                className="w-4 h-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-400"
-              />
-            ))}
-          </div>
-
-          {/* Text with gradient */}
+        {/* Loading Animation */}
+        <div className="relative">
+          {/* Outer Ring */}
           <motion.div
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative"
+            className="w-24 h-24 rounded-full border-4 border-orange-200 relative mx-auto"
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "linear"
+            }}
           >
-            <span className="text-lg font-medium bg-gradient-to-r from-orange-500 to-orange-400 
-                           bg-clip-text text-transparent">
-              Loading
-            </span>
+            {/* Inner Ring */}
             <motion.div
-              animate={{ width: ["0%", "100%", "0%"] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-400"
+              className="absolute inset-2 rounded-full border-4 border-orange-400"
+              animate={{
+                rotate: -360,
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+            
+            {/* Center Dot */}
+            <motion.div
+              className="absolute inset-0 m-auto w-3 h-3 bg-orange-500 rounded-full"
+              animate={{
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+              }}
             />
           </motion.div>
         </div>
 
-        {/* Decorative elements */}
+        {/* Progress Bar */}
         <motion.div
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          className="absolute -z-10 inset-0 border-2 border-orange-200 rounded-full"
-        />
+          className="w-48 h-0.5 bg-orange-100 rounded-full mx-auto overflow-hidden"
+        >
+          <motion.div
+            className="h-full bg-orange-500 rounded-full"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{
+              duration: 3,
+              ease: "easeInOut",
+            }}
+          />
+        </motion.div>
       </div>
     </motion.div>
   )

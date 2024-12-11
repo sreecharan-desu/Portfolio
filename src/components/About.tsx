@@ -1,139 +1,113 @@
 import { motion } from 'framer-motion'
 import ParticlesBackground from './ParticlesBackground'
+import { Element } from 'react-scroll'
 
 const About = () => {
   return (
-    <div name="about" className="relative w-full min-h-screen bg-gradient-to-br from-white via-orange-50/30 to-white text-gray-900 py-20 overflow-hidden">
+    <Element name="about" className="relative w-full min-h-screen bg-gradient-to-br from-white via-orange-50/30 to-white 
+                                   text-gray-900 py-8 sm:py-12 md:py-20 overflow-hidden">
+      {/* Background Pattern */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <ParticlesBackground />
       </div>
 
-      <div className="relative w-full max-w-[90%] xl:max-w-[1400px] mx-auto p-4 z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+      <div className="relative w-full max-w-[95%] sm:max-w-[90%] xl:max-w-[1400px] mx-auto px-3 sm:px-4 z-10">
+        {/* Title Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          {/* Left Column */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-orange-800 to-gray-900 
+                       bg-clip-text text-transparent pb-2">
+            About Me
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-2 max-w-2xl mx-auto">
+            Passionate developer crafting digital experiences
+          </p>
+        </motion.div>
+
+        {/* Content Grid */}
+        <motion.div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
+          {/* Main About Section - 7 columns on desktop */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-            className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl 
-                     border border-orange-100/20 transition-all duration-300"
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg 
+                     hover:shadow-xl border border-orange-100/20 transition-all duration-300"
           >
-            <motion.h2 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="text-4xl font-bold text-gray-900 border-b-4 border-orange-500 p-2 inline"
-            >
-              About Me
-            </motion.h2>
-            
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              className="text-gray-800 mt-6 leading-relaxed tracking-wide"
-            >
-              Dedicated and detail-oriented Computer Science sophomore at Rajiv Gandhi University of
-              Knowledge Technologies, specializing in full-stack web development. Proficient in modern web
-              technologies, including the MERN stack, with a strong foundation in C, Java, JavaScript, TypeScript,
-              React, Node.js, and Mongoose.
-            </motion.p>
-
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              className="text-gray-800 mt-4 leading-relaxed tracking-wide"
-            >
-              Experienced in developing scalable web applications, with a keen eye for minimalist and clean design. 
-              Passionate about continuous learning and collaboration, with a proven track record of delivering 
-              impactful projects such as TaskMaster and Study Space.
-            </motion.p>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                I'm a Computer Science sophomore at RGUKT, passionate about creating efficient, 
+                user-friendly applications and contributing to open-source projects.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                My journey in technology is driven by curiosity and a desire to solve real-world 
+                problems through innovative solutions. I specialize in full-stack development 
+                and am constantly exploring new technologies.
+              </p>
+            </div>
           </motion.div>
 
-          {/* Right Column */}
+          {/* Stats & Quick Info - 5 columns on desktop */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-            className="space-y-8"
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 space-y-6"
           >
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              className="bg-orange-50/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl 
-                       border border-orange-100/20 transition-all duration-300"
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="text-orange-500">🏆</span> Achievements
-              </h3>
-              <ul className="list-disc list-inside text-gray-800 space-y-3">
-                <motion.li 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.2, delay: 0.3 }}
-                  className="hover:text-orange-600 transition-colors"
-                >
-                  First Prize in Hackathon held at RGUKT, Ongole campus on the eve of Ornate 2k24
-                </motion.li>
-                <motion.li 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.2, delay: 0.4 }}
-                  className="hover:text-orange-600 transition-colors"
-                >
-                  Organized and managed coding workshops at RGUKT
-                </motion.li>
-              </ul>
-            </motion.div>
+            {/* Stats Cards */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-md 
+                         hover:shadow-lg border border-orange-100/20 text-center"
+              >
+                <h3 className="text-3xl sm:text-4xl font-bold text-orange-500">10+</h3>
+                <p className="text-sm sm:text-base text-gray-600 mt-1">Projects</p>
+              </motion.div>
+              
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-md 
+                         hover:shadow-lg border border-orange-100/20 text-center"
+              >
+                <h3 className="text-3xl sm:text-4xl font-bold text-orange-500">100+</h3>
+                <p className="text-sm sm:text-base text-gray-600 mt-1">Commits</p>
+              </motion.div>
+            </div>
 
+            {/* Quick Info Card */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.3 }}
-              className="bg-gradient-to-br from-orange-50/50 to-white backdrop-blur-sm p-8 rounded-2xl 
-                       shadow-lg hover:shadow-xl border border-orange-100/20 transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-br from-orange-50/50 to-white backdrop-blur-sm p-6 sm:p-8 
+                       rounded-xl shadow-lg border border-orange-100/20"
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="text-orange-500">🎓</span> Education
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 
+                           flex items-center gap-2">
+                <span className="text-orange-500">🎯</span> Focus Areas
               </h3>
-              <div className="text-gray-800 space-y-2">
-                <motion.p 
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2, delay: 0.4 }}
-                  className="font-semibold text-lg text-orange-600"
-                >
-                  Bachelor of Technology in Computer Science
-                </motion.p>
-                <motion.p 
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2, delay: 0.5 }}
-                  className="font-medium"
-                >
-                  Rajiv Gandhi University of Knowledge Technologies
-                </motion.p>
-                <motion.p 
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2, delay: 0.6 }}
-                  className="text-gray-600"
-                >
-                  Expected Graduation: 2027
-                </motion.p>
-              </div>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <span className="text-orange-500">•</span>
+                  Full Stack Development
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <span className="text-orange-500">•</span>
+                  Open Source Contribution
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <span className="text-orange-500">•</span>
+                  UI/UX Design
+                </li>
+              </ul>
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </Element>
   )
 }
 
