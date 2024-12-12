@@ -8,7 +8,7 @@ const ResumeButton = () => {
 
   const handleDownload = async () => {
     try {
-      const response = await fetch('public/DESU-SREECHARAN-RESUME.pdf') // Update with your resume path
+      const response = await fetch('/DESU-SREECHARAN-RESUME.pdf') // Update with your resume path
       if (!response.ok) throw new Error('Download failed')
       
       const blob = await response.blob()
