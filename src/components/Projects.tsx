@@ -218,7 +218,7 @@ const Projects = () => {
     },
     {
       title: "EdgeAI", 
-      description: "AI-powered web application.",
+      description: "A waitlist application created to join YC.",
       liveUrl: "https://edgeai.vercel.app/",
       githubUrl: "https://github.com/sreecharan-desu/EdgeAI",
       tech: ["React", "AI/ML", "TailwindCSS"],
