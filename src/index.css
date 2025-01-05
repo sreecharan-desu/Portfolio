@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  font-family: "Courier Prime", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer components {
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 

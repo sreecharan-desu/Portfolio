@@ -32,8 +32,8 @@ const Footer = () => {
       color: "#0077B5"
     },
     {
-      name: "Twitter",
-      url: "https://x.com/sreecharandesu",
+      name: "X",
+      url: "https://x.com/sr1x0r",
       icon: RiTwitterXFill,
       color: "#000000"
     },
