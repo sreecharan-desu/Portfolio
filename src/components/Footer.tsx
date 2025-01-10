@@ -33,7 +33,7 @@ const Footer = () => {
     },
     {
       name: "X",
-      url: "https://x.com/sr1x0r",
+      url: "https://x.com/sr3x0r",
       icon: RiTwitterXFill,
       color: "#000000"
     },
