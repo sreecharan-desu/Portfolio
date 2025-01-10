@@ -141,7 +141,7 @@ const Hero = () => {
               {[
                 { icon: FaGithub, link: "https://github.com/sreecharan-desu", label: "GitHub" },
                 { icon: FaLinkedin, link: "https://linkedin.com/in/sreecharan-desu", label: "LinkedIn" },
-                { icon: RiTwitterXFill, link: "https://x.com/sr3x0r", label: "X (Twitter)" },
+                { icon: RiTwitterXFill, link: "https://x.com/sreecharandesu", label: "X (Twitter)" },
                 { icon: FaYoutube, link: "https://www.youtube.com/@mrsreecharan", label: "YouTube" }
               ].map((social, index) => (
                 <motion.a
