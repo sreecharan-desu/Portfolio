@@ -38,7 +38,7 @@ const Timeline = () => {
           <div className="flex flex-col items-start mb-3 space-y-2 lg:space-y-0 lg:space-x-4">
           <a href='https://www.vidyavision.com/results/RGUKT-2021-RESULT%20DATA_compressed.pdf' target='_blank' className='text-decoration-none'>
             <span className="text-sm">
-              Top 1% in the entrance examination (967/73,548) <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 text-white text-center px-7 py-1 italic text-xs font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300">
+              <b>Top 1%</b> in the entrance examination (967/73,548) <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 text-white text-center px-7 py-1 italic text-xs font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300">
               state level
             </span>
             </span>
