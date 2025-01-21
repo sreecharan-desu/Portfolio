@@ -14,7 +14,7 @@ interface GitHubStats {
 const Footer = () => {
   const stats = [
     { label: "Projects", value: "10+" },
-    { label: "Commits", value: "100+" },
+    { label: "Commits", value: "1000+" },
     { label: "Followers", value: "2" }
   ]
 

@@ -43,8 +43,8 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg text-gray-700 leading-relaxed">
-              I'm a dedicated Computer Science sophomore at Rajiv Gandhi University of Knowledge Technologies, 
-              specializing in full-stack web development. With a strong foundation in modern web technologies 
+              I'm a dedicated Computer Science sophomore at Rajiv Gandhi University of Knowledge Technologies,
+              specializing in full-stack web development. With a strong foundation in modern web technologies
               including the MERN stack, I'm passionate about creating scalable and user-friendly web applications.
             </p>
 
@@ -55,10 +55,10 @@ const About = () => {
               </h3>
               <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
-                  "C", "Java","Python","JavaScript", "TypeScript",
+                  "C", "Java", "Python", "JavaScript", "TypeScript",
                   "React", "Node.js", "Express",
                   "MongoDB", "MySQL", "PostgreSQL",
-                  "Tailwind CSS", "Prisma", "Recoil","Next.js","Hono","Cloudflare","Vercel"
+                  "Tailwind CSS", "Prisma", "Recoil", "Next.js", "Hono", "Cloudflare", "Vercel"
                 ].map((skill) => (
                   <motion.li
                     key={skill}
@@ -96,32 +96,55 @@ const About = () => {
                 </div>
               </div>
             </div>
-
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <FaTrophy className="text-orange-500" />
-                Achievements
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-500 mt-1">•</span>
-                  <p className="text-gray-700">
-                    First Prize in Hackathon at RGUKT, Ongole campus (Ornate 2k24)
-                  </p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-500 mt-1">•</span>
-                  <p className="text-gray-700">
-                  Team lead for the only O21 batch selected for the Inter-University TechHackathon (2025).</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-500 mt-1">•</span>
-                  <p className="text-gray-700">
-                    Actively participated in various hackathons and coding competitions worshops and consistently stood in the top.
-                  </p>
-                </li>
-              </ul>
+            <div className="w-full max-w-4xl mx-auto bg-white/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-lg border border-gray-100">
+      <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+        <FaTrophy className="w-6 h-6 text-orange-500" />
+        Achievements
+      </h3>
+      
+      <ul className="space-y-4">
+        <a href='https://www.vidyavision.com/results/RGUKT-2021-RESULT%20DATA_compressed.pdf' target='_blank'>
+        <li className="-mt-4 lg:mt-0 flex flex-col sm:flex-row items-start gap-2 sm:gap-4">
+        <span className="text-orange-500 text-lg mt-1 flex-shrink-0 text-le">•</span>
+          <p className='-mt-8 ml-4 lg:mt-1 lg:ml-0'> <div className="space-y-2">
+            <p className="text-sm sm:text-base text-start lg:text-lg text-black">
+              Top 1% in the entrance examination for Rajiv Gandhi University of Knowledge Technologies
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-300 px-3 py-1 text-sm italic rounded-full text-black">
+                rank no.967 over 73,548
+              </span>
+              <span className="bg-gradient-to-r from-orange-400 pt-1 via-orange-500 to-yellow-400 text-white text-center px-4 py-1 italic text-xs font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300">
+                state level
+              </span>
             </div>
+          </div>
+          </p>
+        </li>
+        </a>
+        <li className="flex items-start gap-2 sm:gap-4">
+          <span className="text-orange-500 text-lg mt-1 flex-shrink-0">•</span>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700">
+            First Prize in Hackathon at RGUKT, Ongole campus <b>(Ornate 2k24)</b>
+          </p>
+        </li>
+
+        <li className="flex items-start gap-2 sm:gap-4">
+          <span className="text-orange-500 text-lg mt-1 flex-shrink-0">•</span>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700">
+            <b>Team lead</b> for the only O21 batch selected for the Inter-University <b>TechHackathon (2025)</b>
+          </p>
+        </li>
+
+        <li className="flex items-start gap-2 sm:gap-4">
+          <span className="text-orange-500 text-lg mt-1 flex-shrink-0">•</span>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700">
+            Actively participated in various hackathons and coding competitions workshops and consistently stood in the <strong>top</strong>
+          </p>
+        </li>
+      </ul>
+    </div>
+
 
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">

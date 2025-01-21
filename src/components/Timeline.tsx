@@ -34,9 +34,22 @@ const Timeline = () => {
       subtitle: "Mathematics, Physics, Chemistry",
       date: "2021 - 2023",
       achievements: [
-        <span>Top 5% in Entrance Examination</span>,
-        <span>97% Academic Score</span>
+        <div className="achievements">
+          <div className="flex flex-col items-start mb-3 space-y-2 lg:space-y-0 lg:space-x-4">
+          <a href='https://www.vidyavision.com/results/RGUKT-2021-RESULT%20DATA_compressed.pdf' target='_blank' className='text-decoration-none'>
+            <span className="text-sm">
+              Top 1% in the entrance examination (967/73,548) <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 text-white text-center px-7 py-1 italic text-xs font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300">
+              state level
+            </span>
+            </span>
+          </a>
+          </div>
+        </div>,
+                  <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-2 lg:space-y-0 lg:space-x-4">
+                  <span className="text-sm font-medium">97% Academic Score</span>
+                </div>
       ],
+      
       icon: <FaGraduationCap className="text-3xl" />,
       color: "blue"
     },
@@ -47,19 +60,19 @@ const Timeline = () => {
       achievements: [
         <div className="flex flex-row items-start mb-2">
           Chess Champion
-          <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 text-white ml-1 px-1 italic text-[8px]  lg:text-xs lg:mt-1 font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300">
+          <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 text-white ml-1 px-3 italic text-[10px]  lg:text-xs lg:mt-1 font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300">
             school level
           </span>
         </div>,
         <div className="flex flex-row items-start mb-2">
           Chekumuki winners
-          <span className="bg-gradient-to-r from-green-400 via-green-500 to-teal-400 text-white ml-1 px-1 italic text-[8px] lg:text-xs lg:mt-1 font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-500 transform hover:scale-105 transition-all duration-300">
+          <span className="bg-gradient-to-r from-green-400 via-green-500 to-teal-400 text-white ml-1 px-3 italic text-[10px] lg:text-xs lg:mt-1 font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-500 transform hover:scale-105 transition-all duration-300">
             mandal level
           </span>
         </div>,
         <div className="flex flex-row items-start mb-2">
           Topped in Talent test
-          <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 text-white ml-1 px-1 lg:py-0 italic  text-[8px] lg:text-[10px]  font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-500 transform hover:scale-105 transition-all duration-300">
+          <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 text-white ml-1 px-1 text-center lg:py-0 italic  text-[8px] lg:text-[10px]  font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-500 transform hover:scale-105 transition-all duration-300">
             district level
           </span>
         </div>,
@@ -133,7 +146,7 @@ const Timeline = () => {
               {/* Content Container - Enhanced for desktop */}
               <motion.div 
                 className={`relative md:w-[48%] flex flex-row items-start gap-4 sm:gap-6 
-                         ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}
+                         ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse md:w-[50%]'}
                          md:hover:w-[50%] transition-all duration-300`}
               >
                 {/* Icon with Enhanced Visual Effects */}
