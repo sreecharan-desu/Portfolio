@@ -35,7 +35,7 @@ const Timeline = () => {
       date: "2021 - 2023",
       achievements: [
         <span>Top 5% in Entrance Examination</span>,
-        <span>98.5% Academic Score</span>
+        <span>97% Academic Score</span>
       ],
       icon: <FaGraduationCap className="text-3xl" />,
       color: "blue"
