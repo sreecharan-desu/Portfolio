@@ -217,13 +217,13 @@ const Projects = () => {
       repoName: "Gradelite"
     },
     {
-      title: "EdgeAI", 
-      description: "A waitlist application created to join YC.",
-      liveUrl: "https://edgeai.vercel.app/",
-      githubUrl: "https://github.com/sreecharan-desu/EdgeAI",
-      tech: ["React", "AI/ML", "TailwindCSS"],
-      image: "/project-images/edgeai.png",
-      repoName: "EdgeAI"
+      title: "CampusSchield", 
+      description: "A safety companion for university students with low confidence (Introverts).",
+      liveUrl: "https://campus-schield-frontend.vercel.app/",
+      githubUrl: "https://github.com/sreecharan-desu/Campusschield-v.1.0.2",
+      tech: ["React","Javascript" , "Node.js" , "Express" ,"TailwindCSS","MongoDB"],
+      image: "/project-images/campusschield.png",
+      repoName: "Campusschield-v.1.0.2"
     }
   ]
 

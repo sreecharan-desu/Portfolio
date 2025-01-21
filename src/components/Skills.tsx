@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion'
 import { Element } from 'react-scroll'
-import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiMongodb} from 'react-icons/si'
+import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiMongodb, SiRecoil, SiAwsamplify, SiGithubactions, SiMui, SiNextdotjs} from 'react-icons/si'
 import { FaGit, FaPython, FaNode } from 'react-icons/fa'
 
 const Skills = () => {
   const skills = [
    // Frontend Core + Popular Frameworks
    { name: "React", icon: SiReact, color: "#61DAFB", delay: 0.2 },
-  //  { name: "Next.js", icon: SiNextdotjs, color: "#000000", delay: 0.3 },
+   { name: "Next.js", icon: SiNextdotjs, color: "#000000", delay: 0.3 },
    { name: "TypeScript", icon: SiTypescript, color: "#3178C6", delay: 0.4 },
    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", delay: 0.5 },
-  //  { name: "Redux", icon: SiRedux, color: "#764ABC", delay: 0.6 },
+   { name: "Recoil", icon: SiRecoil, color: "#764ABC", delay: 0.6 },
   //  { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D", delay: 0.7 },
    
    // Backend Technologies  
@@ -30,15 +30,15 @@ const Skills = () => {
    
    // DevOps & Cloud
   //  { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", delay: 1.9 },
-  //  { name: "AWS", icon: SiAws, color: "#232F3E", delay: 2.0 },
+   { name: "AWS", icon: SiAwsamplify, color: "#232F3E", delay: 2.0 },
   //  { name: "Azure", icon: SiAzure, color: "#0078D4", delay: 2.1 },
-  //  { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.2 },
+   { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.2 },
   //  { name: "Jenkins", icon: SiJenkins, color: "#D24939", delay: 2.4 },
    // Web Technologies & UI
    { name: "HTML", icon: SiHtml5, color: "#E34F26", delay: 2.5 },
    { name: "CSS", icon: SiCss3, color: "#1572B6", delay: 2.6 },
    { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4", delay: 2.7 },
-  //  { name: "Material UI", icon: SiMui, color: "#0081CB", delay: 2.8 },
+   { name: "Material UI", icon: SiMui, color: "#0081CB", delay: 2.8 },
    { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3", delay: 2.9 },
    
    // Testing & Quality
