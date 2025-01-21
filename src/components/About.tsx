@@ -55,10 +55,10 @@ const About = () => {
               </h3>
               <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
-                  "C", "Java", "JavaScript", "TypeScript",
-                  "React", "Node.js", "Express.js",
+                  "C", "Java","Python","JavaScript", "TypeScript",
+                  "React", "Node.js", "Express",
                   "MongoDB", "MySQL", "PostgreSQL",
-                  "Tailwind CSS", "Prisma", "Recoil"
+                  "Tailwind CSS", "Prisma", "Recoil","Next.js","Hono","Cloudflare","Vercel"
                 ].map((skill) => (
                   <motion.li
                     key={skill}
@@ -112,6 +112,11 @@ const About = () => {
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 mt-1">•</span>
                   <p className="text-gray-700">
+                  Team lead for the only O21 batch selected for the Inter-University TechHackathon (2025).</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-500 mt-1">•</span>
+                  <p className="text-gray-700">
                     Actively participated in various hackathons and coding competitions worshops and consistently stood in the top.
                   </p>
                 </li>
@@ -149,21 +154,21 @@ const About = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100"
           >
-            <h3 className="text-3xl font-bold text-orange-500">2+</h3>
+            <h3 className="text-3xl font-bold text-orange-500">3+</h3>
             <p className="text-gray-600">Years Coding</p>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100"
           >
-            <h3 className="text-3xl font-bold text-orange-500">100+</h3>
-            <p className="text-gray-600">Commits</p>
+            <h3 className="text-3xl font-bold text-orange-500">1000+</h3>
+            <p className="text-gray-600">Contributions</p>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100"
           >
-            <h3 className="text-3xl font-bold text-orange-500">5+</h3>
+            <h3 className="text-3xl font-bold text-orange-500">6+</h3>
             <p className="text-gray-600">Technologies</p>
           </motion.div>
         </motion.div>

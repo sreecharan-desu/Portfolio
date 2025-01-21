@@ -8,7 +8,7 @@ interface TimelineEvent {
   subtitle: string
   date: string
   description?: string
-  achievements?: string[]
+  achievements?: JSX.Element[]
   icon: JSX.Element
   image?: string
   color?: string
@@ -21,8 +21,9 @@ const Timeline = () => {
       subtitle: "Bachelor of Technology - BTech, Computer Science",
       date: "2023 - 2027",
       achievements: [
-        "First Prize in Hackathon 2024",
-        "Active learner"
+        <span>Team lead for the only O21 batch selected for the Inter-University TechHackathon (2025).</span>,
+        <span>First Prize in Hackathon 2024</span>,
+        <span>Active learner</span>
       ],
       icon: <HiAcademicCap className="text-3xl" />,
       image: "/rgukt.jpg",
@@ -33,8 +34,8 @@ const Timeline = () => {
       subtitle: "Mathematics, Physics, Chemistry",
       date: "2021 - 2023",
       achievements: [
-        "Top 5% in Entrance Examination",
-        "98.5% Academic Score"
+        <span>Top 5% in Entrance Examination</span>,
+        <span>98.5% Academic Score</span>
       ],
       icon: <FaGraduationCap className="text-3xl" />,
       color: "blue"
@@ -44,10 +45,28 @@ const Timeline = () => {
       subtitle: "Secondary School Education",
       date: "2020 - 2021",
       achievements: [
-        "Chess Champion",
-        "Consistent first ranker",
-        "Perfect Attendance Award"
+        <div className="flex flex-row items-start mb-2">
+          Chess Champion
+          <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 text-white ml-1 px-1 italic text-[8px]  lg:text-xs lg:mt-1 font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300">
+            school level
+          </span>
+        </div>,
+        <div className="flex flex-row items-start mb-2">
+          Chekumuki winners
+          <span className="bg-gradient-to-r from-green-400 via-green-500 to-teal-400 text-white ml-1 px-1 italic text-[8px] lg:text-xs lg:mt-1 font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-500 transform hover:scale-105 transition-all duration-300">
+            mandal level
+          </span>
+        </div>,
+        <div className="flex flex-row items-start mb-2">
+          Topped in Talent test
+          <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 text-white ml-1 px-1 lg:py-0 italic  text-[8px] lg:text-[10px]  font-bold rounded-full shadow-md hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-500 transform hover:scale-105 transition-all duration-300">
+            district level
+          </span>
+        </div>,
+        <span className="text-gray-800 font-semibold text-sm">Perfect Attendance Award</span>
       ],
+      
+      
       icon: <FaChessKnight className="text-2xl sm:text-3xl" />,
       color: "green"
     }
@@ -113,9 +132,9 @@ const Timeline = () => {
             >
               {/* Content Container - Enhanced for desktop */}
               <motion.div 
-                className={`relative md:w-[42%] flex flex-row items-start gap-4 sm:gap-6 
+                className={`relative md:w-[48%] flex flex-row items-start gap-4 sm:gap-6 
                          ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}
-                         md:hover:w-[45%] transition-all duration-300`}
+                         md:hover:w-[50%] transition-all duration-300`}
               >
                 {/* Icon with Enhanced Visual Effects */}
                 <motion.div 

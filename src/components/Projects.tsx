@@ -75,8 +75,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover object-center rounded-xl 
-                      transform transition-transform duration-700 group-hover:scale-110"
+            className={`w-full h-full ${project.title == "GitSeek" ? `object-fill` : `object-cover`} object-center rounded-xl 
+                      transform transition-transform duration-700 group-hover:scale-110`}
           />
 
           {/* Enhanced Project Links Overlay */}
@@ -119,9 +119,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         transition={{ duration: 0.7, delay: 0.3 }}
       >
         <motion.h3 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center lg:text-left 
+          className={`text-4xl sm:text-5xl md:text-6xl ${project.title == "CampusSchield" ? `lg:text-6xl` : `lg:text-7xl` } font-bold text-center lg:text-left 
                      bg-gradient-to-br from-orange-500 via-orange-600 to-orange-500 bg-clip-text text-transparent
-                     tracking-tight leading-none"
+                     tracking-tight leading-none`}
           whileHover={{ scale: 1.02 }}
         >
           {project.title}
