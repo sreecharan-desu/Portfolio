@@ -224,6 +224,24 @@ const Projects = () => {
       tech: ["React","Javascript" , "Node.js" , "Express" ,"TailwindCSS","MongoDB"],
       image: "/project-images/campusschield.png",
       repoName: "Campusschield-v.1.0.2"
+    },
+    {
+      title: "echo.ink", 
+      description: "A basic funtional blogging application - powered with hono & cloudflare workers",
+      liveUrl: "https://srees-echoink.vercel.app/",
+      githubUrl: "https://github.com/sreecharan-desu/echo.ink",
+      tech: ["React","Typescript" ,"TailwindCSS", "Hono" , "Cloudflare workers" ,"Prisma","Postgress","NeonDB"],
+      image: "/project-images/echo.ink.png",
+      repoName: "echo.ink"
+    },
+    {
+      title: "GitSeek", 
+      description: "GitSeeker is a GitHub profile searcher that allows users to search for GitHub profiles",
+      liveUrl: "https://gitseek.vercel.app/",
+      githubUrl: "https://github.com/sreecharan-desu/Gitseek",
+      tech: ["React","Typescript" , "TailwindCSS","Github API"],
+      image: "/project-images/gitseek.png",
+      repoName: "Gitseek"
     }
   ]
 
