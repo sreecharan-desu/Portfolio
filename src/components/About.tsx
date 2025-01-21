@@ -108,7 +108,7 @@ const About = () => {
         <span className="text-orange-500 text-lg mt-1 flex-shrink-0 text-le">•</span>
           <p className='-mt-8 ml-4 lg:mt-1 lg:ml-0'> <div className="space-y-2">
             <p className="text-sm sm:text-base text-start lg:text-lg text-black">
-              Top 1% in the entrance examination for Rajiv Gandhi University of Knowledge Technologies
+              <b>Top 1%</b> in the entrance examination for Rajiv Gandhi University of Knowledge Technologies
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-300 px-3 py-1 text-sm italic rounded-full text-black">
