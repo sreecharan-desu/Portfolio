@@ -62,7 +62,7 @@ const Hero = () => {
             >
               <TypeAnimation
                 sequence={[
-                  'Full Stack Developer & DevOps engineer',
+                  'Full Stack & DevOps engineer',
                   3000,
                   'CS Sophomore at RGUKT',
                   2000,
