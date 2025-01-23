@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Element } from 'react-scroll'
-import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiMongodb, SiRecoil, SiAwsamplify, SiGithubactions, SiMui, SiNextdotjs} from 'react-icons/si'
+import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5, SiNetlify, SiExpress, SiMongodb, SiRecoil, SiAwsamplify, SiGithubactions, SiMui, SiNextdotjs, SiDocker} from 'react-icons/si'
 import { FaGit, FaPython, FaNode } from 'react-icons/fa'
 
 const Skills = () => {
@@ -30,6 +30,7 @@ const Skills = () => {
    
    // DevOps & Cloud
   //  { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", delay: 1.9 },
+   { name: "Docker", icon: SiDocker, color: "#326CE5", delay: 1.9 },
    { name: "AWS", icon: SiAwsamplify, color: "#232F3E", delay: 2.0 },
   //  { name: "Azure", icon: SiAzure, color: "#0078D4", delay: 2.1 },
    { name: "CI/CD", icon: SiGithubactions, color: "#2088FF", delay: 2.2 },
