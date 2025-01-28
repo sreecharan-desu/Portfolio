@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Element } from 'react-scroll'
 import { FaGithub, FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 import { BiGitRepoForked } from 'react-icons/bi'
-import { IoMdAddCircle, IoMdAnalytics, IoMdPulse } from 'react-icons/io'
+import { IoMdAnalytics} from 'react-icons/io'
 
 interface Repository {
   id: number
