@@ -33,8 +33,8 @@ const App = () => {
         <>
           <Hero />
           <About />
-          <Skills />
           <Projects />
+          <Skills />
           <Timeline />
           <GitHubSection />
           <YouTubeSection />

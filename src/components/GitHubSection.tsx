@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Element } from 'react-scroll'
 import { FaGithub, FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 import { BiGitRepoForked } from 'react-icons/bi'
-import { IoMdPulse } from 'react-icons/io'
+import { IoMdAddCircle, IoMdAnalytics, IoMdPulse } from 'react-icons/io'
 
 interface Repository {
   id: number
@@ -210,10 +210,9 @@ const GitHubSection = () => {
                     <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
                       {repo.name}
                       <motion.span
-                        animate={{ rotate: [0, 360] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                       >
-                        <IoMdPulse className="text-orange-500" />
+                        <IoMdAnalytics className="text-orange-500" />
                       </motion.span>
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-2">{repo.description}</p>
