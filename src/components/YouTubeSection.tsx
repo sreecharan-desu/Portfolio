@@ -2,20 +2,20 @@ import { motion } from 'framer-motion'
 import { Element } from 'react-scroll'
 import { FaYoutube } from 'react-icons/fa'
 
-// interface Video {
-//   id: string;
-//   title: string;
-//   description: string;
-// }
+
+const link = "https://www.youtube.com/watch?v=DhWCM4sYR_w"
 
 const YouTubeSection = () => {
-  const videos = [
-    {
-      id: "dkO5wqdS4D4",
-      title: "Spotify is the next Radio",
-      description: "Learning the outstanding features of Spotify and its Technologies",
-    }
-  ]
+  // Extract video ID from the URL
+  const videoId = new URL(link).searchParams.get('v') || link.split('v=')[1].split('&')[0];
+
+  // Fallback to default if the ID cannot be found
+  if (!videoId) {
+    return <div className="text-center text-red-500">Invalid YouTube URL</div>;
+  }
+
+  // Use YouTube API to fetch title and description (optional)
+  // In this example, I'll assume the title and description are passed along, but you can extend this if needed.
 
   return (
     <Element name="youtube" className="py-32 relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-orange-50">
@@ -53,9 +53,6 @@ const YouTubeSection = () => {
               transition={{ duration: 1, delay: 0.3 }}
             />
           </h2>
-          <p className="text-xl text-gray-600 mt-4">
-            Project Showcase & Demonstrations
-          </p>
         </motion.div>
 
         {/* Single Featured Video Layout */}
@@ -70,20 +67,12 @@ const YouTubeSection = () => {
                          hover:shadow-orange-500/20 transition-all duration-300">
             <div className="relative aspect-video">
               <iframe
-                src={`https://www.youtube.com/embed/${videos[0].id}`}
-                title={videos[0].title}
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title="Featured Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
               ></iframe>
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                {videos[0].title}
-              </h3>
-              <p className="text-gray-600">
-                {videos[0].description}
-              </p>
             </div>
           </div>
         </motion.div>
@@ -95,7 +84,7 @@ const YouTubeSection = () => {
           className="text-center mt-12"
         >
           <motion.a
-            href={`https://youtu.be/${videos[0].id}`}
+            href={link}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 
@@ -116,4 +105,4 @@ const YouTubeSection = () => {
   )
 }
 
-export default YouTubeSection 
+export default YouTubeSection;

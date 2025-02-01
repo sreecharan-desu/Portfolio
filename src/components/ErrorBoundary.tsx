@@ -13,7 +13,9 @@ class ErrorBoundary extends Component<{ children: ReactNode }> {
 
   render() {
     if (this.state.hasError) {
-      return <div>Something went wrong. Please refresh the page.</div>
+      return <div className='flex flex-col justify-center place-content-center h-screen text-center'>
+        <p>Something went wrong. Please refresh the page.</p>
+      </div>
     }
 
     return this.props.children

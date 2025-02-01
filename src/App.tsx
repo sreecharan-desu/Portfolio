@@ -37,7 +37,7 @@ const App = () => {
           <Skills />
           <Timeline />
           <GitHubSection />
-          <YouTubeSection />
+          <YouTubeSection/>
           <Footer />
           <ResumeButton />
         </>
