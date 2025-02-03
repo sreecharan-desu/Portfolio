@@ -27,6 +27,7 @@ import {
   SiTurborepo,
   SiMoonrepo,
   SiLinux,
+  SiBun,
 } from 'react-icons/si'
 import { FaGit, FaPython, FaNode } from 'react-icons/fa'
 
@@ -44,6 +45,7 @@ const Skills = () => {
     { name: 'Bootstrap', icon: <SiBootstrap size={32} color="#7952B3" /> },
   
     // **Backend**
+    { name: 'Bun.js', icon: <SiBun size={32} color="#F7B93E" /> }, // Best color for Bun.js
     { name: 'Node.js', icon: <FaNode size={32} color="#68A063" /> }, // Slightly brighter green
     { name: 'Express', icon: <SiExpress size={32} color="#000000" /> },
     { name: 'PHP', icon: <SiPhp size={32} color="#4FC08D" /> },
