@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaDiscord, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
 
 
@@ -8,7 +8,7 @@ const Hero = () => {
     { href: 'https://github.com/sreecharan-desu', icon: FaGithub, name: 'GitHub' },
     { href: 'https://linkedin.com/in/ssreecharan-desu', icon: FaLinkedin, name: 'LinkedIn' },
     { href: 'https://x.com/sr3x0r', icon: RiTwitterXFill, name: 'X' },
-    { href: 'https://discord.com/users/sr3x0r', icon: FaDiscord, name: 'Discord' },
+    // { href: 'https://discord.com/users/sr3x0r', icon: FaDiscord, name: 'Discord' },
   ];
 
   // Replace with your WhatsApp number and optional message
@@ -52,7 +52,7 @@ const Hero = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                I'm a third-year CS student passionate about crafting user-friendly apps and websites.
+               CS Junior passionate about crafting user-friendly apps and websites.
               </motion.p>
               <motion.p
                 className="text-gray-300 text-base sm:text-lg mb-6"
