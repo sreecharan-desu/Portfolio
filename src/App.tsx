@@ -1,7 +1,4 @@
-import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
 import ErrorBoundary from './components/ErrorBoundary'
-import LoadingScreen from './components/LoadingScreen'
 import ResumeButton from './components/ResumeButton'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,25 +10,22 @@ import YouTubeSection from './components/YouTubeSection'
 import GitHubSection from './components/GitHubSection'
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
-
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <ErrorBoundary>
-      <AnimatePresence mode="wait">
-        {isLoading && <LoadingScreen />}
-      </AnimatePresence>
-
-      {!isLoading && (
         <>
-          <Hero />
+        <PortfolioV2 />
+        </>
+    </ErrorBoundary>
+  )
+}
+
+export default App
+
+function PortfolioV1() {
+  return (
+    <div className="bg-gray-900 text-white min-h-screen">
+      <Hero />
           <About />
           <Projects />
           <Skills />
@@ -39,11 +33,19 @@ const App = () => {
           <GitHubSection />
           <YouTubeSection/>
           <Footer />
-          <ResumeButton />
-        </>
-      )}
-    </ErrorBoundary>
-  )
+          <ResumeButton />  
+  </div>)
 }
 
-export default App
+function PortfolioV2() {
+  return (
+    <div className="bg-gray-900 text-white min-h-screen">
+          <Hero />
+          <About />
+          <Projects />
+          <Skills/>
+          <Timeline/>
+          <YouTubeSection/>
+          <Footer />
+  </div>)
+}

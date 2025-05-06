@@ -1,33 +1,18 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        dark: {
-          DEFAULT: '#000000',
-          light: '#1a1a1a'
-        },
-        orange: {
-          DEFAULT: '#FF5722',
-          light: '#FF7A50',
-          dark: '#E64A19'
-        },
-        white: {
-          DEFAULT: '#FFFFFF',
-          off: '#F5F5F5',
-          dim: '#EEEEEE'
-        }
+        'blue-50': '#EFF6FF',
+        'blue-100': '#DBEAFE',
+        'blue-600': '#2563EB',
+        'purple-100': '#F3E8FF',
       },
-      boxShadow: {
-        glow: '0 0 15px rgba(255, 87, 34, 0.5)',
-        'glow-soft': '0 0 20px rgba(255, 87, 34, 0.3)'
-      }
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],
-}
-
+};
