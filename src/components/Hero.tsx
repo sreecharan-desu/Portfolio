@@ -6,7 +6,7 @@ import { RiTwitterXFill } from 'react-icons/ri';
 const Hero = () => {
   const socialLinks = [
     { href: 'https://github.com/sreecharan-desu', icon: FaGithub, name: 'GitHub' },
-    { href: 'https://linkedin.com/in/ssreecharan-desu', icon: FaLinkedin, name: 'LinkedIn' },
+    { href: 'https://linkedin.com/in/sreecharan-desu', icon: FaLinkedin, name: 'LinkedIn' },
     { href: 'https://x.com/sr3x0r', icon: RiTwitterXFill, name: 'X' },
     // { href: 'https://discord.com/users/sr3x0r', icon: FaDiscord, name: 'Discord' },
   ];
