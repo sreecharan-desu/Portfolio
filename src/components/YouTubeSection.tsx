@@ -42,6 +42,7 @@ const YouTubeSection = () => {
         );
         setVideos(response.data.items);
         setLoading(false);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
         setError('Failed to load videos. Please try again later.');
         setLoading(false);

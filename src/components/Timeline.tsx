@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaChessKnight, FaMedal, FaExternalLinkAlt } from 'react-icons/fa';
 import { HiAcademicCap } from 'react-icons/hi';
