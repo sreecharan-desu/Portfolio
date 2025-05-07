@@ -168,7 +168,7 @@ import { FiYoutube } from 'react-icons/fi';
 
 const YouTubeVideoGrid = ({ videos }: { videos: YouTubeVideo[] }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 max-w-6xl mx-auto">
       {videos.map((video, index) => (
         <motion.div 
           key={index}

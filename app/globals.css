@@ -1,15 +1,11 @@
-/* ✅ Put all @import rules at the very top */
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
 @import "tailwindcss";
 
-/* Apply Jura globally */
 * {
-  font-family: "Jura", sans-serif;
+  font-family: var(--font-jura), sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-/* Hide scrollbar for all browsers */
 ::-webkit-scrollbar {
   display: none;
 }
