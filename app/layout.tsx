@@ -21,6 +21,9 @@ const jura = Jura({
 export const metadata: Metadata = {
   title: "Sr3x0r",
   description: "CS Junior turned FullStack and DevOps Engineer | AKA Sr3X0r",
+  icons: {
+    icon: "/sr3x0r-icon.jpeg", // Place favicon.ico in /public
+  },
 };
 
 export default function RootLayout({

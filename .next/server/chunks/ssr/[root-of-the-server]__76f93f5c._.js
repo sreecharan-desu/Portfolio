@@ -787,7 +787,7 @@ const Skills = ()=>{
             className: "container mx-auto px-4 sm:px-6 lg:px-8",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h2, {
-                    className: "text-4xl first-letter:text-5xl                                                                                                                                    sm:text-4xl font-bold text-white text-center mb-12 tracking-tight",
+                    className: "text-4xl sm:text-4xl font-bold text-white text-center mb-12 tracking-tight",
                     initial: {
                         opacity: 0,
                         y: -20
@@ -808,40 +808,36 @@ const Skills = ()=>{
                     lineNumber: 50,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                     className: "grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-8 gap-4 max-w-5xl mx-auto",
-                    children: skills.map((skill, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                            className: "relative group flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300",
+                    initial: {
+                        opacity: 0,
+                        y: 20
+                    },
+                    whileInView: {
+                        opacity: 1,
+                        y: 0
+                    },
+                    transition: {
+                        duration: 0.5
+                    },
+                    viewport: {
+                        once: true
+                    },
+                    children: skills.map((skill)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "relative group flex items-center justify-center w-14 h-14 rounded-lg bg-black border border-white/10 hover:border-white/30 transition-all duration-300",
                             title: skill.name,
-                            initial: {
-                                opacity: 0,
-                                scale: 0.9
-                            },
-                            whileInView: {
-                                opacity: 1,
-                                scale: 1
-                            },
-                            transition: {
-                                duration: 0.4,
-                                delay: index * 0.05
-                            },
-                            viewport: {
-                                once: true
-                            },
-                            whileHover: {
-                                scale: 1.1
-                            },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "text-2xl opacity-80 rounded-full group-hover:opacity-100 transition-opacity duration-300",
+                                    className: "text-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-300",
                                     children: skill.icon
                                 }, void 0, false, {
                                     fileName: "[project]/components/Skills.tsx",
-                                    lineNumber: 71,
+                                    lineNumber: 72,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 bg-gray-800 text-white text-xs rounded shadow-lg",
+                                    className: "absolute bottom-full mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible px-2 py-1 bg-black text-white text-xs rounded shadow-lg transition-opacity duration-200",
                                     children: skill.name
                                 }, void 0, false, {
                                     fileName: "[project]/components/Skills.tsx",
@@ -851,7 +847,7 @@ const Skills = ()=>{
                             ]
                         }, skill.name, true, {
                             fileName: "[project]/components/Skills.tsx",
-                            lineNumber: 61,
+                            lineNumber: 67,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
@@ -1171,6 +1167,19 @@ const Projects = ()=>{
             ],
             image: '/project-images/gitseek.png',
             status: 'online'
+        },
+        {
+            title: "Portfolio v_1.0.0",
+            description: "My Intial portfolio website built with React, Tailwind CSS, and Framer Motion.",
+            liveUrl: "https://sr3x0r-portfolio.vercel.app/",
+            githubUrl: "https://github.com/sreecharan-desu/Portfolio-v_1.0.1",
+            tech: [
+                "React",
+                "Tailwind CSS",
+                "Framer Motion"
+            ],
+            image: "/project-images/portfolio.png",
+            status: "online"
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$scroll$2f$modules$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Element"], {
@@ -1195,7 +1204,7 @@ const Projects = ()=>{
                     children: "Projects"
                 }, void 0, false, {
                     fileName: "[project]/components/Projects.tsx",
-                    lineNumber: 189,
+                    lineNumber: 197,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1204,12 +1213,12 @@ const Projects = ()=>{
                             project: project
                         }, project.title, false, {
                             fileName: "[project]/components/Projects.tsx",
-                            lineNumber: 201,
+                            lineNumber: 209,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/Projects.tsx",
-                    lineNumber: 199,
+                    lineNumber: 207,
                     columnNumber: 9
                 }, this),
                 projects.length > 4 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1220,23 +1229,23 @@ const Projects = ()=>{
                         children: showAll ? 'Show Less' : 'Show More'
                     }, void 0, false, {
                         fileName: "[project]/components/Projects.tsx",
-                        lineNumber: 208,
+                        lineNumber: 216,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/Projects.tsx",
-                    lineNumber: 207,
+                    lineNumber: 215,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/Projects.tsx",
-            lineNumber: 188,
+            lineNumber: 196,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/Projects.tsx",
-        lineNumber: 187,
+        lineNumber: 195,
         columnNumber: 5
     }, this);
 };

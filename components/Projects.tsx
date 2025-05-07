@@ -180,7 +180,15 @@ const Projects = () => {
       tech: ['React', 'TypeScript', 'TailwindCSS', 'GitHub API'],
       image: '/project-images/gitseek.png',
       status: 'online',
-    },
+    },{
+      title : "Portfolio v_1.0.0",
+      description : "My Intial portfolio website built with React, Tailwind CSS, and Framer Motion.",
+      liveUrl : "https://sr3x0r-portfolio.vercel.app/",
+      githubUrl : "https://github.com/sreecharan-desu/Portfolio-v_1.0.1",
+      tech : ["React", "Tailwind CSS", "Framer Motion"],
+      image : "/project-images/portfolio.png",
+      status : "online"
+    }
   ];
 
   return (

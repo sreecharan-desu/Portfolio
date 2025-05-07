@@ -4,6 +4,7 @@ import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { FaYoutube } from 'react-icons/fa';
 import axios from 'axios';
+import { FiYoutube } from 'react-icons/fi';
 
 interface YouTubeVideo {
   id: { videoId: string };
@@ -83,7 +84,7 @@ const YouTubeSection = () => {
           const totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
           // Exclude videos 60 seconds or shorter and videos with #shorts tag
-          const isNotShort = totalSeconds > 60 && 
+          const isNotShort = totalSeconds > 15 && 
                             !(video.snippet.tags?.includes('shorts') || 
                               video.snippet.title.toLowerCase().includes('#shorts') ||
                               video.snippet.description.toLowerCase().includes('#shorts'));
@@ -140,9 +141,9 @@ const YouTubeSection = () => {
           Explore My Recent Video Content
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <YouTubeVideoGrid videos={videos} />
-        </div>
+        <div className="flex justify-center items-center">
+    <YouTubeVideoGrid videos={videos} />
+</div>
 
         {/* Channel Link */}
         <div className="text-center mt-12">
@@ -163,65 +164,52 @@ const YouTubeSection = () => {
 
 export default YouTubeSection;
 
-
-import { FiYoutube } from 'react-icons/fi';
-
 const YouTubeVideoGrid = ({ videos }: { videos: YouTubeVideo[] }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 max-w-6xl mx-auto">
-      {videos.map((video, index) => (
-        <motion.div 
-          key={index}
-          className="flex flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          viewport={{ once: true }}
-        >
- <div className="relative aspect-video overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={video.snippet.thumbnails.medium.url}
-              alt={video.snippet.title}
-              className="w-full h-full object-fill transition-transform duration-300 hover:scale-105"
-            />
-            <a
-              href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300"
-              aria-label={`Watch ${video.snippet.title} on YouTube`}
-            >
-              <FaYoutube className="text-white text-3xl" />
-            </a>
-          </div>
-          {/* Card Content */}
-          <div className="p-5 flex flex-col">
-            <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2 tracking-tight">
-              {video.snippet.title}
-            </h3>
-            <p className="text-sm text-gray-300 mb-4 line-clamp-3 leading-relaxed">
-              {video.snippet.description || 'No description available.'}
-            </p>
-            <div className="flex justify-between items-center mt-auto">
-              <span className="text-xs text-gray-400">
-                {new Date(video.snippet.publishedAt).toLocaleDateString()}
-              </span>
-              <a
-                href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-700 to-gray-600 text-white px-4 py-2 rounded-full hover:from-gray-600 hover:to-gray-500 transition-all duration-300 text-sm font-medium"
-                aria-label={`Watch ${video.snippet.title} on YouTube`}
-              >
-                <FiYoutube className="text-base" />
-                Watch
-              </a>
+    <div className="flex flex-row justify-center">
+      <div className="w-full max-w-7xl place-content-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+        {videos.map((video, index) => (
+          <motion.div
+            key={index}
+            className="flex flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative w-full aspect-video overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={video.snippet.thumbnails.medium.url}
+                alt={video.snippet.title}
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
-        </motion.div>
-      ))}
+            <div className="p-5 flex flex-col h-full">
+              <h3 className="text-base sm:text-lg font-semibold text-white mb-2 line-clamp-2">
+                {video.snippet.title}
+              </h3>
+              <p className="text-sm text-gray-300 mb-4 line-clamp-3">
+                {video.snippet.description || 'No description available.'}
+              </p>
+              <div className="flex justify-between items-center mt-auto">
+                <span className="text-xs text-gray-400">
+                  {new Date(video.snippet.publishedAt).toLocaleDateString()}
+                </span>
+                <a
+                  href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1.5 rounded-full text-sm"
+                >
+                  <FiYoutube className="text-base" />
+                  Watch
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };
-

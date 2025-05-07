@@ -1,16 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaComment } from 'react-icons/fa';
 import Image from 'next/image';
+import { Link } from 'react-scroll'; // Import react-scroll Link
 import { socialLinks } from '@/lib/socialLinks';
 
 export const whatsappLink = 'https://wa.me/+916300625861?text=Hi%20SreeCharan,%20I%27m%20interested%20in%20hiring%20you!';
 
 const Hero = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleScroll = (to: string) => {
+    // Prevent hash from appearing in URL
+    window.history.replaceState(null, window.location.pathname);
+  };
+
   return (
-    <section id="home" className="min-h-screen flex items-center bg-black py-12 -mb-28">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <section id="home" className="min-h-screen bg-black py-12 -mb-60 mt-10 pt-20">
+      {/* Navbar */}
+      <Navbar/>                                                                                                                                                                     
+
+      {/* Hero Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">                                 
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Profile Image */}
           <motion.div
@@ -40,7 +51,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h1 className="text-4xl first-letter:text-5xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
+            <h1 className="text-3xl first-letter:text-4xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
               Hi, I&apos;m SreeCharan
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 mb-6 leading-relaxed">
@@ -76,21 +87,150 @@ const Hero = () => {
             </div>
 
             {/* Hire Me Button */}
-            <a
+            <motion.a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-700 to-gray-600 text-white px-6 py-3 rounded-full hover:from-gray-600 hover:to-gray-500 transition-all duration-300 shadow-md hover:shadow-lg"
+              className="relative inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-full font-medium overflow-hidden backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-md hover:shadow-lg"
               aria-label="Contact SreeCharan via WhatsApp"
+              initial={{ y: 0 }}
+              whileHover={{
+                y: -4,
+                scale: 1.05,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{ scale: 0.95 }}
             >
-              <FaWhatsapp className="text-lg" />
-              <span className="font-medium">Hire Me</span>
-            </a>
+              {/* Background Animation Layer */}
+              <motion.span
+                className="absolute inset-0 bg-white/10"
+                initial={{ x: '-100%' }}
+                whileHover={{
+                  x: 0,
+                  transition: { duration: 0.3, ease: 'easeInOut' },
+                }}
+              />
+              {/* Content */}
+              <span className="relative z-10 flex items-center gap-2">
+                <FaComment className="text-lg" />
+                <b className="-mt-1">Hire Me</b>
+              </span>
+            </motion.a>
           </motion.div>
-        </div>
+
+
+      </div>
       </div>
     </section>
+
   );
 };
 
 export default Hero;
+
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react"; // or use any other icon library
+
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: 'Home', to: 'home' },
+    { name: 'Experience', to: 'work-experience' },
+    { name: 'Projects', to: 'projects' },
+    { name: 'SkillSet', to: 'skills' },
+
+  ];
+
+  return (
+    <motion.nav
+      className="fixed top-4 left-4 right-4 z-50 bg-black/60 backdrop-blur-md border border-white/10 shadow-md rounded-xl"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      style={{
+        boxShadow: '0 6px 20px rgba(255, 255, 255, 0.1)',
+        transition: 'box-shadow 0.3s ease',
+      }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14">
+          {/* Logo */}
+          <div className="text-white text-xl font-bold tracking-widest">
+            SR3X0R
+          </div>
+
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+            {navLinks.map((link, index) => (
+              <motion.div
+                key={link.name}
+                whileHover={{ scale: 1.05, y: -1 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
+              >
+                <Link
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-30} // Add 10px top offset
+                  className="text-white hover:text-gray-300 text-sm font-medium tracking-wide transition-colors cursor-pointer relative group"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                  <motion.span
+                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full"
+                    transition={{ duration: 0.3 }}
+                  />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className="md:hidden flex flex-col items-start px-4 pb-4 space-y-3"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-30} // Add 10px top offset
+                  className="text-white hover:text-gray-300 text-base font-medium tracking-wide transition-colors cursor-pointer"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.nav>
+  );
+};
+

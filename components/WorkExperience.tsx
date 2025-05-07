@@ -17,7 +17,7 @@ const WorkExperience = () => {
   ];
 
   return (
-    <section className="bg-black py-16">
+    <section className="bg-black py-16 -mb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           className="text-4xl first-letter:text-5xl sm:text-4xl font-bold text-white text-center mb-12 tracking-tight"

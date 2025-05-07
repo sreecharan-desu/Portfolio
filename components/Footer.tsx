@@ -28,8 +28,11 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-center text-gray-400 mt-8">
-          Made with <FaHeart className="inline text-red-500" /> by SreeCharan
-        </p>
+  Made with <b className="inline-block animate-pulse -mt-2">
+    <FaHeart className="inline text-red-500" />
+  </b> by SreeCharan
+</p>
+
       </div>
     </footer>
   );

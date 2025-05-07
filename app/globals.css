@@ -14,3 +14,23 @@ body {
   -ms-overflow-style: none; /* IE & Edge */
   scrollbar-width: none;    /* Firefox */
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes crawl {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+.animate-crawl {
+  border-image: linear-gradient(90deg, white 0%, transparent 50%, white 100%);
+  border-image-slice: 1;
+  animation: crawl 2s linear infinite;
+}
