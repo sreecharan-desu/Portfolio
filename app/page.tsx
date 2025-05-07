@@ -4,7 +4,7 @@ import { Element } from 'react-scroll';
 import Hero from '@/components/Hero';
 import WorkExperience from '@/components/WorkExperience';
 import Skills from '@/components/Skills';
-import Timeline from '@/components/Timeline';
+// import Timeline from '@/components/Timeline';
 import Projects from '@/components/Projects';
 import YouTubeSection from '@/components/YoutubeSection';
 import Footer from '@/components/Footer';

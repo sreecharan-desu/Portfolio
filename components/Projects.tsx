@@ -197,8 +197,8 @@ const Projects = () => {
 
         {/* Display projects in a 2-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {projects.slice(0, showAll ? projects.length : 4).map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+          {projects.slice(0, showAll ? projects.length : 4).map((project) => (
+            <ProjectCard key={project.title} project={project}/>
           ))}
         </div>
 

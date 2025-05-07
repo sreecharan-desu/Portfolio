@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { JSX } from 'react';
-import { FaGraduationCap, FaChessKnight, FaMedal, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGraduationCap, FaChessKnight, FaMedal } from 'react-icons/fa';
 import { HiAcademicCap } from 'react-icons/hi';
 import { Element } from 'react-scroll';
 

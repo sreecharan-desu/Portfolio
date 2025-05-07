@@ -41,7 +41,7 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             <h1 className="text-4xl first-letter:text-5xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
-              Hi, I'm SreeCharan
+              Hi, I&apos;m SreeCharan
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 mb-6 leading-relaxed">
               A CS junior passionate about crafting websites and turning ideas into reality.
@@ -64,7 +64,7 @@ const Hero = () => {
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
-                  href={link.href}
+                  href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
