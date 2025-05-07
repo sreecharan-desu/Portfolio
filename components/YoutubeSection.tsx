@@ -170,44 +170,62 @@ const YouTubeVideoGrid = ({ videos }: { videos: YouTubeVideo[] }) => {
       <div className="w-full max-w-7xl place-content-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
         {videos.map((video, index) => (
           <motion.div
-            key={index}
-            className="flex flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative w-full aspect-video overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={video.snippet.thumbnails.medium.url}
-                alt={video.snippet.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-5 flex flex-col h-full">
-              <h3 className="text-base sm:text-lg font-semibold text-white mb-2 line-clamp-2">
+          key={index}
+          className="flex flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          {/* Video Thumbnail */}
+          <div className="relative h-48 overflow-hidden">
+            <img
+              src={video.snippet.thumbnails.medium.url}
+              alt={video.snippet.title}
+              className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        
+          {/* Video Info */}
+          <div className="p-5 flex flex-col flex-1">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-lg font-semibold text-white tracking-tight line-clamp-2">
                 {video.snippet.title}
               </h3>
-              <p className="text-sm text-gray-300 mb-4 line-clamp-3">
-                {video.snippet.description || 'No description available.'}
-              </p>
-              <div className="flex justify-between items-center mt-auto">
-                <span className="text-xs text-gray-400">
-                  {new Date(video.snippet.publishedAt).toLocaleDateString()}
-                </span>
-                <a
-                  href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-black hover:bg-gray-900 text-white px-3 py-1.5 rounded-full text-sm"
-                >
-                  <FiYoutube className="text-base" />
-                  Watch
-                </a>
-              </div>
+              <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-400">
+                YouTube
+              </span>
             </div>
-          </motion.div>
+        
+            <p className="text-sm text-gray-300 mb-4 line-clamp-3">
+              {video.snippet.description || 'No description available.'}
+            </p>
+        
+            {/* Tags (Placeholder Example Tags) */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full">
+                Video
+              </span>
+              <span className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full">
+                {new Date(video.snippet.publishedAt).getFullYear()}
+              </span>
+            </div>
+        
+            {/* Video Links */}
+            <div className="flex items-center gap-4 mt-auto">
+              <a
+                href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+                aria-label={`Watch ${video.snippet.title} on YouTube`}
+              >
+                <FiYoutube className="text-lg" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+        
         ))}
       </div>
     </div>
