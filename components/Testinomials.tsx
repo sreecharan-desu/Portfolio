@@ -12,12 +12,14 @@ const Testimonials = () => {
       name: "Aniket Singh",
       title: "CEO, DocGen",
       image: "/aniket.jpg",
+      profile : "https://www.linkedin.com/in/aniket-singh-9a4860190/"
     },
     {
       quote: "Your work is genuinely impressive — clean, efficient, and well-thought-out.",
       name: "Varshith",
       title: "CTO, DocGen",
       image: "/varshith.jpg",
+      profile : "https://www.linkedin.com/in/varshithg17/"
     },
   ];
 
@@ -121,8 +123,8 @@ const Testimonials = () => {
                 />
               </div>
               <div>
-                <p className="text-white font-medium">{testimonials[activeIndex].name}</p>
-                <p className="text-xs text-gray-300">{testimonials[activeIndex].title}</p>
+                <a href={testimonials[activeIndex].profile} target="_blank"> <p className="text-white font-medium">{testimonials[activeIndex].name}</p> </a>
+                <a href={testimonials[activeIndex].profile} target="_blank"> <p className="text-xs text-gray-300">{testimonials[activeIndex].title}</p> </a>
               </div>
             </div>
           </div>

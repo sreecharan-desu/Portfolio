@@ -52,7 +52,7 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             <h1 className="text-3xl first-letter:text-4xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
-              Hi, I&apos;m SreeCharan
+              A boy called SreeCharan
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 mb-6 leading-relaxed">
               A CS junior passionate about crafting websites and turning ideas into reality.
