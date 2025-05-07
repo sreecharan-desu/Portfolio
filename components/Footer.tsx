@@ -1,17 +1,10 @@
-import { FaHeart, FaYoutube } from 'react-icons/fa';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
-import { RiTwitterXFill } from 'react-icons/ri';
+import { FaHeart  } from 'react-icons/fa';
+import { socialLinks } from '@/lib/socialLinks';
 
 const Footer = () => {
-  const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/sreecharan-desu', icon: SiGithub },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/sreecharan-desu', icon: SiLinkedin },
-    { name: 'X', url: 'https://x.com/sreecharandesu', icon: RiTwitterXFill },
-    { name: 'YouTube', url: 'https://www.youtube.com/@mrsreecharan', icon: FaYoutube },
-  ];
 
   return (
-    <footer id="footer" className="bg-black text-white -mt-18 pb-8 border-t-slate-50">
+    <footer id="footer" className="bg-black text-white pb-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
@@ -35,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-center text-gray-400 mt-8">
-          Made with <FaHeart className="inline text-red-500" /> by SreeCharan 
+          Made with <FaHeart className="inline text-red-500" /> by SreeCharan
         </p>
       </div>
     </footer>
