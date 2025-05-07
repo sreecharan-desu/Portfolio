@@ -200,7 +200,7 @@ const YouTubeVideoGrid = ({ videos }: { videos: YouTubeVideo[] }) => {
                   href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1.5 rounded-full text-sm"
+                  className="inline-flex items-center gap-2 bg-black hover:bg-gray-900 text-white px-3 py-1.5 rounded-full text-sm"
                 >
                   <FiYoutube className="text-base" />
                   Watch
