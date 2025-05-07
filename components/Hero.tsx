@@ -55,18 +55,18 @@ const Hero = () => {
               A boy called SreeCharan
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 mb-6 leading-relaxed">
-              A CS junior passionate about crafting websites and turning ideas into reality.
+              <b>CS junior</b> passionate about crafting websites and turning ideas into reality.
             </p>
             <p className="text-base text-gray-400 mb-8">
               Follow me on{' '}
-              <a
+                <a
                 href="https://x.com/sr3x0r"
-                className="text-gray-300 hover:text-white transition-colors duration-200 underline underline-offset-4"
+                className="text-gray-300 hover:text-white transition-colors duration-200 inline-flex items-center gap-1"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                X
-              </a>{' '}
+                >
+                𝕏
+                </a>{' '}
               for insights and updates.
             </p>
 
