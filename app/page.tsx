@@ -8,28 +8,39 @@ import Projects from '@/components/Projects';
 import YouTubeSection from '@/components/YoutubeSection';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testinomials';
+
+
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { FaFileDownload } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
 
 const FloatingResumeButton = () => {
   const [showText, setShowText] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  // Detect touch device
+  // Detect touch device in browser environment
   useEffect(() => {
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
     setIsTouchDevice(isTouch);
   }, []);
 
-  // Handle long-press or tap on mobile
-  const handleTouchStart = () => {
-    if (isTouchDevice) {
-      setShowText(true);
-      // Hide text after 2 seconds
-      setTimeout(() => setShowText(false), 2000);
-    }
-  };
+  // Memoized touch start handler with debounce
+  const handleTouchStart = useCallback(() => {
+    if (!isTouchDevice) return;
+    setShowText(true);
+    const timeout = setTimeout(() => setShowText(false), 2000);
+    return () => clearTimeout(timeout); // Cleanup timeout
+  }, [isTouchDevice]);
+
+  // Memoized mouse enter handler
+  const handleMouseEnter = useCallback(() => {
+    if (!isTouchDevice) setShowText(true);
+  }, [isTouchDevice]);
+
+  // Memoized mouse leave handler
+  const handleMouseLeave = useCallback(() => {
+    if (!isTouchDevice) setShowText(false);
+  }, [isTouchDevice]);
 
   return (
     <motion.a
@@ -42,19 +53,25 @@ const FloatingResumeButton = () => {
       animate={{
         y: [0, -10, 0],
         transition: {
-          y: {
-            repeat: Infinity,
-            repeatType: 'loop',
-            duration: 2,
-            ease: 'easeInOut',
-          },
+          repeat: Infinity,
+          repeatType: 'loop',
+          duration: 2,
+          ease: 'easeInOut',
         },
       }}
-      whileHover={!isTouchDevice ? { scale: 1.05, width: 128, boxShadow: '0 8px 24px rgba(255, 255, 255, 0.2)' } : {}}
+      whileHover={
+        !isTouchDevice
+          ? {
+              scale: 1.05,
+              width: 128,
+              boxShadow: '0 8px 24px rgba(255, 255, 255, 0.2)',
+            }
+          : {}
+      }
       whileTap={{ scale: 0.95 }}
       onTouchStart={handleTouchStart}
-      onMouseEnter={() => !isTouchDevice && setShowText(true)}
-      onMouseLeave={() => !isTouchDevice && setShowText(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       aria-label="Download SreeCharan's Resume"
     >
       <FaFileDownload className="text-base md:text-lg flex-shrink-0" />
@@ -62,7 +79,7 @@ const FloatingResumeButton = () => {
         className="whitespace-nowrap"
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: showText ? 1 : 0, x: showText ? 0 : -10 }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
       >
         Resume
       </motion.span>
