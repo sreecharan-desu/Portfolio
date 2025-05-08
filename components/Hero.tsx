@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-          <section id="home" className="min-h-screen bg-black py-12 -mb-60 mt-10 pt-20">
+          <section id="home" className="min-h-screen bg-black py-12 -mb-20 mt-10 pt-20">
       {/* Navbar */}
       <Navbar/>                                                                                                                                                                     
 
