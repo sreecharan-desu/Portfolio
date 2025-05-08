@@ -173,6 +173,15 @@ const Projects = () => {
       status: 'online',
     },
     {
+      title: 'CampusHub',
+      description: 'A central place for all campus events.',
+      liveUrl: 'https://srees-campushub.vercel.app/',
+      githubUrl: 'https://github.com/sreecharan-desu/CampusHub',
+      tech: ['React', 'TypeScript', 'TailwindCSS'],
+      image: '/project-images/campushub.png',
+      status: 'online',
+    },
+    {
       title: 'GitSeek',
       description: 'GitSeeker is a GitHub profile searcher that allows users to search for GitHub profiles',
       liveUrl: 'https://gitseek.vercel.app/',
