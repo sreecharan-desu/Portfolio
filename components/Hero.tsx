@@ -85,26 +85,24 @@ const Hero = () => {
               ))}
             </div>
 
-         {/* Hire Me Button */}
-         <motion.a
+            <motion.a
   href={whatsappLink}
   target="_blank"
   rel="noopener noreferrer"
-  className="relative inline-flex items-center gap-2 bg-black/90 text-white px-4 py-2 rounded-full font-medium overflow-hidden border border-white/20 hover:bg-black/70 transition-all duration-300 shadow-md hover:shadow-lg"
+  className="relative inline-flex items-center gap-2 bg-black/90 text-white px-5 py-2.5 rounded-full font-medium overflow-hidden border border-white/20 hover:bg-black/70 transition-all duration-300 shadow-md hover:shadow-lg"
   style={{
     background: 'linear-gradient(90deg, rgb(20, 20, 25) 0%, rgb(10, 10, 15) 100%)',
-    boxShadow: '0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1)'
+    boxShadow: '0 0 18px rgba(255, 255, 255, 0.2), 0 0 36px rgba(255, 255, 255, 0.1)'
   }}
   aria-label="Contact via WhatsApp"
   initial={{ y: 0 }}
   whileHover={{
-    y: -4,
-    scale: 1.05,
+    y: -5,
+    scale: 1.08,
     transition: { duration: 0.2 },
   }}
   whileTap={{ scale: 0.95 }}
 >
-  {/* Enhanced Gradient Border Effect - Elegant Glow */}
   <div 
     className="absolute inset-0 rounded-full -z-10"
     style={{
@@ -114,7 +112,6 @@ const Hero = () => {
     }}
   />
   
-  {/* Glowing Background Animation Layer */}
   <motion.span
     className="absolute inset-0 bg-white/5"
     initial={{ x: '-100%' }}
@@ -124,7 +121,6 @@ const Hero = () => {
     }}
   />
   
-  {/* Subtle Inner Glow */}
   <div 
     className="absolute inset-0 rounded-full opacity-20"
     style={{
@@ -132,12 +128,12 @@ const Hero = () => {
     }}
   />
   
-  {/* Content */}
   <span className="relative z-10 flex items-center gap-2">
-    <FaComment className="text-lg" size={18} />
-    <span className="text-sm">Hire me</span>
+    <FaComment className="text-xl" size={20} />
+    <span className="text-base">Hire me</span>
   </span>
 </motion.a>
+
           </motion.div>
 
 
