@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-          <section id="home" className="min-h-screen bg-black py-12 -mb-20 md:-mb-60 lg:-mb-60 mt-10 pt-20">
+          <section id="home" className="min-h-screen bg-black py-12 mt-10 pt-20">
       {/* Navbar */}
       <Navbar/>                                                                                                                                                                     
 
@@ -52,8 +52,7 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             <h1 className="text-3xl first-letter:text-4xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
-              A boy called SreeCharan
-            </h1>
+            Hi, I’m SreeCharan            </h1>
             <p className="text-lg sm:text-xl text-gray-300 mb-6 leading-relaxed">
               <b>CS junior</b> passionate about crafting websites and turning ideas into reality.
             </p>

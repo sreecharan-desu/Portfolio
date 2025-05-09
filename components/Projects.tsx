@@ -201,7 +201,7 @@ const Projects = () => {
   ];
 
   return (
-    <Element name="projects" className="py-12 bg-black">
+    <Element name="projects" className="py-12 bg-black -mt-20 md:mt-0 sm:mt-0 lg:-mt-10">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl first-letter:text-5xl font-bold text-white mb-8 text-center"
