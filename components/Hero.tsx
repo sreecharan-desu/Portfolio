@@ -86,36 +86,59 @@ const Hero = () => {
               ))}
             </div>
 
-            {/* Hire Me Button */}
-            <motion.a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-full font-medium overflow-hidden backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-md hover:shadow-lg"
-              aria-label="Contact SreeCharan via WhatsApp"
-              initial={{ y: 0 }}
-              whileHover={{
-                y: -4,
-                scale: 1.05,
-                transition: { duration: 0.2 },
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {/* Background Animation Layer */}
-              <motion.span
-                className="absolute inset-0 bg-white/10"
-                initial={{ x: '-100%' }}
-                whileHover={{
-                  x: 0,
-                  transition: { duration: 0.3, ease: 'easeInOut' },
-                }}
-              />
-              {/* Content */}
-              <span className="relative z-10 flex items-center gap-2">
-                <FaComment className="text-lg" />
-                <b className="-mt-1">Hire Me</b>
-              </span>
-            </motion.a>
+         {/* Hire Me Button */}
+         <motion.a
+  href={whatsappLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="relative inline-flex items-center gap-2 bg-black/90 text-white px-4 py-2 rounded-full font-medium overflow-hidden border border-white/20 hover:bg-black/70 transition-all duration-300 shadow-md hover:shadow-lg"
+  style={{
+    background: 'linear-gradient(90deg, rgb(20, 20, 25) 0%, rgb(10, 10, 15) 100%)',
+    boxShadow: '0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1)'
+  }}
+  aria-label="Contact via WhatsApp"
+  initial={{ y: 0 }}
+  whileHover={{
+    y: -4,
+    scale: 1.05,
+    transition: { duration: 0.2 },
+  }}
+  whileTap={{ scale: 0.95 }}
+>
+  {/* Enhanced Gradient Border Effect - Elegant Glow */}
+  <div 
+    className="absolute inset-0 rounded-full -z-10"
+    style={{
+      background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(210, 210, 230, 0.2) 100%)',
+      margin: '-1px',
+      opacity: 0.6
+    }}
+  />
+  
+  {/* Glowing Background Animation Layer */}
+  <motion.span
+    className="absolute inset-0 bg-white/5"
+    initial={{ x: '-100%' }}
+    whileHover={{
+      x: 0,
+      transition: { duration: 0.3, ease: 'easeInOut' },
+    }}
+  />
+  
+  {/* Subtle Inner Glow */}
+  <div 
+    className="absolute inset-0 rounded-full opacity-20"
+    style={{
+      background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
+    }}
+  />
+  
+  {/* Content */}
+  <span className="relative z-10 flex items-center gap-2">
+    <FaComment className="text-lg" size={18} />
+    <span className="text-sm">Hire me</span>
+  </span>
+</motion.a>
           </motion.div>
 
 
