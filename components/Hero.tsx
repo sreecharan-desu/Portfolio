@@ -37,7 +37,7 @@ const Hero = () => {
                 alt="SreeCharan"
                 width={288}
                 height={288}
-                className="w-full h-full object-cover filter grayscale"
+                className="w-full h-full object-cover"
                 priority
               />
             </div>
