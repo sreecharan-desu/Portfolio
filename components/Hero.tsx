@@ -33,7 +33,7 @@ const Hero = () => {
           >
             <div className="relative rounded-full overflow-hidden border-4 border-white/10 shadow-lg">
               <Image
-                src="/sr3x0r.jpeg"
+                src="/sr3x0r-1.jpeg"
                 alt="SreeCharan"
                 width={288}
                 height={288}
