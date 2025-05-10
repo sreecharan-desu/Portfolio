@@ -107,7 +107,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/sreecharan-desu/uniZ',
       tech: ['TypeScript', 'Prisma', 'React', 'Node.js'],
       image: '/project-images/uniZ.png',
-      status: 'online',
+      status: 'building',
     },
     {
       title: 'reX',
@@ -143,7 +143,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/sreecharan-desu/Studyspace',
       tech: ['TypeScript', 'React', 'Recoil', 'TailwindCSS'],
       image: '/project-images/studyspace.png',
-      status: 'building',
+      status: 'online',
     },
     {
       title: 'GradeLite',
@@ -181,15 +181,16 @@ const Projects = () => {
       image: '/project-images/campushub.png',
       status: 'online',
     },
+    // {
+    //   title: 'GitSeek',
+    //   description: 'GitSeeker is a GitHub profile searcher that allows users to search for GitHub profiles',
+    //   liveUrl: 'https://gitseek.vercel.app/',
+    //   githubUrl: 'https://github.com/sreecharan-desu/Gitseek',
+    //   tech: ['React', 'TypeScript', 'TailwindCSS', 'GitHub API'],
+    //   image: '/project-images/gitseek.png',
+    //   status: 'online',
+    // },
     {
-      title: 'GitSeek',
-      description: 'GitSeeker is a GitHub profile searcher that allows users to search for GitHub profiles',
-      liveUrl: 'https://gitseek.vercel.app/',
-      githubUrl: 'https://github.com/sreecharan-desu/Gitseek',
-      tech: ['React', 'TypeScript', 'TailwindCSS', 'GitHub API'],
-      image: '/project-images/gitseek.png',
-      status: 'online',
-    },{
       title : "Portfolio v_1.0.0",
       description : "My Intial portfolio website built with React, Tailwind CSS, and Framer Motion.",
       liveUrl : "https://sr3x0r-portfolio.vercel.app/",
