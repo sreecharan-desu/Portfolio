@@ -107,7 +107,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/sreecharan-desu/uniZ',
       tech: ['TypeScript', 'Prisma', 'React', 'Node.js'],
       image: '/project-images/uniZ.png',
-      status: 'building',
+      status: 'online',
     },
     {
       title: 'reX',
