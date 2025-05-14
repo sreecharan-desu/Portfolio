@@ -100,6 +100,15 @@ const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   const projects: Project[] = [
+      {
+      title: 'SPay',
+      description: 'Payments made easy with SPay - a simple and secure payment gateway.',
+      liveUrl: 'https://spay.vercel.app/',
+      githubUrl: 'https://github.com/sreecharan-desu/Spay',
+      tech: ['TypeScript', 'Prisma', 'React', 'Node.js'],
+      image: '/project-images/Spay.png',
+      status: 'building',
+    },
     {
       title: 'UniZ',
       description: 'Emerging university management system with advanced Outpass Management features.',
