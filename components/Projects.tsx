@@ -101,11 +101,11 @@ const Projects = () => {
 
   const projects: Project[] = [
       {
-      title: 'SPay',
-      description: 'Payments made easy with SPay - a simple and secure payment gateway.',
-      liveUrl: 'https://spay.vercel.app/',
+      title: 'Spay',
+      description: 'Spay is a secure and seamless payment gateway powered by a custom-built dummy bank server, simulating real-world banking for modern app integration.',
+      liveUrl: 'https://sreesspay.vercel.app/',
       githubUrl: 'https://github.com/sreecharan-desu/Spay',
-      tech: ['TypeScript', 'Prisma', 'React', 'Node.js'],
+      tech: ['TypeScript', 'Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB'],
       image: '/project-images/Spay.png',
       status: 'building',
     },
