@@ -31,8 +31,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
           src={project.image || '/api/placeholder/400/200'}
           alt={project.title}
           fill
-          className="object-cover transition-transform duration-300 hover:scale-105"
+          className="object-contain object-center w-full transition-transform duration-300 hover:scale-105"
           priority={false}
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
         />
       </div>
 
@@ -94,7 +95,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
     </motion.div>
   );
 };
-
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
