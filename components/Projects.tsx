@@ -109,15 +109,18 @@ const Projects = () => {
     image: '/project-images/Spay.png',
     status: 'building',
   },
-  {
-    title: 'echo.ink',
-    description: 'A basic functional blogging application - powered with hono & cloudflare workers',
-    liveUrl: 'https://srees-echoink.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/echo.ink',
-    tech: ['React', 'TypeScript', 'TailwindCSS', 'Hono', 'Cloudflare workers', 'Prisma', 'Postgres', 'NeonDB'],
-    image: '/project-images/echo.ink.png',
+     {
+    title: 'reX',
+    description: 'An online reward exchange platform.',
+    liveUrl: 'https://rex-beige.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/reX',
+    tech: ['TypeScript', 'React', 'Express', 'MongoDB'],
+    image: '/project-images/reX.png',
     status: 'online',
   },
+
+
+
   {
     title: 'UniZ',
     description: 'Emerging university management system with advanced Outpass Management features.',
@@ -128,15 +131,6 @@ const Projects = () => {
     status: 'online',
   },
     {
-    title: 'reX',
-    description: 'An online reward exchange platform.',
-    liveUrl: 'https://rex-beige.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/reX',
-    tech: ['TypeScript', 'React', 'Express', 'MongoDB'],
-    image: '/project-images/reX.png',
-    status: 'online',
-  },
-  {
     title: 'CampusSchield',
     description: 'A safety companion for university students with low confidence (Introverts).',
     liveUrl: 'https://campus-schield-frontend.vercel.app/',
@@ -145,7 +139,17 @@ const Projects = () => {
     image: '/project-images/campusschield.png',
     status: 'online',
   },
+    {
+    title: 'echo.ink',
+    description: 'A basic functional blogging application - powered with hono & cloudflare workers',
+    liveUrl: 'https://srees-echoink.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/echo.ink',
+    tech: ['React', 'TypeScript', 'TailwindCSS', 'Hono', 'Cloudflare workers', 'Prisma', 'Postgres', 'NeonDB'],
+    image: '/project-images/echo.ink.png',
+    status: 'online',
+  },
 
+ 
   {
     title: 'TaskMaster',
     description: 'A full-stack todo application with real-time updates and secure authentication.',
