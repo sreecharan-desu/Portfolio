@@ -1,41 +1,32 @@
 import { motion } from 'framer-motion';
 import { FaComment } from 'react-icons/fa';
 import Image from 'next/image';
-import { Link } from 'react-scroll'; // Import react-scroll Link
 import { socialLinks } from '@/lib/socialLinks';
 
 export const whatsappLink = 'https://wa.me/+916300625861?text=Hi%20SreeCharan,%20I%27m%20interested%20in%20hiring%20you!';
 
 const Hero = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleScroll = (to: string) => {
-    // Prevent hash from appearing in URL
-    window.history.replaceState(null, window.location.pathname);
-  };
+
 
   return (
-          <section id="home" className="min-h-screen bg-black py-12 mt-10 pt-20">
-      {/* Navbar */}
-      <Navbar/>                                                                                                                                                                     
-
-      {/* Hero Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">                                 
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+    <section id="home" className="bg-black py-20 mb-10 lg:mt-20">
+      <Navbar/>
+      <div className="container mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
           {/* Profile Image */}
           <motion.div
-            className="w-72 sm:w-56 md:w-64 lg:w-72"
+            className="w-64 sm:w-56 md:w-64 lg:w-72"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="relative rounded-full overflow-hidden border-4 border-white/10 shadow-lg">
+            <div className="relative aspect-square rounded-full overflow-hidden border-4 border-white/10 shadow-lg">
               <Image
                 src="/sr3x0r.jpeg"
                 alt="SreeCharan"
-                width={288}
-                height={288}
-                className="w-full h-full object-cover"
+                fill
+                className="object-contain rounded-full bg-[#e1dbd4] scale-110 filter"
                 priority
               />
             </div>
@@ -49,26 +40,29 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h1 className="text-3xl first-letter:text-4xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
-            Hi, I’m SreeCharan            </h1>
-            <p className="text-lg sm:text-xl text-gray-300 mb-6 leading-relaxed">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-5 tracking-tight leading-tight">
+              Hi, I’m SreeCharan
+            </h1>
+
+            <p className="text-xl sm:text-2xl text-gray-300 mb-6 font-medium leading-relaxed">
               <b>CS junior</b> passionate about crafting websites and turning ideas into reality.
             </p>
-            <p className="text-base text-gray-400 mb-8">
+
+            <p className="text-base sm:text-lg text-gray-400 mb-8">
               Follow me on{' '}
-                <a
+              <a
                 href="https://x.com/sr3x0r"
-                className="text-gray-300 hover:text-white transition-colors duration-200 inline-flex items-center gap-1"
+                className="text-gray-300 hover:text-white transition-colors duration-200 inline-flex items-center gap-1 underline underline-offset-2"
                 target="_blank"
                 rel="noopener noreferrer"
-                >
+              >
                 𝕏
-                </a>{' '}
+              </a>{' '}
               for insights and updates.
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-6 justify-center md:justify-start mb-8">
+            <div className="flex gap-6 justify-center md:justify-start mb-10">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
@@ -78,67 +72,61 @@ const Hero = () => {
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   aria-label={`Visit my ${link.name} profile`}
                 >
-                  <link.icon className="text-2xl" />
+                  <link.icon className="text-3xl sm:text-4xl" />
                 </a>
               ))}
             </div>
 
+            {/* WhatsApp CTA */}
             <motion.a
-  href={whatsappLink}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="relative inline-flex items-center gap-2 bg-black/90 text-white px-5 py-2.5 rounded-full font-medium overflow-hidden border border-white/20 hover:bg-black/70 transition-all duration-300 shadow-md hover:shadow-lg"
-  style={{
-    background: 'linear-gradient(90deg, rgb(20, 20, 25) 0%, rgb(10, 10, 15) 100%)',
-    boxShadow: '0 0 18px rgba(255, 255, 255, 0.2), 0 0 36px rgba(255, 255, 255, 0.1)'
-  }}
-  aria-label="Contact via WhatsApp"
-  initial={{ y: 0 }}
-  whileHover={{
-    y: -5,
-    scale: 1.08,
-    transition: { duration: 0.2 },
-  }}
-  whileTap={{ scale: 0.95 }}
->
-  <div 
-    className="absolute inset-0 rounded-full -z-10"
-    style={{
-      background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(210, 210, 230, 0.2) 100%)',
-      margin: '-1px',
-      opacity: 0.6
-    }}
-  />
-  
-  <motion.span
-    className="absolute inset-0 bg-white/5"
-    initial={{ x: '-100%' }}
-    whileHover={{
-      x: 0,
-      transition: { duration: 0.3, ease: 'easeInOut' },
-    }}
-  />
-  
-  <div 
-    className="absolute inset-0 rounded-full opacity-20"
-    style={{
-      background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
-    }}
-  />
-  
-  <span className="relative z-10 flex items-center gap-2">
-    <FaComment className="text-xl" size={20} />
-    <span className="text-base">Hire me</span>
-  </span>
-</motion.a>
-
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center gap-2 bg-black/90 text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-full font-semibold overflow-hidden border border-white/20 hover:bg-black/70 transition-all duration-300 shadow-md hover:shadow-lg"
+              style={{
+                background: 'linear-gradient(90deg, rgb(20, 20, 25) 0%, rgb(10, 10, 15) 100%)',
+                boxShadow: '0 0 18px rgba(255, 255, 255, 0.2), 0 0 36px rgba(255, 255, 255, 0.1)',
+              }}
+              aria-label="Contact via WhatsApp"
+              initial={{ y: 0 }}
+              whileHover={{
+                y: -5,
+                scale: 1.08,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div
+                className="absolute inset-0 rounded-full -z-10"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(210, 210, 230, 0.2) 100%)',
+                  margin: '-1px',
+                  opacity: 0.6,
+                }}
+              />
+              <motion.span
+                className="absolute inset-0 bg-white/5"
+                initial={{ x: '-100%' }}
+                whileHover={{
+                  x: 0,
+                  transition: { duration: 0.3, ease: 'easeInOut' },
+                }}
+              />
+              <div
+                className="absolute inset-0 rounded-full opacity-20"
+                style={{
+                  background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
+                }}
+              />
+              <span className="relative z-10 flex items-center gap-2">
+                <FaComment className="text-xl sm:text-2xl" />
+                <span className="text-base sm:text-lg">Hire me</span>
+              </span>
+            </motion.a>
           </motion.div>
-
-
-      </div>
+        </div>
       </div>
     </section>
-
   );
 };
 
@@ -147,6 +135,7 @@ export default Hero;
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react"; // or use any other icon library
+import { Link } from 'react-scroll';
 
 
 const Navbar = () => {
@@ -249,4 +238,5 @@ const Navbar = () => {
     </motion.nav>
   );
 };
+
 
