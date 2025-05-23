@@ -26,12 +26,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
       viewport={{ once: true }}
     >
       {/* Project Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-52 overflow-hidden">
         <Image
           src={project.image || '/api/placeholder/400/200'}
           alt={project.title}
           fill
-          className="object-contain object-center w-full transition-transform duration-300 hover:scale-105"
+          className="object-cover object-center w-full transition-transform duration-300 hover:scale-105"
           priority={false}
           style={{ objectFit: 'cover', objectPosition: 'center' }}
         />

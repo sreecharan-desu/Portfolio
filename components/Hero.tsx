@@ -23,7 +23,7 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Profile Image */}
           <motion.div
-            className="w-48 sm:w-56 md:w-64 lg:w-72"
+            className="w-72 sm:w-56 md:w-64 lg:w-72"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
