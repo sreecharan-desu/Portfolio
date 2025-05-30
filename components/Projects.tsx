@@ -134,7 +134,7 @@ const Projects = () => {
     title: 'CampusSchield',
     description: 'A safety companion for university students with low confidence (Introverts).',
     liveUrl: 'https://campus-schield-frontend.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/Campusschield-v.1.0.2',
+    githubUrl: 'https://github.com/sreecharan-desu/Campusschield-Version-2',
     tech: ['React', 'JavaScript', 'Node.js', 'Express', 'TailwindCSS', 'MongoDB'],
     image: '/project-images/campusschield.png',
     status: 'online',
@@ -199,7 +199,7 @@ const Projects = () => {
     title : "Portfolio v_1.0.0",
     description : "My Intial portfolio website built with React, Tailwind CSS, and Framer Motion.",
     liveUrl : "https://sr3x0r-portfolio.vercel.app/",
-    githubUrl : "https://github.com/sreecharan-desu/Portfolio-v_1.0.1",
+    githubUrl : "https://github.com/sreecharan-desu/Portfolio-version-1",
     tech : ["React", "Tailwind CSS", "Framer Motion"],
     image : "/project-images/portfolio.png",
     status : "online"
