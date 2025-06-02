@@ -20,7 +20,7 @@ const jura = Jura({
 });
 
 export const metadata: any = {
-  title: "SreeCharan Desu | AKA Sr3x0r – FullStack & DevOps Engineer",
+  title: "SreeCharan Desu • FullStack & DevOps Engineer",
   description:
     "Official site of SreeCharan Desu (AKA Sr3x0r) – CS Junior turned FullStack & DevOps Engineer. Explore projects, blogs, and more.",
   keywords: [
