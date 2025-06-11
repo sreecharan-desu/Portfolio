@@ -45,7 +45,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-300 mb-6 font-medium leading-relaxed">
-              <b>CS junior</b> passionate about crafting websites and turning ideas into reality.
+              <b>CS junior</b>  turning ideas into production-ready web apps with clean design, and scalable infrastructure.
             </p>
 
             <p className="text-base sm:text-lg text-gray-400 mb-8">
