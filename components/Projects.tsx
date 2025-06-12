@@ -8,6 +8,7 @@ import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Zoom from 'react-medium-image-zoom';
+import { useMediaQuery } from 'react-responsive';
 
 // Unified Project Interface
 interface Project {
@@ -151,6 +152,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   return (
     <>
       <motion.div
@@ -223,42 +226,48 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </div>
       </motion.div>
-
       {isModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center"
-          style={{
-            background: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black
-            backdropFilter: 'blur(10px)',     // Blur effect for glassmorphism
-            WebkitBackdropFilter: 'blur(10px)' // Safari support
-          }}
-          onClick={() => setIsModalOpen(false)}
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center"
+        style={{
+          background: 'rgba(0, 0, 0, 0.5)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)'
+        }}
+        onClick={() => setIsModalOpen(false)}
+      >
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.8, opacity: 0 }}
+          className="relative max-w-4xl max-h-[80vh] overflow-auto"
+          onClick={(e) => e.stopPropagation()}
         >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            className="relative max-w-4xl max-h-[80vh] overflow-auto"
-            onClick={(e) => e.stopPropagation()}
+          <button
+            className="absolute top-2 right-2 text-white bg-black/50 rounded-full p-1"
+            onClick={() => setIsModalOpen(false)}
           >
-            <button
-              className="absolute top-2 right-2 text-white bg-black/50 rounded-full p-1"
-              onClick={() => setIsModalOpen(false)}
-            >
-              <FaTimes />
-            </button>
-<Zoom>
-  <Image
-    width={800}
-    height={600}
-    src={project.image}
-    alt={project.title}
-    className="object-contain"
-  />
-</Zoom>
-          </motion.div>
-        </div>
-      )}
+            <FaTimes />
+          </button>
+          {/* Conditionally render Zoom component */}
+          {isMobile ? (
+            <Image
+              src={project.image}
+              alt={project.title}
+              className="object-contain"
+            />
+          ) : (
+            <Zoom>
+              <Image
+                src={project.image}
+                alt={project.title}
+                className="object-contain"
+              />
+            </Zoom>
+          )}
+        </motion.div>
+      </div>
+    )}
     </>
   );
 };
@@ -345,3 +354,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
+
