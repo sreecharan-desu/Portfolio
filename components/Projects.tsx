@@ -249,6 +249,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </button>
 <Zoom>
   <Image
+    width={800}
+    height={600}
     src={project.image}
     alt={project.title}
     className="object-contain"
