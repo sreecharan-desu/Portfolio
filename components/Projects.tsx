@@ -252,6 +252,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {/* Conditionally render Zoom component */}
           {isMobile ? (
             <Image
+              width={800}
+	      height={600}
               src={project.image}
               alt={project.title}
               className="object-contain"
@@ -259,6 +261,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
           ) : (
             <Zoom>
               <Image
+	      	width={800}
+		height={600}
                 src={project.image}
                 alt={project.title}
                 className="object-contain"
