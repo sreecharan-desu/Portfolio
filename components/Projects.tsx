@@ -2,15 +2,12 @@
 
 import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
 import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-
-
-
+import { Magnifier } from 'react-image-magnifiers'; // New import
 
 // FullStack Project Interface
 interface Project {
@@ -137,165 +134,245 @@ const fullstackProjects: Project[] = [
 ];
 
 const devopsProjects: DevOpsProject[] = [
-  
   {
-    title: 'CI/CD Piepline',
-    description: 'Spay is a secure and seamless payment gateway powered by a custom-built dummy bank server, simulating real-world banking for modern app integration.',
-    liveUrl: '',
-    githubUrl: 'https://github.com/sreecharan-desu/Spay',
-    tech: ['TypeScript', 'Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB'],
+    title: 'CI/CD Pipeline',
+    description: 'End-to-end CI/CD workflow automated using GitHub Actions, Docker, and AWS EC2. Code changes trigger Docker builds, push to Docker Hub, and deploy live via NGINX reverse proxy — all fully containerized and production-ready.',
+    liveUrl: 'https://github.com/sreecharan-desu/hello-ci-cd',
+    githubUrl: 'https://github.com/sreecharan-desu/hello-ci-cd',
+    tech: ['Docker', 'GitHub Actions', 'NGINX', 'AWS EC2', 'TypeScript'],
     image: '/project-images/ci-cd.png',
     status: 'online',
-  },
+  }
 ];
 
-// ProjectCard Component (unchanged)
+// ProjectCard Component with Image Popup
 const ProjectCard = ({ project }: { project: Project }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <motion.div
-      className="flex mx-1 flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-    >
-      <div className="relative h-52 overflow-hidden">
-        <Image
-          src={project.image || '/images/placeholder.png'}
-          alt={project.title}
-          fill
-          className="object-cover object-center w-full transition-transform duration-300 hover:scale-105"
-          priority={false}
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-        />
-      </div>
-      <div className="p-5 flex flex-col flex-1">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-lg font-semibold text-white tracking-tight">{project.title}</h3>
-          <span
-            className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-              project.status === 'online'
-                ? 'bg-green-500/20 text-green-400'
-                : 'bg-yellow-500/20 text-yellow-400'
-            }`}
-          >
-            {project.status}
-          </span>
+    <>
+      <motion.div
+        className="flex mx-1 flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <div
+          className="relative h-52 overflow-hidden"
+          onClick={() => setIsModalOpen(true)}
+        >
+          <Image
+            src={project.image || '/images/placeholder.png'}
+            alt={project.title}
+            fill
+            className="object-cover object-center w-full transition-transform duration-300 hover:scale-105"
+            priority={false}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
         </div>
-        <p className="text-sm text-gray-300 mb-4 line-clamp-3">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tech.slice(0, 6).map((tech, i) => (
+        <div className="p-5 flex flex-col flex-1">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-lg font-semibold text-white tracking-tight">{project.title}</h3>
             <span
-              key={i}
-              className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full"
+              className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                project.status === 'online'
+                  ? 'bg-green-500/20 text-green-400'
+                  : 'bg-yellow-500/20 text-yellow-400'
+              }`}
             >
-              {tech}
+              {project.status}
             </span>
-          ))}
+          </div>
+          <p className="text-sm text-gray-300 mb-4 line-clamp-3">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tech.slice(0, 6).map((tech, i) => (
+              <span
+                key={i}
+                className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className="flex items-center gap-4 mt-auto">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+                aria-label={`View ${project.title} on GitHub`}
+              >
+                <FaGithub className="text-lg" />
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+                aria-label={`View live demo of ${project.title}`}
+              >
+                <FaExternalLinkAlt className="text-lg" />
+              </a>
+            )}
+          </div>
         </div>
-        <div className="flex items-center gap-4 mt-auto">
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-              aria-label={`View ${project.title} on GitHub`}
-            >
-              <FaGithub className="text-lg" />
-            </a>
-          )}
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-              aria-label={`View live demo of ${project.title}`}
-            >
-              <FaExternalLinkAlt className="text-lg" />
-            </a>
-          )}
-        </div>
-      </div>
+      </motion.div>
+
+      {isModalOpen && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center"
+    style={{
+      background: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black
+      backdropFilter: 'blur(10px)',     // Blur effect for glassmorphism
+      WebkitBackdropFilter: 'blur(10px)' // Safari support
+    }}
+    onClick={() => setIsModalOpen(false)}
+  >
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.8, opacity: 0 }}
+      className="relative max-w-4xl max-h-[80vh] overflow-auto"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className="absolute top-2 right-2 text-white bg-black/50 rounded-full p-1"
+        onClick={() => setIsModalOpen(false)}
+      >
+ Regions<FaTimes />
+      </button>
+      <Magnifier
+        imageSrc={project.image}
+        imageAlt={project.title}
+        largeImageSrc={project.image} // Use the same image; replace with a higher-res version if available
+        className="object-contain"
+      />
     </motion.div>
+  </div>
+)}
+
+    </>
   );
 };
 
-// Enhanced DevOpsProjectCard Component matching FullStack design
+// DevOpsProjectCard Component with Image Popup
 const DevOpsProjectCard = ({ project }: { project: DevOpsProject }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <motion.div
-      className="flex mx-1 flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-    >
-      <div className="relative h-52 overflow-hidden">
-        <Image
-          src={project.image || '/images/placeholder.png'}
-          alt={project.title}
-          fill
-          className="object-cover object-center w-full transition-transform duration-300 hover:scale-105"
-          priority={false}
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-        />
-      </div>
-      <div className="p-5 flex flex-col flex-1">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-lg font-semibold text-white tracking-tight">{project.title}</h3>
-          <span
-            className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-              project.status === 'online'
-                ? 'bg-green-500/20 text-green-400'
-                : 'bg-yellow-500/20 text-yellow-400'
-            }`}
-          >
-            {project.status}
-          </span>
+    <>
+      <motion.div
+        className="flex mx-1 flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <div
+          className="relative h-52 overflow-hidden"
+          onClick={() => setIsModalOpen(true)}
+        >
+          <Image
+            src={project.image || '/images/placeholder.png courteous'}
+            alt={project.title}
+            fill
+            className="object-cover object-center w-full transition-transform duration-300 hover:scale-105"
+            priority={false}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
         </div>
-        <p className="text-sm text-gray-300 mb-4 line-clamp-3">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tech.slice(0, 6).map((tech, i) => (
+        <div className="p-5 flex flex-col flex-1">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-lg font-semibold text-white tracking-tight">{project.title}</h3>
             <span
-              key={i}
-              className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full"
+              className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                project.status === 'online'
+                  ? 'bg-green-500/20 text-green-400'
+                  : 'bg-yellow-500/20 text-yellow-400'
+              }`}
             >
-              {tech}
+              {project.status}
             </span>
-          ))}
+          </div>
+          <p className="text-sm text-gray-300 mb-4 line-clamp-3">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tech.slice(0, 6).map((tech, i) => (
+              <span
+                key={i}
+                className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className="flex items-center gap-4 mt-auto">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+                aria-label={`View ${project.title} on GitHub`}
+              >
+                <FaGithub className="text-lg" />
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+                aria-label={`View live demo of ${project.title}`}
+              >
+                <FaExternalLinkAlt className="text-lg" />
+              </a>
+            )}
+          </div>
         </div>
-        <div className="flex items-center gap-4 mt-auto">
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-              aria-label={`View ${project.title} on GitHub`}
-            >
-              <FaGithub className="text-lg" />
-            </a>
-          )}
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-              aria-label={`View live demo of ${project.title}`}
-            >
-              <FaExternalLinkAlt className="text-lg" />
-            </a>
-          )}
-        </div>
-      </div>
+      </motion.div>
+      {isModalOpen && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center"
+    style={{
+      background: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black
+      backdropFilter: 'blur(10px)',     // Blur effect for glassmorphism
+      WebkitBackdropFilter: 'blur(10px)' // Safari support
+    }}
+    onClick={() => setIsModalOpen(false)}
+  >
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.8, opacity: 0 }}
+      className="relative max-w-4xl max-h-[80vh] overflow-auto"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className="absolute top-2 right-2 text-white bg-black/50 rounded-full p-1"
+        onClick={() => setIsModalOpen(false)}
+      >
+        <FaTimes />
+      </button>
+      <Magnifier
+        imageSrc={project.image}
+        imageAlt={project.title}
+        largeImageSrc={project.image} // Use the same image; replace with a higher-res version if available
+        className="object-contain"
+      />
     </motion.div>
+  </div>
+)}
+ 
+    </>
   );
 };
 
-// Projects Component
+// Projects Component (unchanged)
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
   const [showAllDevOps, setShowAllDevOps] = useState(false);
