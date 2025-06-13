@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Zoom from 'react-medium-image-zoom';
 import { useMediaQuery } from 'react-responsive';
 
 // Unified Project Interface
@@ -259,7 +258,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
               className="object-contain"
             />
           ) : (
-            <Zoom>
               <Image
 	      	width={800}
 		height={600}
@@ -267,7 +265,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 alt={project.title}
                 className="object-contain"
               />
-            </Zoom>
           )}
         </motion.div>
       </div>
