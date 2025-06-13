@@ -22,13 +22,14 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             <div className="relative aspect-square rounded-full overflow-hidden border-4 border-white/10 shadow-lg">
-              <Image
-                src="/sr3x0r.jpeg"
-                alt="SreeCharan"
-                fill
-                className="object-contain rounded-full bg-[#e1dbd4] scale-110 filter"
-                priority
-              />
+<Image
+  src="/sr3x0r-icon.jpeg"
+  alt="SreeCharan"
+  width={300}
+  height={300}
+  className="object-contain rounded-full bg-[#e1dbd4] scale-90 filter"
+  priority
+/>
             </div>
           </motion.div>
 

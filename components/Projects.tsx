@@ -173,6 +173,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
             className="object-cover object-center w-full transition-transform duration-300 hover:scale-105"
             priority={false}
             style={{ objectFit: 'cover', objectPosition: 'center' }}
+            sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            quality={75}
+            loading="lazy"
           />
         </div>
         <div className="p-5 flex flex-col flex-1">
@@ -252,18 +255,24 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {isMobile ? (
             <Image
               width={800}
-	      height={600}
+              height={600}
               src={project.image}
               alt={project.title}
               className="object-contain"
+              sizes="(max-width: 767px) 100vw, 80vw"
+              quality={75}
+              loading="lazy"
             />
           ) : (
               <Image
-	      	width={800}
-		height={600}
+                width={800}
+                height={600}
                 src={project.image}
                 alt={project.title}
                 className="object-contain"
+                sizes="(max-width: 767px) 100vw, 80vw"
+                quality={75}
+                loading="lazy"
               />
           )}
         </motion.div>

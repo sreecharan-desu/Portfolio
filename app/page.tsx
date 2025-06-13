@@ -8,36 +8,33 @@ import Projects from '@/components/Projects';
 import YouTubeSection from '@/components/YoutubeSection';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testinomials';
-
+import FreelanceServices from '@/components/FreelanceServices'; // Add this import
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { FaFileDownload } from 'react-icons/fa';
 
+// FloatingResumeButton component remains unchanged
 const FloatingResumeButton = () => {
   const [showText, setShowText] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  // Detect touch device in browser environment
   useEffect(() => {
     const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
     setIsTouchDevice(isTouch);
   }, []);
 
-  // Memoized touch start handler with debounce
   const handleTouchStart = useCallback(() => {
     if (!isTouchDevice) return;
     setShowText(true);
     const timeout = setTimeout(() => setShowText(false), 2000);
-    return () => clearTimeout(timeout); // Cleanup timeout
+    return () => clearTimeout(timeout);
   }, [isTouchDevice]);
 
-  // Memoized mouse enter handler
   const handleMouseEnter = useCallback(() => {
     if (!isTouchDevice) setShowText(true);
   }, [isTouchDevice]);
 
-  // Memoized mouse leave handler
   const handleMouseLeave = useCallback(() => {
     if (!isTouchDevice) setShowText(false);
   }, [isTouchDevice]);
@@ -101,13 +98,19 @@ export default function PortfolioPage() {
           <Projects />
         </Element>
 
+
+
         <Element name="work-experience" className="m-0 p-0">
           <WorkExperience />
         </Element>
 
+
+
         <Element name="testinomials" className="m-0 p-0">
           <Testimonials />
         </Element>
+
+
 
         <Element name="skills" className="m-0 p-0">
           <Skills />
@@ -115,6 +118,10 @@ export default function PortfolioPage() {
 
         <Element name="youtube" className="m-0 p-0">
           <YouTubeSection />
+        </Element>
+
+        <Element name="freelance-services" className="m-0 p-0">
+          <FreelanceServices />
         </Element>
 
         <Element name="footer" className="m-0 p-0">

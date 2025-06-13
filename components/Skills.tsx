@@ -4,16 +4,21 @@ import { Element } from 'react-scroll';
 import {
   SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiPrisma, SiPostgresql,
   SiFlask, SiVercel, SiPostman, SiMysql, SiCss3, SiBootstrap, SiHtml5,
-  SiNetlify, SiExpress, SiMongodb, SiRecoil, SiAwsamplify, SiGithubactions,
-  SiMui, SiNextdotjs, SiDocker, SiPhp, SiTurborepo, SiMoonrepo, SiLinux, SiBun
+  SiNetlify, SiExpress, SiMongodb, SiRecoil, SiGithubactions,
+  SiMui, SiNextdotjs, SiDocker, SiPhp, SiTurborepo, SiMoonrepo, SiLinux, SiBun,
+  SiDjango, SiRedis, SiKubernetes,  SiAwslambda,
+   SiNginx,SiVite
 } from 'react-icons/si';
-import { FaGit, FaPython, FaNode } from 'react-icons/fa';
+import { FaGit, FaPython, FaNode, FaServer } from 'react-icons/fa';
+import { Flame } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skills = [
+    // Frontend
     { name: 'React', icon: <SiReact color='#61DAFB' /> },
     { name: 'Next.js', icon: <SiNextdotjs color='#FFFFFF' /> },
+    // { name: 'Vue.js', icon: <SiV color='#4FC08D' /> },
     { name: 'TypeScript', icon: <SiTypescript color='#3178C6' /> },
     { name: 'JavaScript', icon: <SiJavascript color='#F7DF1E' /> },
     { name: 'HTML5', icon: <SiHtml5 color='#E34F26' /> },
@@ -21,27 +26,49 @@ const Skills = () => {
     { name: 'Tailwind CSS', icon: <SiTailwindcss color='#06B6D4' /> },
     { name: 'Material UI', icon: <SiMui color='#0081CB' /> },
     { name: 'Bootstrap', icon: <SiBootstrap color='#7952B3' /> },
-    { name: 'Bun.js', icon: <SiBun color='#F7B93E' /> },
+    { name: 'Vite', icon: <SiVite color='#FFFFFF' /> },
+    { name: 'Recoil', icon: <SiRecoil color='#764ABC' /> },
+
+    // Backend
     { name: 'Node.js', icon: <FaNode color='#68A063' /> },
+    { name: 'Hono.js', icon: <Flame size={32} color='#FFFFFF' /> },
     { name: 'Express.js', icon: <SiExpress color='#FFFFFF' /> },
     { name: 'PHP', icon: <SiPhp color='#4FC08D' /> },
     { name: 'Python', icon: <FaPython color='#3776AB' /> },
     { name: 'Flask', icon: <SiFlask color='#FFFFFF' /> },
+    { name: 'Django', icon: <SiDjango color='#092E20' /> },
+
+    // Databases & Data
     { name: 'PostgreSQL', icon: <SiPostgresql color='#336791' /> },
     { name: 'MongoDB', icon: <SiMongodb color='#47A328' /> },
     { name: 'MySQL', icon: <SiMysql color='#4479A1' /> },
+    { name: 'Redis', icon: <SiRedis color='#DC382D' /> },
+    // { name: 'GraphQL', icon: <SiGraphql color='#E10098' /> },
     { name: 'Prisma', icon: <SiPrisma color='#FFFFFF' /> },
+    // { name: 'Elasticsearch', icon: <SiElasticsearch color='#005571' /> },
+    // { name: 'Apache Kafka', icon: <SiApachekafka color='#FFFFFF' /> },
+
+    // DevOps & Cloud
     { name: 'Docker', icon: <SiDocker color='#2496ED' /> },
-    { name: 'AWS Amplify', icon: <SiAwsamplify color='#FF9900' /> },
+    { name: 'Kubernetes', icon: <SiKubernetes color='#326CE5' /> },
+    { name: 'AWS', icon: <SiAwslambda color='#FF9900' /> },
+    // { name: 'AWS Amplify', icon: <SiAwsamplify color='#FF9900' /> },
+    // { name: 'Terraform', icon: <SiTerraform color='#7B42BC' /> },
     { name: 'GitHub Actions', icon: <SiGithubactions color='#2088FF' /> },
+    // { name: 'Jenkins', icon: <SiJenkins color='#D24939' /> },
     { name: 'Vercel', icon: <SiVercel color='#FFFFFF' /> },
     { name: 'Netlify', icon: <SiNetlify color='#00C7B7' /> },
-    { name: 'Turborepo', icon: <SiTurborepo color='#EF4444' /> },
-    { name: 'Moonrepo', icon: <SiMoonrepo color='#FF6C37' /> },
+    { name: 'Nginx', icon: <SiNginx color='#009639' /> },
+    // { name: 'Prometheus', icon: <SiPrometheus color='#E6522C' /> },
+
+    // Tools & Infrastructure
     { name: 'Git', icon: <FaGit color='#F05032' /> },
-    { name: 'Recoil', icon: <SiRecoil color='#764ABC' /> },
     { name: 'Linux', icon: <SiLinux color='#FCC624' /> },
     { name: 'Postman', icon: <SiPostman color='#FF6C37' /> },
+    { name: 'Turborepo', icon: <SiTurborepo color='#EF4444' /> },
+    { name: 'Moonrepo', icon: <SiMoonrepo color='#FF6C37' /> },
+    { name: 'Bun.js', icon: <SiBun color='#F7B93E' /> },
+    { name: 'Microservices', icon: <FaServer color='#FFFFFF' /> }, // Generic server icon for architecture
   ];
 
   return (

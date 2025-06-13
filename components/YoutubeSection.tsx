@@ -30,7 +30,7 @@ const YouTubeSection = () => {
 
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
   const CHANNEL_ID = 'UCUaEqn8aDVtHE9AaDekpQtQ';
-  const MAX_RESULTS = 10;
+  const MAX_RESULTS = 20;
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -96,7 +96,7 @@ const YouTubeSection = () => {
 
           // Exclude videos 60 seconds or shorter and videos with #shorts tag
           const isNotShort =
-            totalSeconds > 10 &&
+            totalSeconds > 60 &&
             !(video.snippet.tags?.includes('shorts') ||
               video.snippet.title.toLowerCase().includes('#shorts') ||
               video.snippet.description.toLowerCase().includes('#shorts'));
