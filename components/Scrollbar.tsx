@@ -18,14 +18,14 @@ const SmoothMarquee = () => {
     },
     {
       id: 2,
-      title: "Award Ceremony",
+      title: "Achievements",
       subtitle: "ORNATE 2025",
       description: "Received an award from the Director at Ornate 2025, RGUKT Ongole (IIIT AP), recognizing my contributions in hackathons and academics.",
       image: "/scroll-bar/price.jpg",
     },
     {
       id: 3,
-      title: "Dance Performance",
+      title: "Culturals",
       subtitle: "ORNATE 2025",
       description: "Performed a dance at Ornate 2025, showcasing my creative side at RGUKT Ongole (IIIT AP) cultural fest.",
       image: "/scroll-bar/dance-performance.jpg",
@@ -51,10 +51,10 @@ const SmoothMarquee = () => {
     return (
       <motion.div
         className="flex-shrink-0 mb-20 w-[20rem] sm:w-[26rem] md:w-[30rem] h-[12rem] sm:h-[16rem] md:h-[18rem] mx-3 relative overflow-hidden rounded-3xl transition-transform duration-300 hover:scale-105 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-white/50"
-        style={{ animationDelay: `${index * 0.1}s` }}
+        style={{ animationDelay: `${index * 0.1                                                                                                                                                                                                                                                                                                                                                           }s` }}
         onClick={handleTooltipToggle}
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
+        onMouseLeave={() => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
           setIsHovered(false);
           setActiveTooltip(null);
         }}
