@@ -27,7 +27,7 @@ const Hero = () => {
   alt="SreeCharan"
   width={300}
   height={300}
-  className="object-contain rounded-full bg-[#e1dbd4] scale-90 filter"
+  className="object-contain rounded-full filter"
   priority
 />
             </div>
@@ -184,7 +184,7 @@ const Navbar = () => {
                   smooth={true}
                   duration={500}
                   offset={-30} // Add 10px top offset
-                  className="text-white hover:text-gray-300 text-sm font-medium tracking-wide transition-colors cursor-pointer relative group"
+                  className="text-white hover:text-gray-300 text-md font-medium tracking-wide transition-colors cursor-pointer relative group"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
