@@ -11,14 +11,14 @@ const SmoothMarquee = () => {
   const courses = [
     {
       id: 1,
-      title: "Women Safety PWA",
-      subtitle: "HACKATHON PROJECT",
+      title: "Hackathon's",
+      subtitle: "Women Safety PWA",
       description: "Developed a progressive web app for women’s safety at a hackathon at RGUKT Ongole (IIIT AP), focusing on real-time assistance and user-friendly design.",
       image: "/scroll-bar/hackathon.jpg",
     },
     {
       id: 2,
-      title: "Achievements",
+      title: "Academics",
       subtitle: "ORNATE 2025",
       description: "Received an award from the Director at Ornate 2025, RGUKT Ongole (IIIT AP), recognizing my contributions in hackathons and academics.",
       image: "/scroll-bar/price.jpg",
@@ -114,7 +114,7 @@ const SmoothMarquee = () => {
             className={`flex ${isPlaying && !isHovered ? 'animate-marquee' : ''}`}
             style={{
               width: `${duplicatedCourses.length * (480 + 24)}px`, // Adjusted for w-[30rem] + mx-3
-              animationDuration: '100s',
+              animationDuration: '150s',
               animationTimingFunction: 'linear',
               animationIterationCount: 'infinite',
               animationPlayState: isPlaying && !isHovered ? 'running' : 'paused',

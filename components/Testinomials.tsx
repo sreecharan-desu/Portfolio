@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { whatsappLink } from "./Hero";
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -147,19 +146,7 @@ const Testimonials = () => {
         </div>
 
         {/* Call To Action */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-gray-400 mb-4">Join our growing community of satisfied clients</p>
-          <button className="px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-600 hover:from-gray-500 hover:to-gray-500 text-white font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-gray-500/50">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contact SreeCharan via WhatsApp"
-            >
-              <span className="font-semibold">Join our community</span>
-            </a>
-          </button>
-        </div>
+
       </div>
     </section>
   );

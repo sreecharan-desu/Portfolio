@@ -11,6 +11,7 @@ import Testimonials from '@/components/Testinomials';
 import FreelanceServices from '@/components/FreelanceServices'; // Add this import
 import { FloatingResumeButton } from '@/components/ResumeButton';
 import SmoothMarquee from '@/components/Scrollbar';
+import Terminal from '@/components/CURL';
 
 
 
@@ -42,6 +43,9 @@ export default function PortfolioPage() {
         </Element>
 
 
+        <Element name="testinomials" className="m-0 p-0">
+          <Terminal />
+        </Element>
 
         <Element name="skills" className="m-0 p-0">
           <Skills />

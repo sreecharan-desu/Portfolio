@@ -9,7 +9,7 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className="bg-black py-20 mb-10 lg:mt-20">
+    <section id="home" className="bg-black py-20 mb-10 lg:mt-20 mt-10">
       <Navbar/>
       <div className="container mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
@@ -46,7 +46,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-300 mb-6 font-medium leading-relaxed">
-              <b>CS junior</b>  turning ideas into production-ready web apps with clean design, and scalable infrastructure.
+              <b>CS junior</b> crafting sleek, scalable web apps from idea to production.
             </p>
 
             <p className="text-base sm:text-lg text-gray-400 mb-8">

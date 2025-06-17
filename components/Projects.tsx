@@ -22,15 +22,7 @@ interface Project {
 
 // FullStack Projects Data
 const fullstackProjects: Project[] = [
-  {
-    title: 'Spay',
-    description: 'Spay is a secure and seamless payment gateway powered by a custom-built dummy bank server, simulating real-world banking for modern app integration.',
-    liveUrl: 'https://srees-spay.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/Spay',
-    tech: ['TypeScript', 'Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB'],
-    image: '/project-images/Spay.png',
-    status: 'building',
-  },
+
   {
     title: 'reX',
     description: 'An online reward exchange platform.',
@@ -48,6 +40,15 @@ const fullstackProjects: Project[] = [
     tech: ['TypeScript', 'Prisma', 'React', 'Node.js'],
     image: '/project-images/uniZ.png',
     status: 'online',
+  },
+    {
+    title: 'Spay',
+    description: 'Spay is a secure and seamless payment gateway powered by a custom-built dummy bank server, simulating real-world banking for modern app integration.',
+    liveUrl: 'https://srees-spay.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/Spay',
+    tech: ['TypeScript', 'Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB'],
+    image: '/project-images/Spay.png',
+    status: 'building',
   },
   {
     title: 'CampusSchield',
@@ -324,17 +325,17 @@ const Projects = () => {
         {currentView === 'fullstack' ? (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {fullstackProjects.slice(0, showAll ? fullstackProjects.length : 4).map((project) => (
+              {fullstackProjects.slice(0, showAll ? fullstackProjects.length : 2).map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
             </div>
-            {fullstackProjects.length > 4 && (
+            {fullstackProjects.length > 2 && (
               <div className="text-center">
                 <button
                   onClick={() => setShowAll(!showAll)}
                   className="px-6 py-2 bg-black/20 text-white rounded-full border border-white/10 hover:bg-white/20 transition"
                 >
-                  {showAll ? 'Show Less' : 'Show More'}
+                  {showAll ? 'Show Less' : 'Show All'}
                 </button>
               </div>
             )}
