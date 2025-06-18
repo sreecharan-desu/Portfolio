@@ -1,5 +1,5 @@
 import { FaHeart  } from 'react-icons/fa';
-import { socialLinks } from '@/lib/socialLinks';
+import { socialLinks } from '@/lib/socials';
 
 const Footer = () => {
 

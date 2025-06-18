@@ -1,41 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { courses } from '@/lib/socials';
 
 const SmoothMarquee = () => {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
-
-  const courses = [
-    {
-      id: 1,
-      title: "Hackathon's",
-      subtitle: "Women Safety PWA",
-      description: "Developed a progressive web app for women’s safety at a hackathon at RGUKT Ongole (IIIT AP), focusing on real-time assistance and user-friendly design.",
-      image: "/scroll-bar/hackathon.jpg",
-    },
-    {
-      id: 2,
-      title: "Academics",
-      subtitle: "ORNATE 2025",
-      description: "Received an award from the Director at Ornate 2025, RGUKT Ongole (IIIT AP), recognizing my contributions in hackathons and academics.",
-      image: "/scroll-bar/price.jpg",
-    },
-    {
-      id: 3,
-      title: "Culturals",
-      subtitle: "ORNATE 2025",
-      description: "Performed a dance at Ornate 2025, showcasing my creative side at RGUKT Ongole (IIIT AP) cultural fest.",
-      image: "/scroll-bar/dance-performance.jpg",
-    },
-    {
-      id: 4,
-      title: "YouTube Insights",
-      subtitle: "CONTENT CREATION",
-      description: "Run a YouTube channel sharing insights on tech, coding, and student life at RGUKT Ongole (IIIT AP).",
-      image: "/scroll-bar/youtube-channel.png",
-    },
-  ];
 
   const duplicatedCourses = [...courses, ...courses];
 

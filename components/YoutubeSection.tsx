@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaYoutube } from 'react-icons/fa';
 import axios from 'axios';
 import { FiYoutube } from 'react-icons/fi';
+import { CHANNEL_ID } from '@/lib/socials';
 
 interface YouTubeVideo {
   id: { videoId: string };
@@ -29,7 +30,6 @@ const YouTubeSection = () => {
   const [error, setError] = useState<string | null>(null);
 
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
-  const CHANNEL_ID = 'UCUaEqn8aDVtHE9AaDekpQtQ';
   const MAX_RESULTS = 20;
 
   useEffect(() => {

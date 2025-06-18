@@ -1,20 +1,11 @@
 'use client';
 
+import { experiences } from '@/lib/socials';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const WorkExperience = () => {
-  const experiences = [
-    {
-      company: 'DocGen',
-      website: 'https://docgen.dev',
-      role: 'Full Stack Intern',
-      period: 'Mar 2025 - Apr 2025',
-      location: 'Remote',
-      type: 'Internship',
-      logo: '/docgen-logo.png',
-    },
-  ];
+
 
   return (
     <section className="bg-black py-16 -mb-20">

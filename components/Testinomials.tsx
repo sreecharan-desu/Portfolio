@@ -1,30 +1,17 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { testimonials } from "@/lib/socials";
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
 
-  const testimonials = [
-    {
-      quote: "You've done a phenomenal job building the platform — your clarity, speed, and attention to detail really stood out.",
-      name: "Aniket Singh",
-      title: "CEO, DocGen",
-      image: "/aniket.jpg",
-      profile : "https://www.linkedin.com/in/aniket-singh-9a4860190/"
-    },
-    {
-      quote: "Your work is genuinely impressive — clean, efficient, and well-thought-out.",
-      name: "Varshith",
-      title: "CTO, DocGen",
-      image: "/varshith.jpg",
-      profile : "https://www.linkedin.com/in/varshithg17/"
-    },
-  ];
+
 
   // Memoize the interval callback to prevent re-creation
   const rotateTestimonials = useCallback(() => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [testimonials.length]);
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect, useRef } from 'react';
 import { Copy, Check, Terminal as TerminalIcon, ChevronRight } from 'lucide-react';
+import { command } from '@/lib/socials';
 
 const Terminal = () => {
   const [copied, setCopied] = useState(false);
@@ -11,7 +12,6 @@ const Terminal = () => {
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef(null);
 
-  const command = "curl -sL who.sreecharandesu.in | bash";
 
   // Typing animation
   useEffect(() => {

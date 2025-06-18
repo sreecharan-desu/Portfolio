@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
+import { fiverrGig, fiverrUrl } from '@/lib/socials';
 import { useState, useEffect } from 'react';
 
 const FreelanceServices = () => {
@@ -68,7 +69,7 @@ const FreelanceServices = () => {
           {/* Monochrome CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-12">
             <a
-              href="https://www.fiverr.com/sreecharan_desu"
+              href={fiverrUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="relative px-12 py-4 bg-white text-black text-base font-medium rounded-full border border-white focus:outline-none focus:ring-2 focus:ring-white/50"
@@ -85,9 +86,8 @@ const FreelanceServices = () => {
                 </svg>
               </span>
             </a>
-
             <a
-              href="https://www.fiverr.com/s/5re0wZE"
+              href={fiverrGig}
               target="_blank"
               rel="noopener noreferrer"
               className="relative px-12 py-4 bg-black text-white text-base font-medium rounded-full border border-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/50"

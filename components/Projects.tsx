@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { devopsProjects, fullstackProjects } from '@/lib/socials';
 
 // Unified Project Interface
-interface Project {
+export interface Project {
   title: string;
   description: string;
   liveUrl: string;
@@ -17,130 +18,6 @@ interface Project {
   status: 'online' | 'building';
 }
 
-// FullStack Projects Data
-const fullstackProjects: Project[] = [
-  {
-    title: "DocgenAI",
-    description: "Generate comprehensive documentation for any codebase in seconds with our advanced AI-powered analysis engine.",
-    liveUrl: "https://www.docgen.dev/",
-    githubUrl: "",
-    tech: ["React", "Tailwind CSS", "Framer Motion", "API"],
-    image: "/project-images/docgenai.png",
-    status: "online"
-  },
-  {
-    title: 'reX',
-    description: 'An online reward exchange platform.',
-    liveUrl: 'https://rex-beige.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/reX',
-    tech: ['TypeScript', 'React', 'Express', 'MongoDB'],
-    image: '/project-images/reX.png',
-    status: 'online',
-  },
-  {
-    title: 'UniZ',
-    description: 'Emerging university management system with advanced Outpass Management features.',
-    liveUrl: 'https://sreesuniz.vercel.app/student',
-    githubUrl: 'https://github.com/sreecharan-desu/uniZ',
-    tech: ['TypeScript', 'Prisma', 'React', 'Node.js'],
-    image: '/project-images/uniZ.png',
-    status: 'online',
-  },
-  {
-    title: 'Spay',
-    description: 'Spay is a secure and seamless payment gateway powered by a custom-built dummy bank server, simulating real-world banking for modern app integration.',
-    liveUrl: 'https://srees-spay.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/Spay',
-    tech: ['TypeScript', 'Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB'],
-    image: '/project-images/Spay.png',
-    status: 'building',
-  },
-  {
-    title: 'CampusSchield',
-    description: 'A safety companion for university students with low confidence (Introverts).',
-    liveUrl: 'https://campus-schield-frontend.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/Campusschield-v.1.0.2',
-    tech: ['React', 'JavaScript', 'Node.js', 'Express', 'TailwindCSS', 'MongoDB'],
-    image: '/project-images/campusschield.png',
-    status: 'online',
-  },
-  {
-    title: 'echo.ink',
-    description: 'A basic functional blogging application - powered with hono & cloudflare workers',
-    liveUrl: 'https://srees-echoink.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/echo.ink',
-    tech: ['React', 'TypeScript', 'TailwindCSS', 'Hono', 'Cloudflare workers', 'Prisma', 'Postgres', 'NeonDB'],
-    image: '/project-images/echo.ink.png',
-    status: 'online',
-  },
-  {
-    title: 'TaskMaster',
-    description: 'A full-stack todo application with real-time updates and secure authentication.',
-    liveUrl: 'https://task-master-black.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/TaskMaster',
-    tech: ['React', 'Node.js', 'MongoDB', 'JWT'],
-    image: '/project-images/taskmaster.png',
-    status: 'online',
-  },
-  {
-    title: 'StudySpace',
-    description: 'Platform for students to join study groups and collaborate offline.',
-    liveUrl: 'https://studyspace-exp.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/Studyspace',
-    tech: ['TypeScript', 'React', 'Recoil', 'TailwindCSS'],
-    image: '/project-images/studyspace.png',
-    status: 'online',
-  },
-  {
-    title: 'ChromaPost',
-    description: 'An online ad generator built with modern web technologies.',
-    liveUrl: 'https://chromapost.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/ChromaPost',
-    tech: ['React', 'TypeScript', 'Vite', 'TailwindCSS'],
-    image: '/project-images/chromapost.png',
-    status: 'online',
-  },
-  {
-    title: 'CampusHub',
-    description: 'A central place for all campus events.',
-    liveUrl: 'https://srees-campushub.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/CampusHub',
-    tech: ['React', 'TypeScript', 'TailwindCSS'],
-    image: '/project-images/campushub.png',
-    status: 'online',
-  },
-  {
-    title: 'GradeLite',
-    description: 'A grade management and visualization tool for students.',
-    liveUrl: 'https://sreecharan-desu.github.io/Gradelite/#GradeLite',
-    githubUrl: 'https://github.com/sreecharan-desu/Gradelite',
-    tech: ['JavaScript', 'HTML', 'CSS'],
-    image: '/project-images/gradelite.png',
-    status: 'online',
-  },
-  {
-    title: "Portfolio v_1.0.0",
-    description: "My Initial portfolio website built with React, Tailwind CSS, and Framer Motion.",
-    liveUrl: "https://sr3x0r-portfolio.vercel.app/",
-    githubUrl: "https://github.com/sreecharan-desu/Portfolio-v_1.0.1",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-    image: "/project-images/portfolio.png",
-    status: "online"
-  },
-];
-
-// DevOps Projects Data
-const devopsProjects: Project[] = [
-  {
-    title: 'CI/CD Pipeline',
-    description: 'End-to-end CI/CD workflow automated using GitHub Actions, Docker, and AWS EC2. Code changes trigger Docker builds, push to Docker Hub, and deploy live via NGINX reverse proxy — all fully containerized and production-ready.',
-    liveUrl: 'https://github.com/sreecharan-desu/hello-ci-cd',
-    githubUrl: 'https://github.com/sreecharan-desu/hello-ci-cd',
-    tech: ['Docker', 'GitHub Actions', 'NGINX', 'AWS EC2', 'TypeScript'],
-    image: '/project-images/ci-cd.png',
-    status: 'online',
-  }
-];
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

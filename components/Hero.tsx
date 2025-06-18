@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 // import Image from 'next/image';
 import Navbar from './Navbar'; // Assuming Navbar is a separate component
 import { FaComment } from 'react-icons/fa';
-import { socialLinks, whatsappLink } from '../lib/socialLinks'; // Assuming these are imported from a data file
+import { socialLinks, whatsappLink } from '../lib/socials'; // Assuming these are imported from a data file
 import Image from 'next/image';
 
 const Hero = () => {
