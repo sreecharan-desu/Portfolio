@@ -1,6 +1,5 @@
-
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
@@ -29,13 +28,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 blur-effect">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <div className="text-white text-xl font-bold tracking-widest">
-            SR3X0R
-          </div>
+          <div className="text-white text-xl font-bold tracking-widest">SR3X0R</div>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <div key={link.name}>
                 <Link
                   to={link.to}
@@ -70,7 +67,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden flex flex-col items-start px-4 pb-4 space-y-3">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <Link
                 key={link.name}
                 to={link.to}
@@ -99,4 +96,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default Navbar;

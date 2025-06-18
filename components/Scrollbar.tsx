@@ -1,41 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { courses } from '@/lib/socials';
 
 const SmoothMarquee = () => {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
-
-  const courses = [
-    {
-      id: 1,
-      title: "Hackathon's",
-      subtitle: "Women Safety PWA",
-      description: "Developed a progressive web app for women’s safety at a hackathon at RGUKT Ongole (IIIT AP), focusing on real-time assistance and user-friendly design.",
-      image: "/scroll-bar/hackathon.jpg",
-    },
-    {
-      id: 2,
-      title: "Academics",
-      subtitle: "ORNATE 2025",
-      description: "Received an award from the Director at Ornate 2025, RGUKT Ongole (IIIT AP), recognizing my contributions in hackathons and academics.",
-      image: "/scroll-bar/price.jpg",
-    },
-    {
-      id: 3,
-      title: "Culturals",
-      subtitle: "ORNATE 2025",
-      description: "Performed a dance at Ornate 2025, showcasing my creative side at RGUKT Ongole (IIIT AP) cultural fest.",
-      image: "/scroll-bar/dance-performance.jpg",
-    },
-    {
-      id: 4,
-      title: "YouTube Insights",
-      subtitle: "CONTENT CREATION",
-      description: "Run a YouTube channel sharing insights on tech, coding, and student life at RGUKT Ongole (IIIT AP).",
-      image: "/scroll-bar/youtube-channel.png",
-    },
-  ];
 
   const duplicatedCourses = [...courses, ...courses];
 
@@ -60,7 +29,7 @@ const SmoothMarquee = () => {
         className="flex-shrink-0 w-[20rem] sm:w-[26rem] md:w-[32rem] h-[12rem] sm:h-[16rem] md:h-[18rem] mx-3 relative overflow-hidden rounded-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
         onClick={handleTooltipToggle}
         tabIndex={0}
-        onKeyDown={(e) => {
+        onKeyDown={e => {
           if (e.key === 'Enter' || e.key === ' ') {
             handleTooltipToggle(e);
           }
@@ -80,9 +49,7 @@ const SmoothMarquee = () => {
           <div className="text-base font-medium tracking-widest uppercase opacity-90">
             {course.subtitle}
           </div>
-          <h3 className="text-2xl sm:text-3xl font-bold leading-tight mt-1">
-            {course.title}
-          </h3>
+          <h3 className="text-2xl sm:text-3xl font-bold leading-tight mt-1">{course.title}</h3>
           <div
             className={`absolute inset-0 bg-black/80 p-5 sm:p-6 flex flex-col justify-center text-sm sm:text-base transition-opacity duration-300 z-20 ${
               isTooltipActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -97,7 +64,6 @@ const SmoothMarquee = () => {
 
   return (
     <div className="w-full py-10 bg-black">
-      
       <div className="w-full bg-black">
         <div
           ref={marqueeRef}
@@ -117,7 +83,11 @@ const SmoothMarquee = () => {
             }}
           >
             {duplicatedCourses.map((course, index) => (
-              <CourseCard key={`${course.id}-${Math.floor(index / courses.length)}`} course={course} index={index} />
+              <CourseCard
+                key={`${course.id}-${Math.floor(index / courses.length)}`}
+                course={course}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -166,7 +136,7 @@ const SmoothMarquee = () => {
           font-family: 'Inter', sans-serif;
           font-size: 3.5rem;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #ffffff;
           letter-spacing: -0.02em;
           line-height: 1.1;
           text-transform: uppercase;
@@ -181,7 +151,7 @@ const SmoothMarquee = () => {
           transform: translateX(-50%);
           width: 6rem;
           height: 0.5rem;
-          background: linear-gradient(90deg, #FF6B00 0%, #FFD700 100%);
+          background: linear-gradient(90deg, #ff6b00 0%, #ffd700 100%);
           border-radius: 2px;
           z-index: 1;
         }

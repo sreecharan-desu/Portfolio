@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 // import Image from 'next/image';
 import Navbar from './Navbar'; // Assuming Navbar is a separate component
 import { FaComment } from 'react-icons/fa';
-import { socialLinks, whatsappLink } from '../lib/socialLinks'; // Assuming these are imported from a data file
+import { socialLinks, whatsappLink } from '../lib/socials'; // Assuming these are imported from a data file
 import Image from 'next/image';
 
 const Hero = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
               <Image
                 src="/sr3x0r-icon.jpeg"
                 alt="SreeCharan"
-                width= {400}
+                width={400}
                 height={400}
                 className="object-contain rounded-full filter"
                 priority
@@ -86,7 +86,8 @@ const Hero = () => {
               <div
                 className="absolute inset-0 rounded-full -z-10"
                 style={{
-                  background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(210, 210, 230, 0.2) 100%)',
+                  background:
+                    'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(210, 210, 230, 0.2) 100%)',
                   margin: '-1px',
                   opacity: 0.6,
                 }}
@@ -94,7 +95,8 @@ const Hero = () => {
               <div
                 className="absolute inset-0 rounded-full opacity-20"
                 style={{
-                  background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
+                  background:
+                    'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
                 }}
               />
               <span className="relative z-10 flex items-center gap-2">

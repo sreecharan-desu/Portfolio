@@ -1,30 +1,15 @@
-import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import { testimonials } from '@/lib/socials';
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
 
-  const testimonials = [
-    {
-      quote: "You've done a phenomenal job building the platform — your clarity, speed, and attention to detail really stood out.",
-      name: "Aniket Singh",
-      title: "CEO, DocGen",
-      image: "/aniket.jpg",
-      profile : "https://www.linkedin.com/in/aniket-singh-9a4860190/"
-    },
-    {
-      quote: "Your work is genuinely impressive — clean, efficient, and well-thought-out.",
-      name: "Varshith",
-      title: "CTO, DocGen",
-      image: "/varshith.jpg",
-      profile : "https://www.linkedin.com/in/varshithg17/"
-    },
-  ];
-
   // Memoize the interval callback to prevent re-creation
   const rotateTestimonials = useCallback(() => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    setActiveIndex(prevIndex => (prevIndex + 1) % testimonials.length);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [testimonials.length]);
 
   useEffect(() => {
@@ -59,11 +44,7 @@ const Testimonials = () => {
               onMouseLeave={() => setIsHovering(false)}
             >
               <div className="mb-6">
-                <svg
-                  className="h-6 w-6 text-gray-400 mb-3"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="h-6 w-6 text-gray-400 mb-3" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
                 <p className="text-sm md:text-base italic text-gray-300 leading-relaxed">
@@ -98,11 +79,7 @@ const Testimonials = () => {
             className="relative bg-white/5 border border-white/10 backdrop-blur-sm p-6 rounded-xl text-gray-300"
           >
             <div className="mb-6">
-              <svg
-                className="h-6 w-6 text-gray-400 mb-3"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="h-6 w-6 text-gray-400 mb-3" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p className="text-sm italic text-gray-300 leading-relaxed min-h-24">
@@ -122,8 +99,14 @@ const Testimonials = () => {
                 />
               </div>
               <div>
-                <a href={testimonials[activeIndex].profile} target="_blank"> <p className="text-white font-medium">{testimonials[activeIndex].name}</p> </a>
-                <a href={testimonials[activeIndex].profile} target="_blank"> <p className="text-xs text-gray-300">{testimonials[activeIndex].title}</p> </a>
+                <a href={testimonials[activeIndex].profile} target="_blank">
+                  {' '}
+                  <p className="text-white font-medium">{testimonials[activeIndex].name}</p>{' '}
+                </a>
+                <a href={testimonials[activeIndex].profile} target="_blank">
+                  {' '}
+                  <p className="text-xs text-gray-300">{testimonials[activeIndex].title}</p>{' '}
+                </a>
               </div>
             </div>
           </div>
@@ -135,9 +118,7 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  activeIndex === index
-                    ? "bg-gray-500 w-6"
-                    : "bg-white/30 hover:bg-white/50"
+                  activeIndex === index ? 'bg-gray-500 w-6' : 'bg-white/30 hover:bg-white/50'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -146,7 +127,6 @@ const Testimonials = () => {
         </div>
 
         {/* Call To Action */}
-
       </div>
     </section>
   );

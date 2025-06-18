@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react';
 import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { FaYoutube } from 'react-icons/fa';
 import axios from 'axios';
 import { FiYoutube } from 'react-icons/fi';
+import { CHANNEL_ID } from '@/lib/socials';
 
 interface YouTubeVideo {
   id: { videoId: string };
@@ -29,7 +29,6 @@ const YouTubeSection = () => {
   const [error, setError] = useState<string | null>(null);
 
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
-  const CHANNEL_ID = 'UCUaEqn8aDVtHE9AaDekpQtQ';
   const MAX_RESULTS = 20;
 
   useEffect(() => {
@@ -42,19 +41,16 @@ const YouTubeSection = () => {
 
       try {
         // Step 1: Fetch video IDs
-        const searchResponse = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search`,
-          {
-            params: {
-              part: 'snippet',
-              channelId: CHANNEL_ID,
-              maxResults: MAX_RESULTS,
-              order: 'date',
-              type: 'video',
-              key: API_KEY,
-            },
-          }
-        );
+        const searchResponse = await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
+          params: {
+            part: 'snippet',
+            channelId: CHANNEL_ID,
+            maxResults: MAX_RESULTS,
+            order: 'date',
+            type: 'video',
+            key: API_KEY,
+          },
+        });
 
         const videoIds = searchResponse.data.items
           ?.map((item: any) => item.id.videoId)
@@ -68,16 +64,13 @@ const YouTubeSection = () => {
         }
 
         // Step 2: Fetch video details to get durations, tags, and embeddable status
-        const videosResponse = await axios.get(
-          `https://www.googleapis.com/youtube/v3/videos`,
-          {
-            params: {
-              part: 'snippet,contentDetails,status',
-              id: videoIds,
-              key: API_KEY,
-            },
-          }
-        );
+        const videosResponse = await axios.get(`https://www.googleapis.com/youtube/v3/videos`, {
+          params: {
+            part: 'snippet,contentDetails,status',
+            id: videoIds,
+            key: API_KEY,
+          },
+        });
 
         const filteredVideos = videosResponse.data.items.filter((video: YouTubeVideo) => {
           // Check if video is embeddable
@@ -97,9 +90,11 @@ const YouTubeSection = () => {
           // Exclude videos 60 seconds or shorter and videos with #shorts tag
           const isNotShort =
             totalSeconds > 60 &&
-            !(video.snippet.tags?.includes('shorts') ||
+            !(
+              video.snippet.tags?.includes('shorts') ||
               video.snippet.title.toLowerCase().includes('#shorts') ||
-              video.snippet.description.toLowerCase().includes('#shorts'));
+              video.snippet.description.toLowerCase().includes('#shorts')
+            );
 
           return isNotShort;
         });
@@ -122,8 +117,8 @@ const YouTubeSection = () => {
           err.response?.status === 403
             ? 'YouTube API quota exceeded. Please try again later.'
             : err.response?.status === 400
-            ? 'Invalid YouTube API request. Please contact the site administrator.'
-            : 'Failed to load videos. Please try again later.'
+              ? 'Invalid YouTube API request. Please contact the site administrator.'
+              : 'Failed to load videos. Please try again later.'
         );
         setLoading(false);
       }
@@ -210,7 +205,7 @@ const YouTubeVideoGrid = ({ videos }: { videos: YouTubeVideo[] }) => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                onError={(e) => console.error(`Iframe error for video ${video.id}:`, e)}
+                onError={e => console.error(`Iframe error for video ${video.id}:`, e)}
               ></iframe>
             </div>
 

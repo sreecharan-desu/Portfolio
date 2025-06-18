@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from "react";
-import { FaFileDownload } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { useCallback, useEffect, useState } from 'react';
+import { FaFileDownload } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 // FloatingResumeButton component remains unchanged
 export const FloatingResumeButton = () => {
@@ -8,7 +8,8 @@ export const FloatingResumeButton = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    const isTouch =
+      typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
     setIsTouchDevice(isTouch);
   }, []);
 
