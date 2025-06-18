@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect, useRef } from 'react';
 import { Copy, Check, Terminal as TerminalIcon, ChevronRight } from 'lucide-react';
 import { command } from '@/lib/socials';
@@ -11,7 +10,6 @@ const Terminal = () => {
   const [isMinimized, setIsMinimized] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef(null);
-
 
   // Typing animation
   useEffect(() => {
@@ -55,7 +53,7 @@ const Terminal = () => {
 
   // Keyboard shortcuts
   useEffect(() => {
-    const handleKeyDown = (e:any) => {
+    const handleKeyDown = (e: any) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'c') {
         if (e.target === inputRef.current || e.target.closest('.terminal-container')) {
           e.preventDefault();
@@ -74,9 +72,7 @@ const Terminal = () => {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
           Copy this command to run in your terminal
         </h1>
-        <p className="text-white/80 text-sm md:text-base">
-          My CLI version of Portfolio
-        </p>
+        <p className="text-white/80 text-sm md:text-base">My CLI version of Portfolio</p>
       </div>
 
       <div
@@ -87,24 +83,24 @@ const Terminal = () => {
         aria-label="Terminal Interface"
       >
         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-black/60 to-black/40 border-b border-white/10 backdrop-blur-md">
-    <div className="flex items-center space-x-2">
-  <button
-    onClick={() => setIsMinimized(!isMinimized)}
-    className="header-button w-3 h-3 md:w-4 md:h-4 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors duration-200"
-    title="Minimize terminal"
-    aria-label="Minimize terminal"
-  />
-  <button
-    className="header-button w-3 h-3 md:w-4 md:h-4 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors duration-200"
-    title="Minimize"
-    aria-label="Minimize window"
-  />
-  <button
-    className="header-button w-3 h-3 md:w-4 md:h-4 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors duration-200"
-    title="Maximize"
-    aria-label="Maximize window"
-  />
-</div>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setIsMinimized(!isMinimized)}
+              className="header-button w-3 h-3 md:w-4 md:h-4 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors duration-200"
+              title="Minimize terminal"
+              aria-label="Minimize terminal"
+            />
+            <button
+              className="header-button w-3 h-3 md:w-4 md:h-4 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors duration-200"
+              title="Minimize"
+              aria-label="Minimize window"
+            />
+            <button
+              className="header-button w-3 h-3 md:w-4 md:h-4 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors duration-200"
+              title="Maximize"
+              aria-label="Maximize window"
+            />
+          </div>
           <div className="flex items-center space-x-2 text-white/80 text-xs md:text-sm">
             <TerminalIcon className="w-4 h-4" aria-hidden="true" />
             <span>zsh — 80x24</span>
@@ -166,8 +162,13 @@ const Terminal = () => {
 
       <style jsx>{`
         @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
         }
         .animate-blink {
           animation: blink 0.6s step-end infinite;

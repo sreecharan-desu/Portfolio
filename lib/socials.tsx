@@ -1,10 +1,5 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaXTwitter,
-  FaYoutube,
-  FaDiscord,
-} from 'react-icons/fa6';
+import { Project } from '@/components/Projects';
+import { FaGithub, FaLinkedin, FaXTwitter, FaYoutube, FaDiscord } from 'react-icons/fa6';
 
 // --- Social Links ---
 export const socialLinks = [
@@ -44,7 +39,7 @@ export const fiverr = {
 };
 
 // --- Projects ---
-export const fullstackProjects = [
+export const fullstackProjects: Project[] = [
   {
     title: 'DocgenAI',
     description: 'Generate developer docs for any codebase in seconds using AI.',
@@ -146,7 +141,7 @@ export const fullstackProjects = [
   },
 ];
 
-export const devopsProjects = [
+export const devopsProjects: Project[] = [
   {
     title: 'CI/CD Pipeline',
     description:
@@ -162,24 +157,28 @@ export const devopsProjects = [
 // --- Courses / Activities ---
 export const courses = [
   {
+    id: 1,
     title: "Hackathon's",
     subtitle: 'Women Safety PWA',
     description: 'Built a PWA focused on real-time safety during a university hackathon.',
     image: '/scroll-bar/hackathon.jpg',
   },
   {
+    id: 2,
     title: 'Academics',
     subtitle: 'ORNATE 2025',
     description: 'Awarded by the Director for academic & hackathon excellence.',
     image: '/scroll-bar/price.jpg',
   },
   {
+    id: 3,
     title: 'Culturals',
     subtitle: 'ORNATE 2025',
     description: 'Performed a dance at the cultural fest.',
     image: '/scroll-bar/dance-performance.jpg',
   },
   {
+    id: 4,
     title: 'YouTube Insights',
     subtitle: 'Content Creation',
     description: 'Created content around tech, coding, and life at IIIT.',
@@ -221,3 +220,5 @@ export const experiences = [
 
 // --- Environment ---
 export const CHANNEL_ID = process.env.CHANNEL_ID;
+
+export const command = 'curl -sL who.sreecharandesu.in | bash';

@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import { fiverrGig, fiverrUrl } from '@/lib/socials';
+import { fiverr } from '@/lib/socials';
 import { useState, useEffect } from 'react';
 
 const FreelanceServices = () => {
   // Keep mouse position state for potential future use, but unused here
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -69,7 +67,7 @@ const FreelanceServices = () => {
           {/* Monochrome CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-12">
             <a
-              href={fiverrUrl}
+              href={fiverr.profile}
               target="_blank"
               rel="noopener noreferrer"
               className="relative px-12 py-4 bg-white text-black text-base font-medium rounded-full border border-white focus:outline-none focus:ring-2 focus:ring-white/50"
@@ -77,17 +75,13 @@ const FreelanceServices = () => {
             >
               <span className="relative z-10 flex items-center gap-3">
                 View Profile
-                <svg
-                  className="w-4 h-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
                 </svg>
               </span>
             </a>
             <a
-              href={fiverrGig}
+              href={fiverr.gig}
               target="_blank"
               rel="noopener noreferrer"
               className="relative px-12 py-4 bg-black text-white text-base font-medium rounded-full border border-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/50"

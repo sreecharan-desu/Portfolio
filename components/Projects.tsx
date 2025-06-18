@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Element } from 'react-scroll';
 import { useState, useEffect } from 'react';
@@ -133,7 +133,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         >
           <div
             className="relative max-w-5xl max-h-[90vh] overflow-auto rounded-lg border border-white/20"
-            onClick={(e) => e.stopPropagation()}
+            onClick={e => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
@@ -155,8 +155,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 quality={95}
                 priority
               />
-
-              
             </div>
           </div>
         </div>
@@ -186,15 +184,16 @@ const Projects = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-12">
-    <motion.h2
-          className="text-5xl first-letter:text-6xl sm:text-4xl font-bold text-white text-center mb-12 tracking-tight"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          Projects
-        </motion.h2>          <p className="text-white/50 text-base max-w-xl mx-auto">
+          <motion.h2
+            className="text-5xl first-letter:text-6xl sm:text-4xl font-bold text-white text-center mb-12 tracking-tight"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Projects
+          </motion.h2>{' '}
+          <p className="text-white/50 text-base max-w-xl mx-auto">
             A showcase of my work in full-stack development and DevOps engineering
           </p>
         </div>
@@ -205,7 +204,9 @@ const Projects = () => {
             <button
               onClick={() => handleViewChange('fullstack')}
               className={`px-6 py-2 rounded-full text-sm font-medium ${
-                currentView === 'fullstack' ? 'bg-white text-black' : 'text-white/70 hover:bg-white/20'
+                currentView === 'fullstack'
+                  ? 'bg-white text-black'
+                  : 'text-white/70 hover:bg-white/20'
               }`}
             >
               Full Stack
@@ -222,18 +223,17 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className='flex justify-center place-content-center'>
-                   <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-150 ${
-            isTransitioning ? 'blur-sm opacity-50' : 'blur-none opacity-100'
-          }`}
-        >
-          {currentProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
+        <div className="flex justify-center place-content-center">
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-150 ${
+              isTransitioning ? 'blur-sm opacity-50' : 'blur-none opacity-100'
+            }`}
+          >
+            {currentProjects.map(project => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
         </div>
-        </div>
-   
 
         {/* Section Footer */}
         <div className="text-center mt-12 pt-6 border-t border-white/20">

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { courses } from '@/lib/socials';
@@ -30,7 +29,7 @@ const SmoothMarquee = () => {
         className="flex-shrink-0 w-[20rem] sm:w-[26rem] md:w-[32rem] h-[12rem] sm:h-[16rem] md:h-[18rem] mx-3 relative overflow-hidden rounded-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
         onClick={handleTooltipToggle}
         tabIndex={0}
-        onKeyDown={(e) => {
+        onKeyDown={e => {
           if (e.key === 'Enter' || e.key === ' ') {
             handleTooltipToggle(e);
           }
@@ -50,9 +49,7 @@ const SmoothMarquee = () => {
           <div className="text-base font-medium tracking-widest uppercase opacity-90">
             {course.subtitle}
           </div>
-          <h3 className="text-2xl sm:text-3xl font-bold leading-tight mt-1">
-            {course.title}
-          </h3>
+          <h3 className="text-2xl sm:text-3xl font-bold leading-tight mt-1">{course.title}</h3>
           <div
             className={`absolute inset-0 bg-black/80 p-5 sm:p-6 flex flex-col justify-center text-sm sm:text-base transition-opacity duration-300 z-20 ${
               isTooltipActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -67,7 +64,6 @@ const SmoothMarquee = () => {
 
   return (
     <div className="w-full py-10 bg-black">
-      
       <div className="w-full bg-black">
         <div
           ref={marqueeRef}
@@ -87,7 +83,11 @@ const SmoothMarquee = () => {
             }}
           >
             {duplicatedCourses.map((course, index) => (
-              <CourseCard key={`${course.id}-${Math.floor(index / courses.length)}`} course={course} index={index} />
+              <CourseCard
+                key={`${course.id}-${Math.floor(index / courses.length)}`}
+                course={course}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -136,7 +136,7 @@ const SmoothMarquee = () => {
           font-family: 'Inter', sans-serif;
           font-size: 3.5rem;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #ffffff;
           letter-spacing: -0.02em;
           line-height: 1.1;
           text-transform: uppercase;
@@ -151,7 +151,7 @@ const SmoothMarquee = () => {
           transform: translateX(-50%);
           width: 6rem;
           height: 0.5rem;
-          background: linear-gradient(90deg, #FF6B00 0%, #FFD700 100%);
+          background: linear-gradient(90deg, #ff6b00 0%, #ffd700 100%);
           border-radius: 2px;
           z-index: 1;
         }
