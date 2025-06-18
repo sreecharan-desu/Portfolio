@@ -77,6 +77,15 @@ export const fullstackProjects: Project[] = [
     status: 'building',
   },
   {
+    title: 'CampusSchield',
+    description: 'A safety companion for university students with low confidence (Introverts).',
+    liveUrl: 'https://campus-schield-frontend.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/Campusschield-v.1.0.2',
+    tech: ['React', 'JavaScript', 'Node.js', 'Express', 'TailwindCSS', 'MongoDB'],
+    image: '/project-images/campusschield.png',
+    status: 'online',
+  },
+  {
     title: 'echo.ink',
     description: 'Lightweight blog engine powered by Cloudflare Workers & Hono.',
     liveUrl: 'https://srees-echoink.vercel.app/',
@@ -85,6 +94,7 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/echo.ink.png',
     status: 'online',
   },
+
   {
     title: 'TaskMaster',
     description: 'A focused, full-stack productivity app.',
@@ -219,6 +229,6 @@ export const experiences = [
 ];
 
 // --- Environment ---
-export const CHANNEL_ID = process.env.CHANNEL_ID;
+export const CHANNEL_ID = process.env.CHANNEL_ID || 'UCUaEqn8aDVtHE9AaDekpQtQ';
 
 export const command = 'curl -sL who.sreecharandesu.in | bash';
