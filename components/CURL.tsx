@@ -89,107 +89,103 @@ const Terminal = () => {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
           Run my command in One Click
         </h1>
-        <p className="text-gray-400 text-sm md:text-base">
-          Experience a seamless terminal interface to copy commands effortlessly.
+        <p className="text-white text-sm md:text-base">
+          Experience a seamless terminal interface of mine.
         </p>
       </div>
 
       {/* Main Terminal */}
-<div
-  className={`terminal-container bg-black border border-gray-800 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 ${
-    isMinimized ? 'scale-90 opacity-80' : 'scale-100 opacity-100'
-  }`}
-  role="region"
-  aria-label="Terminal Interface"
->
-  {/* Terminal Header */}
-  <div className="flex items-center justify-between px-5 py-4 bg-gray-900 border-b border-gray-800">
-    <div className="flex items-center space-x-3">
-      <button
-        onClick={() => setIsMinimized(!isMinimized)}
-        className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors duration-200"
-        title="Minimize terminal"
-        aria-label="Minimize terminal"
-      />
-      <button
-        className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors duration-200"
-        title="Minimize"
-        aria-label="Minimize window"
-      />
-      <button
-        className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors duration-200"
-        title="Maximize"
-        aria-label="Maximize window"
-      />
-    </div>
-
-    <div className="flex items-center space-x-2 text-gray-400 text-sm font-mono">
-      <TerminalIcon className="w-4 h-4" aria-hidden="true" />
-      <span>zsh</span>
-      <span className="text-gray-600">•</span>
-      <span className="text-gray-500">~</span>
-    </div>
-
-    <div className="flex items-center space-x-2">
-      <button
-        onClick={copyToClipboard}
-        className="p-2 hover:bg-gray-800 rounded-lg transition-all duration-200 group relative"
-        title="Copy command (⌘C)"
-        aria-label="Copy command to clipboard"
+      <div
+        className={`terminal-container bg-black/70 border border-white/20 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 backdrop-blur-xl ${
+          isMinimized ? 'scale-95 opacity-70' : 'scale-100 opacity-100'
+        }`}
+        role="region"
+        aria-label="Terminal Interface"
       >
-        {copied ? (
-          <Check className="w-4 h-4 text-green-400" />
-        ) : (
-          <Copy className="w-4 h-4 text-gray-400 group-hover:text-white" />
-        )}
-        {copied && (
-          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-md">
-            Copied!
+        {/* Terminal Header */}
+        <div className="flex items-center justify-between px-5 py-4 bg-black/50 border-b border-white/10 backdrop-blur-md">
+          <div className="flex items-center space-x-3">
+            <button
+              onClick={() => setIsMinimized(!isMinimized)}
+              className="w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-colors duration-200"
+              title="Minimize terminal"
+              aria-label="Minimize terminal"
+            />
+            <button
+              className="w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-colors duration-200"
+              title="Minimize"
+              aria-label="Minimize window"
+            />
+            <button
+              className="w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-colors duration-200"
+              title="Maximize"
+              aria-label="Maximize window"
+            />
           </div>
-        )}
-      </button>
-    </div>
-  </div>
 
-  {/* Terminal Content */}
-  <div className="bg-black text-white font-mono text-sm">
-    <div className="p-6 space-y-3">
-      {/* Command Input Line */}
-      <div className="flex items-center group">
-        <div className="flex items-center text-gray-400 select-none">
-          <span className="text-green-400">➜</span>
-          <span className="ml-2 text-blue-400">~</span>
-          <ChevronRight className="w-3 h-3 ml-1" aria-hidden="true" />
+          <div className="flex items-center space-x-2 text-white/80 text-sm font-mono">
+            <TerminalIcon className="w-4 h-4" aria-hidden="true" />
+            <span>zsh</span>
+            <span className="text-white/50">•</span>
+            <span className="text-white/50">~</span>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={copyToClipboard}
+              className="p-2 hover:bg-white/20 rounded-lg transition-all duration-300 group relative"
+              title="Copy command (⌘C)"
+              aria-label="Copy command to clipboard"
+            >
+              {copied ? (
+                <Check className="w-4 h-4 text-white" />
+              ) : (
+                <Copy className="w-4 h-4 text-white/80 group-hover:text-white" />
+              )}
+   
+            </button>
+          </div>
         </div>
-        <div className="ml-3 flex-1 relative">
-          <span
-            className="text-white cursor-pointer hover:bg-gray-900 px-1 py-0.5 rounded transition-colors duration-200"
-            onClick={() => inputRef.current?.focus()}
-            role="textbox"
-            aria-readonly="true"
-          >
-            {displayedCommand || command}
-          </span>
-          <span
-            className={`ml-0.5 font-thin text-white inline-block ${
-              showCursor && !isTyping ? 'animate-blink' : 'opacity-0'
-            }`}
-            aria-hidden="true"
-          >
-            |
-          </span>
-          <input
-            ref={inputRef}
-            className="absolute inset-0 opacity-0 cursor-default"
-            value={command}
-            readOnly
-            aria-label="Terminal command input"
-          />
+
+        {/* Terminal Content */}
+        <div className="bg-transparent text-white font-mono text-sm">
+          <div className="p-6 space-y-3">
+            {/* Command Input Line */}
+            <div className="flex items-center group">
+              <div className="flex items-center text-white/80 select-none">
+                <span className="text-white">➜</span>
+                <span className="ml-2 text-white">~</span>
+                <ChevronRight className="w-3 h-3 ml-1 text-white/80" aria-hidden="true" />
+              </div>
+              <div className="ml-3 flex-1 relative">
+                <span
+                  className="text-white cursor-pointer hover:bg-white/10 px-1 py-0.5 rounded transition-colors duration-300"
+                  onClick={() => inputRef.current?.focus()}
+                  role="textbox"
+                  aria-readonly="true"
+                >
+                  {displayedCommand || command}
+                </span>
+                <span
+                  className={`ml-0.5 font-thin text-white inline-block ${
+                    showCursor && !isTyping ? 'animate-blink' : 'opacity-0'
+                  }`}
+                  aria-hidden="true"
+                >
+                  |
+                </span>
+                <input
+                  ref={inputRef}
+                  className="absolute inset-0 opacity-0 cursor-default"
+                  value={command}
+                  readOnly
+                  aria-label="Terminal command input"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
       <style jsx>{`
         @keyframes blink {
@@ -219,13 +215,25 @@ const Terminal = () => {
         /* Accessibility focus styles */
         button:focus-visible,
         input:focus-visible {
-          outline: 2px solid #60a5fa;
+          outline: 2px solid #ffffff;
           outline-offset: 2px;
         }
 
         /* Enhanced minimized state */
-        .terminal-container.scale-90 {
-          filter: blur(1px);
+        .terminal-container.scale-95 {
+          filter: blur(2px);
+        }
+
+        /* Glassmorphism effect */
+        .terminal-container {
+          background: rgba(0, 0, 0, 0.7);
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Smooth hover effects */
+        button:hover {
+          transform: scale(1.1);
         }
       `}</style>
     </div>

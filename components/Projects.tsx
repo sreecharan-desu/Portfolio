@@ -1,13 +1,10 @@
-"use client"
+"use client";
 
 import { Element } from 'react-scroll';
-import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { useMediaQuery } from 'react-responsive';
+import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 // Unified Project Interface
 interface Project {
@@ -22,7 +19,15 @@ interface Project {
 
 // FullStack Projects Data
 const fullstackProjects: Project[] = [
-
+  {
+    title: "DocgenAI",
+    description: "Generate comprehensive documentation for any codebase in seconds with our advanced AI-powered analysis engine.",
+    liveUrl: "https://www.docgen.dev/",
+    githubUrl: "",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "API"],
+    image: "/project-images/docgenai.png",
+    status: "online"
+  },
   {
     title: 'reX',
     description: 'An online reward exchange platform.',
@@ -41,7 +46,7 @@ const fullstackProjects: Project[] = [
     image: '/project-images/uniZ.png',
     status: 'online',
   },
-    {
+  {
     title: 'Spay',
     description: 'Spay is a secure and seamless payment gateway powered by a custom-built dummy bank server, simulating real-world banking for modern app integration.',
     liveUrl: 'https://srees-spay.vercel.app/',
@@ -121,7 +126,7 @@ const fullstackProjects: Project[] = [
     tech: ["React", "Tailwind CSS", "Framer Motion"],
     image: "/project-images/portfolio.png",
     status: "online"
-  }
+  },
 ];
 
 // DevOps Projects Data
@@ -136,8 +141,6 @@ const devopsProjects: Project[] = [
     status: 'online',
   }
 ];
-
-// Unified ProjectCard Component with Image Popup
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -152,36 +155,33 @@ const ProjectCard = ({ project }: { project: Project }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
   return (
     <>
-      <motion.div
-        className="flex mx-1 flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
+      <div
+        className="flex flex-col bg-black border border-white/20 rounded-lg overflow-hidden"
+        style={{ width: '361px', height: '472px' }}
       >
+        {/* Image Container */}
         <div
-          className="relative h-52 overflow-hidden"
+          className="relative h-[192px] overflow-hidden cursor-pointer"
           onClick={() => setIsModalOpen(true)}
         >
           <Image
             src={project.image || '/images/placeholder.png'}
             alt={project.title}
             fill
-            className="object-cover object-center w-full transition-transform duration-300 hover:scale-105"
-            priority={false}
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-            sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            quality={75}
+            className="object-cover object-center"
+            sizes="361px"
+            quality={85}
             loading="lazy"
           />
         </div>
-        <div className="p-5 flex flex-col flex-1">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-lg font-semibold text-white tracking-tight">{project.title}</h3>
+
+        {/* Content Container */}
+        <div className="p-6 flex flex-col space-y-4 h-[280px] relative">
+          {/* Title and Status */}
+          <div className="flex items-center gap-2">
+            <h3 className="text-xl font-semibold text-white truncate">{project.title}</h3>
             <span
               className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                 project.status === 'online'
@@ -192,178 +192,200 @@ const ProjectCard = ({ project }: { project: Project }) => {
               {project.status}
             </span>
           </div>
-          <p className="text-sm text-gray-300 mb-4 line-clamp-3">{project.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
+          {/* Description */}
+          <p className="text-sm text-white/70 line-clamp-3">{project.description}</p>
+          {/* Technology Stack */}
+          <div className="flex flex-wrap gap-2">
             {project.tech.slice(0, 6).map((tech, i) => (
               <span
                 key={i}
-                className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full"
+                className="px-2.5 py-1 bg-white/10 text-white/70 text-xs font-medium rounded-md border border-white/20"
               >
                 {tech}
               </span>
             ))}
+            {project.tech.length > 6 && (
+              <span className="px-2.5 py-1 bg-white/10 text-white/50 text-xs font-medium rounded-md border border-white/20">
+                +{project.tech.length - 6} more
+              </span>
+            )}
           </div>
-          <div className="flex items-center gap-4 mt-auto">
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors duration-200"
-                aria-label={`View ${project.title} on GitHub`}
-              >
-                <FaGithub className="text-lg" />
-              </a>
-            )}
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors duration-200"
-                aria-label={`View live demo of ${project.title}`}
-              >
-                <FaExternalLinkAlt className="text-lg" />
-              </a>
-            )}
+          {/* Action Links */}
+          <div className="flex items-center justify-between pt-2 border-t border-white/20 absolute bottom-6 left-6 right-6">
+            <div className="flex items-center gap-4">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/70 hover:text-white/80"
+                  aria-label={`View ${project.title} on GitHub`}
+                >
+                  <FaGithub className="text-lg" />
+                  <span className="text-sm font-medium">Code</span>
+                </a>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/70 hover:text-white/80"
+                  aria-label={`View live demo of ${project.title}`}
+                >
+                  <FaExternalLinkAlt className="text-sm" />
+                  <span className="text-sm font-medium">Live Demo</span>
+                </a>
+              )}
+            </div>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="text-xs text-white/70 hover:text-white/80"
+            >
+              View Image
+            </button>
           </div>
         </div>
-      </motion.div>
+      </div>
+
+      {/* Modal */}
       {isModalOpen && (
-      <div
-        className="fixed inset-0 z-50 flex items-center justify-center"
-        style={{
-          background: 'rgba(0, 0, 0, 0.5)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)'
-        }}
-        onClick={() => setIsModalOpen(false)}
-      >
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.8, opacity: 0 }}
-          className="relative max-w-4xl max-h-[80vh] overflow-auto"
-          onClick={(e) => e.stopPropagation()}
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+          onClick={() => setIsModalOpen(false)}
         >
-          <button
-            className="absolute top-2 right-2 text-white bg-black/50 rounded-full p-1"
-            onClick={() => setIsModalOpen(false)}
+          <div
+            className="relative max-w-5xl max-h-[90vh] overflow-auto rounded-lg border border-white/20"
+            onClick={(e) => e.stopPropagation()}
           >
-            <FaTimes />
-          </button>
-          {/* Conditionally render Zoom component */}
-          {isMobile ? (
-            <Image
-              width={800}
-              height={600}
-              src={project.image}
-              alt={project.title}
-              className="object-contain"
-              sizes="(max-width: 767px) 100vw, 80vw"
-              quality={75}
-              loading="lazy"
-            />
-          ) : (
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4 text-white bg-black/80 rounded-full p-2 hover:bg-black/90"
+              onClick={() => setIsModalOpen(false)}
+              aria-label="Close image modal"
+            >
+              <FaTimes className="text-lg" />
+            </button>
+            {/* Image Container */}
+            <div className="relative bg-black rounded-lg overflow-hidden">
               <Image
-                width={800}
-                height={600}
+                width={1200}
+                height={800}
                 src={project.image}
                 alt={project.title}
-                className="object-contain"
-                sizes="(max-width: 767px) 100vw, 80vw"
-                quality={75}
-                loading="lazy"
+                className="object-contain w-full h-full"
+                sizes="90vw"
+                quality={95}
+                priority
               />
-          )}
-        </motion.div>
-      </div>
-    )}
+              {/* Image Info Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black/80 p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <h4 className="text-white text-xl font-semibold">{project.title}</h4>
+                  <span
+                    className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                      project.status === 'online'
+                        ? 'bg-green-500/20 text-green-400'
+                        : 'bg-yellow-500/20 text-yellow-400'
+                    }`}
+                  >
+                    {project.status}
+                  </span>
+                </div>
+                <p className="text-white/70 text-sm">{project.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
 
-// Projects Component
 const Projects = () => {
-  const [showAll, setShowAll] = useState(false);
-  const [showAllDevOps, setShowAllDevOps] = useState(false);
   const [currentView, setCurrentView] = useState<'fullstack' | 'devops'>('fullstack');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Handle view switching with blur effect
+  const handleViewChange = (view: 'fullstack' | 'devops') => {
+    if (view === currentView) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentView(view);
+      setIsTransitioning(false);
+    }, 150);
+  };
+
+  const currentProjects = currentView === 'fullstack' ? fullstackProjects : devopsProjects;
 
   return (
-    <Element name="projects" className="py-12 bg-black -mt-20 md:mt-0 sm:mt-0 lg:-mt-10">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-4xl first-letter:text-5xl font-bold text-white mb-8 text-center"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
+    <Element name="projects" className="py-16 bg-black">
+      <div className="container mx-auto px-4 max-w-6xl">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+    <motion.h2
+          className="text-5xl first-letter:text-6xl sm:text-4xl font-bold text-white text-center mb-12 tracking-tight"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
         >
           Projects
-        </motion.h2>
+        </motion.h2>          <p className="text-white/50 text-base max-w-xl mx-auto">
+            A showcase of my work in full-stack development and DevOps engineering
+          </p>
+        </div>
 
         {/* Toggle Bar */}
         <div className="flex justify-center mb-8">
-          <button
-            onClick={() => setCurrentView('fullstack')}
-            className={`px-4 py-2 mx-2 rounded-full border border-white/10 ${
-              currentView === 'fullstack' ? 'bg-white/20 text-white' : 'bg-black/20 text-gray-300'
-            } hover:bg-white/20 transition`}
-          >
-            FullStack
-          </button>
-          <button
-            onClick={() => setCurrentView('devops')}
-            className={`px-4 py-2 mx-2 rounded-full border border-white/10 ${
-              currentView === 'devops' ? 'bg-white/20 text-white' : 'bg-black/20 text-gray-300'
-            } hover:bg-white/20 transition`}
-          >
-            DevOps
-          </button>
+          <div className="inline-flex bg-white/10 rounded-full p-1 border border-white/20">
+            <button
+              onClick={() => handleViewChange('fullstack')}
+              className={`px-6 py-2 rounded-full text-sm font-medium ${
+                currentView === 'fullstack' ? 'bg-white text-black' : 'text-white/70 hover:bg-white/20'
+              }`}
+            >
+              Full Stack
+            </button>
+            <button
+              onClick={() => handleViewChange('devops')}
+              className={`px-6 py-2 rounded-full text-sm font-medium ${
+                currentView === 'devops' ? 'bg-white text-black' : 'text-white/70 hover:bg-white/20'
+              }`}
+            >
+              DevOps
+            </button>
+          </div>
         </div>
 
-        {/* Conditional Rendering Based on View */}
-        {currentView === 'fullstack' ? (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {fullstackProjects.slice(0, showAll ? fullstackProjects.length : 2).map((project) => (
-                <ProjectCard key={project.title} project={project} />
-              ))}
-            </div>
-            {fullstackProjects.length > 2 && (
-              <div className="text-center">
-                <button
-                  onClick={() => setShowAll(!showAll)}
-                  className="px-6 py-2 bg-black/20 text-white rounded-full border border-white/10 hover:bg-white/20 transition"
-                >
-                  {showAll ? 'Show Less' : 'Show All'}
-                </button>
-              </div>
-            )}
-          </>
-        ) : (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {devopsProjects.slice(0, showAllDevOps ? devopsProjects.length : 4).map((project) => (
-                <ProjectCard key={project.title} project={project} />
-              ))}
-            </div>
-            {devopsProjects.length > 4 && (
-              <div className="text-center">
-                <button
-                  onClick={() => setShowAllDevOps(!showAllDevOps)}
-                  className="px-6 py-2 bg-black/20 text-white rounded-full border border-white/10 hover:bg-white/20 transition"
-                >
-                  {showAllDevOps ? 'Show Less' : 'Show More'}
-                </button>
-              </div>
-            )}
-          </>
-        )}
+        {/* Projects Grid */}
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-150 ${
+            isTransitioning ? 'blur-sm opacity-50' : 'blur-none opacity-100'
+          }`}
+        >
+          {currentProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+
+        {/* Section Footer */}
+        <div className="text-center mt-12 pt-6 border-t border-white/20">
+          <p className="text-white/50 text-sm">
+            More projects coming soon •{' '}
+            <a
+              href="https://github.com/sreecharan-desu"
+              className="text-white/70 hover:text-white/80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View all on GitHub
+            </a>
+          </p>
+        </div>
       </div>
     </Element>
   );
 };
 
 export default Projects;
-
-
