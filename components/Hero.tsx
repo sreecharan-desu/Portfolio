@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-10 lg:px-16 blur-effect">
         <div className="flex flex-col items-center gap-8 md:gap-12">
           {/* Profile Image */}
-          <div className="w-64 sm:w-52 md:w-32 lg:w-72">
+          <div className="w-64 sm:w-52 md:w-64 lg:w-72">
             <div className="relative aspect-square rounded-full overflow-hidden border-4 border-white/10 shadow-lg">
               <Image
                 src="/sr3x0r-icon.jpeg"
@@ -61,7 +61,7 @@ const Hero = () => {
             <p className="text-base sm:text-lg text-gray-400 mb-8">
               Follow me on{' '}
               <a
-                href="https://x.com/sr3x0r"
+                href={socialLinks[2].url}
                 className="text-gray-300 hover:text-white transition-colors duration-200 inline-flex items-center gap-1 underline underline-offset-2"
                 target="_blank"
                 rel="noopener noreferrer"

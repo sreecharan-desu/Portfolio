@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Element } from 'react-scroll';
 import Hero from '@/components/Hero';
 import WorkExperience from '@/components/WorkExperience';
@@ -14,8 +15,17 @@ import SmoothMarquee from '@/components/Scrollbar';
 import Terminal from '@/components/CURL';
 
 export default function PortfolioPage() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 100); // Micro-second blur duration
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="bg-black">
+    <div className={`bg-black transition-all duration-200 ${isLoading ? 'filter blur-[2px]' : ''}`}>
       <div className="bg-black text-white lg:ml-20 lg:mr-20">
         {/* Hero + Scrollbar */}
         <Element name="home" className="m-0 p-0 bg-black">
