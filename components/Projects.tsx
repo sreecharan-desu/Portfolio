@@ -278,22 +278,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 quality={95}
                 priority
               />
-              {/* Image Info Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-black/80 p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <h4 className="text-white text-xl font-semibold">{project.title}</h4>
-                  <span
-                    className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                      project.status === 'online'
-                        ? 'bg-green-500/20 text-green-400'
-                        : 'bg-yellow-500/20 text-yellow-400'
-                    }`}
-                  >
-                    {project.status}
-                  </span>
-                </div>
-                <p className="text-white/70 text-sm">{project.description}</p>
-              </div>
+
+              
             </div>
           </div>
         </div>
@@ -359,7 +345,8 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div
+        <div className='flex justify-center place-content-center'>
+                   <div
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-150 ${
             isTransitioning ? 'blur-sm opacity-50' : 'blur-none opacity-100'
           }`}
@@ -368,6 +355,8 @@ const Projects = () => {
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
+        </div>
+   
 
         {/* Section Footer */}
         <div className="text-center mt-12 pt-6 border-t border-white/20">
