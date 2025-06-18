@@ -34,6 +34,12 @@ import {
   SiAwslambda,
   SiNginx,
   SiVite,
+  SiPrometheus,
+  SiApachekafka,
+  SiAwsamplify,
+  SiElasticsearch,
+  SiJenkins,
+  SiTerraform,
 } from 'react-icons/si';
 import { FaGit, FaPython, FaNode, FaServer } from 'react-icons/fa';
 import { Flame } from 'lucide-react';
@@ -71,21 +77,22 @@ const Skills = () => {
     { name: 'Redis', icon: <SiRedis color="#DC382D" /> },
     // { name: 'GraphQL', icon: <SiGraphql color='#E10098' /> },
     { name: 'Prisma', icon: <SiPrisma color="#FFFFFF" /> },
-    // { name: 'Elasticsearch', icon: <SiElasticsearch color='#005571' /> },
-    // { name: 'Apache Kafka', icon: <SiApachekafka color='#FFFFFF' /> },
+    { name: 'Elasticsearch', icon: <SiElasticsearch color="#005571" /> },
+    { name: 'Apache Kafka', icon: <SiApachekafka color="#FFFFFF" /> },
 
     // DevOps & Cloud
     { name: 'Docker', icon: <SiDocker color="#2496ED" /> },
     { name: 'Kubernetes', icon: <SiKubernetes color="#326CE5" /> },
     { name: 'AWS', icon: <SiAwslambda color="#FF9900" /> },
-    // { name: 'AWS Amplify', icon: <SiAwsamplify color='#FF9900' /> },
-    // { name: 'Terraform', icon: <SiTerraform color='#7B42BC' /> },
+    { name: 'AWS Amplify', icon: <SiAwsamplify color="#FF9900" /> },
+    { name: 'Terraform', icon: <SiTerraform color="#7B42BC" /> },
     { name: 'GitHub Actions', icon: <SiGithubactions color="#2088FF" /> },
-    // { name: 'Jenkins', icon: <SiJenkins color='#D24939' /> },
+    { name: 'Jenkins', icon: <SiJenkins color="#D24939" /> },
     { name: 'Vercel', icon: <SiVercel color="#FFFFFF" /> },
     { name: 'Netlify', icon: <SiNetlify color="#00C7B7" /> },
     { name: 'Nginx', icon: <SiNginx color="#009639" /> },
-    // { name: 'Prometheus', icon: <SiPrometheus color='#E6522C' /> },
+    { name: 'Prometheus', icon: <SiPrometheus color="#E6522C" /> },
+    { name: 'Garfana', icon: <FaServer color="#E6522C" /> },
 
     // Tools & Infrastructure
     { name: 'Git', icon: <FaGit color="#F05032" /> },
