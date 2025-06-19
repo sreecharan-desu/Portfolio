@@ -166,19 +166,20 @@ export const devopsProjects: Project[] = [
 
 // --- Courses / Activities ---
 export const courses = [
+
   {
     id: 1,
-    title: "Hackathon's",
-    subtitle: 'Women Safety PWA',
-    description: 'Built a PWA focused on real-time safety during a university hackathon.',
-    image: '/scroll-bar/hackathon.jpg',
-  },
-  {
-    id: 2,
     title: 'Academics',
     subtitle: 'ORNATE 2025',
     description: 'Awarded by the Director for academic & hackathon excellence.',
     image: '/scroll-bar/price.jpg',
+  },
+  {
+    id: 2,
+    title: "Hackathon's",
+    subtitle: 'Women Safety PWA',
+    description: 'Built a PWA focused on real-time safety during a university hackathon.',
+    image: '/scroll-bar/hackathon.jpg',
   },
   {
     id: 3,
