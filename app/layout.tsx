@@ -43,7 +43,7 @@ export const metadata: any = {
     siteName: 'Sr3x0r',
     images: [
       {
-        url: 'https://sreecharandesu.in/sr3x0r-icon.jpeg',
+        url: 'https://sreecharandesu.in/link-preview.png',
         width: 1200,
         height: 630,
         alt: 'Sr3x0r Icon',
@@ -57,7 +57,7 @@ export const metadata: any = {
     title: 'SreeCharan Desu | Sr3x0r – FullStack & DevOps Engineer',
     description:
       'Official site of SreeCharan Desu (aka Sr3x0r) – CS Junior turned FullStack & DevOps Engineer. Explore projects, blogs, and more.',
-    images: ['https://sreecharandesu.in/sr3x0r-icon.jpeg'],
+    images: ['https://sreecharandesu.in/link-preview.png'],
   },
 };
 
