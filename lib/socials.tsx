@@ -166,7 +166,6 @@ export const devopsProjects: Project[] = [
 
 // --- Courses / Activities ---
 export const courses = [
-
   {
     id: 1,
     title: 'Academics',
