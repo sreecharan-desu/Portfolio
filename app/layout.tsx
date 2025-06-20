@@ -36,7 +36,7 @@ export const metadata: any = {
     icon: '/sr3x0r-icon.jpeg',
   },
   openGraph: {
-    title: 'SreeCharan Desu | Sr3x0r – FullStack & DevOps Engineer',
+    title: 'SreeCharan Desu – FullStack & DevOps Engineer',
     description:
       'Official site of SreeCharan Desu (AKA Sr3x0r) – CS Junior turned FullStack & DevOps Engineer. Explore projects, blogs, and more.',
     url: 'https://sreecharandesu.in/',
