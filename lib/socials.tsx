@@ -1,4 +1,5 @@
 import { Project } from '@/components/Projects';
+import { FaChessKnight } from 'react-icons/fa';
 import { FaGithub, FaLinkedin, FaXTwitter, FaYoutube, FaDiscord } from 'react-icons/fa6';
 
 // --- Social Links ---
@@ -27,6 +28,11 @@ export const socialLinks = [
     name: 'Discord',
     url: 'https://discord.com/users/1370022259606945792',
     icon: FaDiscord,
+  },
+  {
+    name: 'Chess.com',
+    url: 'https://www.chess.com/member/SreeCharanDesu',
+    icon: FaChessKnight,
   },
 ];
 
