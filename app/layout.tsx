@@ -46,7 +46,7 @@ export const metadata: any = {
         url: 'https://sreecharandesu.in/link-preview.png',
         width: 1200,
         height: 630,
-        alt: 'SreeCharan Desu Icon',
+        alt: 'SreeCharan Desu',
       },
     ],
     locale: 'en_US',
@@ -54,7 +54,7 @@ export const metadata: any = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SreeCharan Desu | Sr3x0r – FullStack & DevOps Engineer',
+    title: 'SreeCharan Desu – FullStack & DevOps Engineer',
     description:
       'Official site of SreeCharan Desu – CS Junior turned FullStack & DevOps Engineer. Explore projects, blogs, and more.',
     images: ['https://sreecharandesu.in/link-preview.png'],

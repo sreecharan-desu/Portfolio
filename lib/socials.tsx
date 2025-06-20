@@ -83,6 +83,16 @@ export const fullstackProjects: Project[] = [
     status: 'building',
   },
   {
+    title: 'Schat',
+    description:
+      'SChat is a real-time posting board with Google login. Post and see messages instantly — no history, just whats happening now.',
+    liveUrl: 'https://srees-schat.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/Schat',
+    tech: ['Next.js', 'Tailwind', 'Websockets', 'TypeScript', 'Node'],
+    image: '/project-images/Schat.png',
+    status: 'online',
+  },
+  {
     title: 'CampusSchield',
     description: 'A safety companion for university students with low confidence (Introverts).',
     liveUrl: 'https://campus-schield-frontend.vercel.app/',
