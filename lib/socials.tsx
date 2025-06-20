@@ -89,7 +89,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://srees-schat.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/Schat',
     tech: ['Next.js', 'Tailwind', 'Websockets', 'TypeScript', 'Node'],
-    image: '/project-images/Schat.png',
+    image: '/project-images/schat.png',
     status: 'online',
   },
   {
