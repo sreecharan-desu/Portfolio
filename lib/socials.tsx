@@ -214,7 +214,7 @@ export const devopsProjects: Project[] = [
 
 export const slides = [
   {
-    id: 1,
+    id: 3,
     title: 'Open Source',
     subtitle: 'GitHub Overview',
     description: 'Active OSS contributor — commits, PRs, and issues across diverse projects.',
@@ -228,7 +228,7 @@ export const slides = [
     image: '/scroll-bar/hackathon.jpg',
   },
   {
-    id: 3,
+    id: 1,
     title: 'Academics',
     subtitle: 'ORNATE 2025',
     description: 'Awarded by the Director for academic & hackathon excellence.',
