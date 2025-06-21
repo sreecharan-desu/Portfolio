@@ -74,7 +74,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="koNSYWvj-OocClKflR2QfftPUCohXsaExIJ9ZVH0KBQ"
         />
-
+        <link rel="preload" as="image" href="/sr3x0r-icon.jpeg" />
         {/* Explicit title & description in case Next.js doesn’t inject automatically */}
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-// import Image from 'next/image';
-import Navbar from './Navbar'; // Assuming Navbar is a separate component
+import Navbar from './Navbar';
 import { FaComment } from 'react-icons/fa';
-import { socialLinks, whatsappLink } from '../lib/socials'; // Assuming these are imported from a data file
+import { socialLinks, whatsappLink } from '../lib/socials';
 import Image from 'next/image';
+import Profile from '@/public/sr3x0r-icon.jpeg';
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -21,12 +21,13 @@ const Hero = () => {
           <div className="w-64 sm:w-52 md:w-64 lg:w-72">
             <div className="relative aspect-square rounded-full overflow-hidden border-4 border-white/10 shadow-lg">
               <Image
-                src="/sr3x0r-icon.jpeg"
+                src={Profile}
                 alt="SreeCharan"
                 width={400}
                 height={400}
                 className="object-contain rounded-full filter"
                 priority
+                placeholder="blur"
               />
             </div>
           </div>
