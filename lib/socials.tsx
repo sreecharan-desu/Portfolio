@@ -45,7 +45,6 @@ export const fiverr = {
 };
 
 export const fullstackProjects: Project[] = [
-  // 1. AI tooling
   {
     title: 'DocgenAI',
     description:
@@ -56,20 +55,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/docgenai.png',
     status: 'online',
   },
-
-  // 2. Community engagement
-  {
-    title: 'reX',
-    description:
-      'A community-first reward exchange platform built to simplify peer recognition, gamify interactions, and foster engagement.',
-    liveUrl: 'https://rex-beige.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/reX',
-    tech: ['TypeScript', 'React', 'Express', 'MongoDB', 'JWT', 'Vercel'],
-    image: '/project-images/reX.png',
-    status: 'online',
-  },
-
-  // 3. Role-based portal
   {
     title: 'UniZ',
     description:
@@ -80,8 +65,26 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/uniZ.png',
     status: 'online',
   },
-
-  // 4. Edge microservices
+  {
+    title: 'Schat',
+    description:
+      'Real-time posting board with Google login. Instantly see messages from everyone. No edit, no history — just raw moments.',
+    liveUrl: 'https://srees-schat.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/Schat',
+    tech: ['Next.js', 'Tailwind', 'Websockets', 'TypeScript', 'Node', 'Vercel'],
+    image: '/project-images/schat.png',
+    status: 'online',
+  },
+  {
+    title: 'reX',
+    description:
+      'A community-first reward exchange platform built to simplify peer recognition, gamify interactions, and foster engagement.',
+    liveUrl: 'https://rex-beige.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/reX',
+    tech: ['TypeScript', 'React', 'Express', 'MongoDB', 'JWT', 'Vercel'],
+    image: '/project-images/reX.png',
+    status: 'online',
+  },
   {
     title: 'echo.ink',
     description:
@@ -92,8 +95,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/echo.ink.png',
     status: 'online',
   },
-
-  // 5a. Campus events hub
   {
     title: 'CampusHub',
     description:
@@ -104,7 +105,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/campushub.png',
     status: 'online',
   },
-  // 5b. Campus safety
   {
     title: 'CampusSchield',
     description:
@@ -115,8 +115,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/campusschield.png',
     status: 'online',
   },
-
-  // 6. PWA & collaboration
   {
     title: 'StudySpace',
     description:
@@ -127,8 +125,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/studyspace.png',
     status: 'online',
   },
-
-  // 7. Productivity tool
   {
     title: 'TaskMaster',
     description:
@@ -139,8 +135,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/taskmaster.png',
     status: 'online',
   },
-
-  // 8. Creative Canvas
   {
     title: 'ChromaPost',
     description:
@@ -151,8 +145,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/chromapost.png',
     status: 'online',
   },
-
-  // 9. Data viz & GPA
   {
     title: 'GradeLite',
     description:
@@ -163,8 +155,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/gradelite.png',
     status: 'online',
   },
-
-  // 10. Foundational portfolio
   {
     title: 'Portfolio v1',
     description:
@@ -175,8 +165,6 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/portfolio.png',
     status: 'online',
   },
-
-  // — In-Progress / Building —
   {
     title: 'Spay',
     description:
@@ -185,16 +173,6 @@ export const fullstackProjects: Project[] = [
     githubUrl: 'https://github.com/sreecharan-desu/Spay',
     tech: ['Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB', 'TypeScript'],
     image: '/project-images/Spay.png',
-    status: 'building',
-  },
-  {
-    title: 'Schat',
-    description:
-      'Real-time posting board with Google login. Instantly see messages from everyone. No edit, no history — just raw moments.',
-    liveUrl: 'https://srees-schat.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/Schat',
-    tech: ['Next.js', 'Tailwind', 'Websockets', 'TypeScript', 'Node', 'Vercel'],
-    image: '/project-images/schat.png',
     status: 'building',
   },
 ];
