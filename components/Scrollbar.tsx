@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { courses } from '@/lib/socials';
+import { slides } from '@/lib/socials';
 
 const SmoothMarquee = () => {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
 
-  const duplicatedCourses = [...courses, ...courses];
+  const duplicatedslides = [...slides, ...slides];
 
-  const CourseCard = ({ course, index }: any) => {
+  const SlideCard = ({ course, index }: any) => {
     const isTooltipActive = activeTooltip === `${course.id}-${index}`;
     const cardRef = useRef<HTMLDivElement>(null);
 
@@ -41,7 +41,7 @@ const SmoothMarquee = () => {
           alt={course.title}
           fill
           className="object-cover"
-          sizes="(max-width: 640px) 20rem, (max-width: 768px) 26rem, 32rem"
+          sizes="(max-width: 740px) 20rem, (max-width: 868px) 26rem, 32rem"
           loading="eager"
           priority
         />
@@ -76,15 +76,15 @@ const SmoothMarquee = () => {
           <div
             className="flex animate-marquee"
             style={{
-              width: `calc(${duplicatedCourses.length} * (32rem + 1.5rem))`,
+              width: `calc(${duplicatedslides.length} * (32rem + 1.5rem))`,
               animationDuration: '30s',
               animationTimingFunction: 'linear',
               animationIterationCount: 'infinite',
             }}
           >
-            {duplicatedCourses.map((course, index) => (
-              <CourseCard
-                key={`${course.id}-${Math.floor(index / courses.length)}`}
+            {duplicatedslides.map((course, index) => (
+              <SlideCard
+                key={`${course.id}-${Math.floor(index / slides.length)}`}
                 course={course}
                 index={index}
               />
