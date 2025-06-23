@@ -36,7 +36,7 @@ export const socialLinks = [
   },
 ];
 
-export const whatsappLink = 'chat.sreecharandesu.in';
+export const whatsappLink = 'https://chat.sreecharandesu.in';
 export const terminalCommand = 'curl -sL who.sreecharandesu.in | bash';
 
 export const fiverr = {
@@ -52,7 +52,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://www.docgen.dev/',
     githubUrl: '',
     tech: ['React', 'Tailwind CSS', 'Framer Motion', 'API', 'TypeScript', 'Vercel'],
-    image: '/project-images/docgenai.png',
+    image: '/project-images/docgenai.webp',
     status: 'online',
   },
   {
@@ -62,7 +62,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://sreesuniz.vercel.app/student',
     githubUrl: 'https://github.com/sreecharan-desu/uniZ',
     tech: ['TypeScript', 'Prisma', 'React', 'Node.js', 'Tailwind', 'PostgreSQL'],
-    image: '/project-images/uniZ.png',
+    image: '/project-images/uniZ.webp',
     status: 'online',
   },
   {
@@ -72,7 +72,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://srees-schat.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/Schat',
     tech: ['Next.js', 'Tailwind', 'Websockets', 'TypeScript', 'Node', 'Vercel'],
-    image: '/project-images/schat.png',
+    image: '/project-images/schat.webp',
     status: 'online',
   },
   {
@@ -82,7 +82,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://rex-beige.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/reX',
     tech: ['TypeScript', 'React', 'Express', 'MongoDB', 'JWT', 'Vercel'],
-    image: '/project-images/reX.png',
+    image: '/project-images/reX.webp',
     status: 'online',
   },
   {
@@ -92,7 +92,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://srees-echoink.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/echo.ink',
     tech: ['TypeScript', 'TailwindCSS', 'Hono', 'Prisma', 'Postgres', 'Cloudflare'],
-    image: '/project-images/echo.ink.png',
+    image: '/project-images/echo.ink.webp',
     status: 'online',
   },
   {
@@ -102,7 +102,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://srees-campushub.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/CampusHub',
     tech: ['React', 'TypeScript', 'TailwindCSS', 'Next.js', 'MongoDB', 'Express'],
-    image: '/project-images/campushub.png',
+    image: '/project-images/campushub.webp',
     status: 'online',
   },
   {
@@ -112,7 +112,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://campus-schield-frontend.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/Campusschield-v.1.0.2',
     tech: ['React', 'JavaScript', 'Node.js', 'Express', 'TailwindCSS', 'MongoDB'],
-    image: '/project-images/campusschield.png',
+    image: '/project-images/campusschield.webp',
     status: 'online',
   },
   {
@@ -122,7 +122,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://studyspace-exp.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/Studyspace',
     tech: ['TypeScript', 'Recoil', 'TailwindCSS', 'PWA', 'Vite', 'Vercel'],
-    image: '/project-images/studyspace.png',
+    image: '/project-images/studyspace.webp',
     status: 'online',
   },
   {
@@ -132,7 +132,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://task-master-black.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/TaskMaster',
     tech: ['React', 'Node.js', 'MongoDB', 'JWT', 'Express', 'TailwindCSS'],
-    image: '/project-images/taskmaster.png',
+    image: '/project-images/taskmaster.webp',
     status: 'online',
   },
   {
@@ -142,7 +142,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://chromapost.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/ChromaPost',
     tech: ['React', 'Vite', 'TailwindCSS', 'Canvas API', 'TypeScript', 'Vercel'],
-    image: '/project-images/chromapost.png',
+    image: '/project-images/chromapost.webp',
     status: 'online',
   },
   {
@@ -152,7 +152,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://sreecharan-desu.github.io/Gradelite/#GradeLite',
     githubUrl: 'https://github.com/sreecharan-desu/Gradelite',
     tech: ['JavaScript', 'HTML', 'CSS', 'Chart.js', 'Bootstrap', 'GitHub Pages'],
-    image: '/project-images/gradelite.png',
+    image: '/project-images/gradelite.webp',
     status: 'online',
   },
   {
@@ -162,7 +162,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://sr3x0r-portfolio.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/Portfolio-v_1.0.1',
     tech: ['React', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vite', 'Vercel'],
-    image: '/project-images/portfolio.png',
+    image: '/project-images/portfolio.webp',
     status: 'online',
   },
   {
@@ -172,7 +172,7 @@ export const fullstackProjects: Project[] = [
     liveUrl: 'https://srees-spay.vercel.app/',
     githubUrl: 'https://github.com/sreecharan-desu/Spay',
     tech: ['Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB', 'TypeScript'],
-    image: '/project-images/Spay.png',
+    image: '/project-images/Spay.webp',
     status: 'building',
   },
 ];
@@ -185,7 +185,7 @@ export const devopsProjects: Project[] = [
     liveUrl: 'https://github.com/sreecharan-desu/hello-ci-cd',
     githubUrl: 'https://github.com/sreecharan-desu/hello-ci-cd',
     tech: ['Docker', 'GitHub Actions', 'NGINX', 'AWS EC2', 'TypeScript'],
-    image: '/project-images/ci-cd.png',
+    image: '/project-images/ci-cd.webp',
     status: 'online',
   },
 ];
@@ -196,14 +196,14 @@ export const slides = [
     title: 'Academics',
     subtitle: 'ORNATE 2025',
     description: 'Awarded by the Director for academic & hackathon excellence.',
-    image: '/scroll-bar/price.jpg',
+    image: '/scroll-bar/prize.webp',
   },
   {
     id: 2,
     title: "Hackathon's",
     subtitle: 'Women Safety PWA',
     description: 'Built a PWA focused on real-time safety during a university hackathon.',
-    image: '/scroll-bar/hackathon.jpg',
+    image: '/scroll-bar/hackathon.webp',
   },
 
   {
@@ -211,21 +211,28 @@ export const slides = [
     title: 'Open Source',
     subtitle: 'GitHub Overview',
     description: 'Active OSS contributor — commits, PRs, and issues across diverse projects.',
-    image: '/scroll-bar/oss.png',
+    image: '/scroll-bar/oss.webp',
   },
   {
     id: 4,
     title: 'YouTube Insights',
     subtitle: 'Content Creation',
     description: 'Created content around tech, coding, and life at IIIT.',
-    image: '/scroll-bar/youtube-channel.png',
+    image: '/scroll-bar/youtube-channel.webp',
   },
   {
     id: 5,
     title: 'Culturals',
     subtitle: 'ORNATE 2025',
     description: 'Performed a dance at the cultural fest.',
-    image: '/scroll-bar/dance-performance.jpg',
+    image: '/scroll-bar/dance-performance.webp',
+  },
+  {
+    id: 6,
+    title: 'Volunteering',
+    subtitle: 'TechXcel',
+    description: 'Volunteered at TechXcel, a tech fest, managing events and logistics.',
+    image: '/scroll-bar/techxcel.webp',
   },
 ];
 
