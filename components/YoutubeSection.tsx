@@ -27,6 +27,19 @@ interface YouTubeVideo {
 
 const cache: Record<string, YouTubeVideo[]> = {};
 
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < breakpoint);
+    check(); // initial
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
 const YouTubeSection = () => {
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
   const [loading, setLoading] = useState(true);
@@ -35,6 +48,9 @@ const YouTubeSection = () => {
 
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
   const MAX_RESULTS = 20;
+
+  const isMobile = useIsMobile(); // 👈 detect mobile
+  const visibleVideos = isMobile ? videos.slice(0, 1) : videos;
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -118,7 +134,7 @@ const YouTubeSection = () => {
 
   return (
     <Element name="youtube" className="py-16 bg-black">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-8 max-w-6xl">
         <div className="text-center mb-12">
           <motion.h2
             className="text-5xl first-letter:text-6xl font-bold text-white mb-4"
@@ -139,7 +155,7 @@ const YouTubeSection = () => {
 
         {!loading && !error && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, index) => (
+            {visibleVideos.map((video, index) => (
               <article
                 key={index}
                 className="flex flex-col bg-black border border-white/20 rounded-lg overflow-hidden"

@@ -40,6 +40,7 @@ import {
   SiElasticsearch,
   SiJenkins,
   SiTerraform,
+  SiSocketdotio,
 } from 'react-icons/si';
 import { FaGit, FaPython, FaNode, FaServer } from 'react-icons/fa';
 import { Flame } from 'lucide-react';
@@ -69,6 +70,7 @@ const Skills = () => {
     { name: 'Python', icon: <FaPython color="#3776AB" /> },
     { name: 'Flask', icon: <SiFlask color="#FFFFFF" /> },
     { name: 'Django', icon: <SiDjango color="#092E20" /> },
+    { name: 'WebSockets', icon: <SiSocketdotio color="#092E20" /> },
 
     // Databases & Data
     { name: 'PostgreSQL', icon: <SiPostgresql color="#336791" /> },

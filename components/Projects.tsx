@@ -166,18 +166,20 @@ const ProjectCard = ({ project }: { project: Project }) => {
 const Projects = () => {
   const [currentView, setCurrentView] = useState<'fullstack' | 'devops'>('fullstack');
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [showAll, setShowAll] = useState(false); // NEW
 
-  // Handle view switching with blur effect
   const handleViewChange = (view: 'fullstack' | 'devops') => {
     if (view === currentView) return;
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentView(view);
       setIsTransitioning(false);
+      setShowAll(false); // Reset showAll on tab change
     }, 150);
   };
 
   const currentProjects = currentView === 'fullstack' ? fullstackProjects : devopsProjects;
+  const visibleProjects = showAll ? currentProjects : currentProjects.slice(0, 2); // NEW
 
   return (
     <Element name="projects" className="py-16 bg-black">
@@ -192,7 +194,7 @@ const Projects = () => {
             viewport={{ once: true }}
           >
             Projects
-          </motion.h2>{' '}
+          </motion.h2>
           <p className="text-white/50 text-base max-w-xl mx-auto">
             A showcase of my work in full-stack development and DevOps engineering
           </p>
@@ -229,11 +231,23 @@ const Projects = () => {
               isTransitioning ? 'blur-sm opacity-50' : 'blur-none opacity-100'
             }`}
           >
-            {currentProjects.map(project => (
+            {visibleProjects.map(project => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         </div>
+
+        {/* Show More Button */}
+        {!showAll && currentProjects.length > 2 && (
+          <div className="mt-8 text-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="text-sm text-white/80 hover:text-white bg-white/10 border border-white/20 px-4 py-2 rounded-full transition-all"
+            >
+              Show more
+            </button>
+          </div>
+        )}
 
         {/* Section Footer */}
         <div className="text-center mt-12 pt-6 border-t border-white/20">
