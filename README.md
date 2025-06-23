@@ -19,22 +19,7 @@ This document provides a comprehensive overview of the portfolio system, its arc
 
 ### System Overview
 
-The portfolio system is a React-based web application designed to showcase a developer's skills, experience, projects, and social media presence. It provides a visually appealing and interactive platform to present information effectively. The system is built using Next.js, leveraging its features for server-side rendering, routing, and optimization.
-
-The key features of the system include:
-
-*   **Hero Section:** Introduces the developer with a profile picture, name, and a brief introduction.
-*   **Navigation Bar:** Provides easy access to different sections of the portfolio.
-*   **Work Experience:** Showcases the developer's professional history and achievements.
-*   **Skills:** Highlights the developer's technical skills and expertise.
-*   **Projects:** Presents a selection of projects with descriptions, links, and technologies used.
-*   **YouTube Section:** Displays recent video content from the developer's YouTube channel.
-*   **Testimonials:** Features positive feedback from clients or colleagues.
-*   **Freelance Services:** Promotes freelance services offered by the developer.
-*   **Footer:** Contains copyright information and social media links.
-*   **Interactive Terminal:** Simulates a command-line interface to display a command for copying.
-*   **Smooth Scrolling Marquee:** Displays a set of slides in a marquee fashion.
-*   **Floating Resume Button:** Provides a convenient way to download the developer's resume.
+The portfolio system is a (Next.js + React)-based web application designed to showcase my developer's skills, experience, projects, and social media presence. It provides a visually appealing and interactive platform to present information effectively. The system is built using Next.js, leveraging its features for server-side rendering, routing, and optimization.
 
 ### Technical Architecture
 
