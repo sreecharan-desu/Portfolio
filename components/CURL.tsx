@@ -26,7 +26,7 @@ const Terminal = () => {
           clearInterval(typeInterval);
           setIsTyping(false);
         }
-      }, 80);
+      }, 100);
     };
 
     typeCommand();
@@ -67,12 +67,12 @@ const Terminal = () => {
   }, []);
 
   return (
-    <div className="w-full md:max-w-4xl lg:max-w-4xl space-y-8">
+    <div className="w-full space-y-8 space-x-1">
       <div className="text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-          Copy this command to run in your terminal
-        </h1>
-        <p className="text-white/80 text-sm md:text-base">My CLI version of Portfolio</p>
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">$ who.sreecharandesu.in</h1>
+        <p className="text-white/80 text-sm md:text-base">
+          Simulate my dev environment inside your terminal
+        </p>
       </div>
 
       <div
@@ -123,13 +123,12 @@ const Terminal = () => {
           <div className="p-4 md:p-6 space-y-3">
             <div className="flex items-center group">
               <div className="flex items-center text-white/80 select-none">
-                <span className="text-white">➜</span>
                 <span className="ml-2 text-white">~</span>
                 <ChevronRight className="w-3 h-3 ml-1 text-white/80" aria-hidden="true" />
               </div>
               <div className="ml-3 flex-1 relative">
                 <span
-                  className="text-white cursor-pointer hover:bg-white/10 px-1 py-0.5 rounded transition-colors duration-300"
+                  className="text-white font-mono cursor-pointer hover:bg-white/10 px-1 py-0.5 rounded transition-colors duration-300"
                   //@ts-expect-error ---
                   onClick={() => inputRef.current?.focus()}
                   role="textbox"
