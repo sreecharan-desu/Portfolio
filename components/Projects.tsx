@@ -179,7 +179,7 @@ const Projects = () => {
   };
 
   const currentProjects = currentView === 'fullstack' ? fullstackProjects : devopsProjects;
-  const visibleProjects = showAll ? currentProjects : currentProjects.slice(0, 2); // NEW
+  const visibleProjects = showAll ? currentProjects : currentProjects.slice(0, 3); // NEW
 
   return (
     <Element name="projects" className="py-16 bg-black">
