@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
+'use client';
+
+import { useState, useEffect, useMemo } from 'react';
 import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
-import { FaYoutube } from 'react-icons/fa';
+import Image from 'next/image';
+import { FaYoutube, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import axios from 'axios';
-import { FiYoutube } from 'react-icons/fi';
 import { CHANNEL_ID } from '@/lib/socials';
 
 interface YouTubeVideo {
-  id: { videoId: string };
+  id: { videoId: string } | string;
   snippet: {
     title: string;
     description: string;
@@ -23,10 +25,13 @@ interface YouTubeVideo {
   };
 }
 
+const cache: Record<string, YouTubeVideo[]> = {};
+
 const YouTubeSection = () => {
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [modalVideo, setModalVideo] = useState<YouTubeVideo | null>(null);
 
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
   const MAX_RESULTS = 20;
@@ -34,13 +39,19 @@ const YouTubeSection = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       if (!API_KEY) {
-        setError('YouTube API key is missing. Please contact the site administrator.');
+        setError('YouTube API key is missing.');
+        setLoading(false);
+        return;
+      }
+
+      // Use in-memory cache to prevent redundant API calls
+      if (cache[CHANNEL_ID]) {
+        setVideos(cache[CHANNEL_ID]);
         setLoading(false);
         return;
       }
 
       try {
-        // Step 1: Fetch video IDs
         const searchResponse = await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
           params: {
             part: 'snippet',
@@ -63,7 +74,6 @@ const YouTubeSection = () => {
           return;
         }
 
-        // Step 2: Fetch video details to get durations, tags, and embeddable status
         const videosResponse = await axios.get(`https://www.googleapis.com/youtube/v3/videos`, {
           params: {
             part: 'snippet,contentDetails,status',
@@ -73,53 +83,32 @@ const YouTubeSection = () => {
         });
 
         const filteredVideos = videosResponse.data.items.filter((video: YouTubeVideo) => {
-          // Check if video is embeddable
-          if (!video.status?.embeddable) {
-            console.warn(`Video ${video.id} is not embeddable.`);
-            return false;
-          }
+          if (!video.status?.embeddable) return false;
 
-          // Check duration
           const duration = video.contentDetails?.duration || 'PT0S';
           const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-          const hours = parseInt(match?.[1] || '0');
-          const minutes = parseInt(match?.[2] || '0');
-          const seconds = parseInt(match?.[3] || '0');
-          const totalSeconds = hours * 3600 + minutes * 60 + seconds;
+          const totalSeconds =
+            (parseInt(match?.[1] || '0') || 0) * 3600 +
+            (parseInt(match?.[2] || '0') || 0) * 60 +
+            (parseInt(match?.[3] || '0') || 0);
 
-          // Exclude videos 60 seconds or shorter and videos with #shorts tag
           const isNotShort =
             totalSeconds > 60 &&
-            !(
-              video.snippet.tags?.includes('shorts') ||
-              video.snippet.title.toLowerCase().includes('#shorts') ||
-              video.snippet.description.toLowerCase().includes('#shorts')
-            );
+            ![
+              video.snippet.tags?.includes('shorts'),
+              video.snippet.title.toLowerCase().includes('#shorts'),
+              video.snippet.description.toLowerCase().includes('#shorts'),
+            ].some(Boolean);
 
           return isNotShort;
         });
 
-        if (filteredVideos.length === 0) {
-          setError('No embeddable videos meet the duration or content criteria.');
-          setLoading(false);
-          return;
-        }
-
+        cache[CHANNEL_ID] = filteredVideos;
         setVideos(filteredVideos);
         setLoading(false);
       } catch (err: any) {
-        console.error('Error fetching videos:', {
-          message: err.message,
-          status: err.response?.status,
-          data: err.response?.data,
-        });
-        setError(
-          err.response?.status === 403
-            ? 'YouTube API quota exceeded. Please try again later.'
-            : err.response?.status === 400
-              ? 'Invalid YouTube API request. Please contact the site administrator.'
-              : 'Failed to load videos. Please try again later.'
-        );
+        console.error(err);
+        setError('Failed to fetch videos.');
         setLoading(false);
       }
     };
@@ -127,129 +116,135 @@ const YouTubeSection = () => {
     fetchVideos();
   }, [API_KEY]);
 
-  if (loading) {
-    return (
-      <Element name="youtube" className="min-h-screen py-16 bg-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">
-            Explore My Recent Video Content
-          </h2>
-          <div className="text-center text-gray-400">Loading videos...</div>
-        </div>
-      </Element>
-    );
-  }
-
-  if (error) {
-    return (
-      <Element name="youtube" className="min-h-screen py-16 bg-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">
-            Explore My Recent Video Content
-          </h2>
-          <div className="text-center text-red-500">{error}</div>
-        </div>
-      </Element>
-    );
-  }
-
   return (
-    <Element name="youtube" className="min-h-screen py-16 bg-black">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl first-letter:text-5xl font-bold text-white mb-12 text-center">
-          Explore My Recent Video Content
-        </h2>
-
-        <div className="flex justify-center items-center">
-          <YouTubeVideoGrid videos={videos} />
+    <Element name="youtube" className="py-16 bg-black">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-12">
+          <motion.h2
+            className="text-5xl first-letter:text-6xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            YouTube
+          </motion.h2>
+          <p className="text-white/50 text-base max-w-xl mx-auto">
+            A curation of my latest long-form video content
+          </p>
         </div>
 
-        {/* Channel Link */}
-        <div className="text-center mt-12">
+        {loading && <p className="text-white/50 text-center">Loading videos...</p>}
+        {error && <p className="text-red-500 text-center">{error}</p>}
+
+        {!loading && !error && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {videos.map((video, index) => (
+              <article
+                key={index}
+                className="flex flex-col bg-black border border-white/20 rounded-lg overflow-hidden"
+                style={{ width: '361px', height: '472px' }}
+              >
+                <div
+                  className="relative h-[192px] overflow-hidden cursor-pointer"
+                  onClick={() => setModalVideo(video)}
+                >
+                  <Image
+                    src={video.snippet.thumbnails.medium.url}
+                    alt={video.snippet.title}
+                    fill
+                    className="object-cover object-center"
+                    sizes="361px"
+                    quality={85}
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="p-6 flex flex-col space-y-4 h-[280px] relative">
+                  <header className="flex items-center gap-2">
+                    <h3 className="text-xl font-semibold text-white truncate">
+                      {video.snippet.title}
+                    </h3>
+                    <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-400">
+                      YouTube
+                    </span>
+                  </header>
+                  <p className="text-sm text-white/70 line-clamp-3">
+                    {video.snippet.description || 'No description available.'}
+                  </p>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="px-2.5 py-1 bg-white/10 text-white/70 text-xs font-medium rounded-md border border-white/20">
+                      Video
+                    </span>
+                    <span className="px-2.5 py-1 bg-white/10 text-white/70 text-xs font-medium rounded-md border border-white/20">
+                      {new Date(video.snippet.publishedAt).getFullYear() || 'Unknown'}
+                    </span>
+                  </div>
+                  <footer className="flex items-center justify-between pt-2 border-t border-white/20 absolute bottom-6 left-6 right-6">
+                    <a
+                      href={`https://www.youtube.com/watch?v=${typeof video.id === 'string' ? video.id : video.id.videoId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-white/70 hover:text-white/80"
+                    >
+                      <FaExternalLinkAlt className="text-sm" />
+                      <span className="text-sm font-medium">Watch</span>
+                    </a>
+                    <button
+                      onClick={() => setModalVideo(video)}
+                      className="text-xs text-white/70 hover:text-white/80"
+                    >
+                      Preview
+                    </button>
+                  </footer>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+
+        <div className="text-center mt-12 pt-6 border-t border-white/20">
           <a
             href="https://www.youtube.com/@mrsreecharan"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full border border-white hover:bg-white hover:text-black transition-all duration-300"
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white/80"
           >
-            <FaYoutube className="text-xl" />
-            Visit My YouTube Channel
+            <FaYoutube className="text-lg" />
+            Visit My Channel
           </a>
         </div>
+
+        {modalVideo && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+            onClick={() => setModalVideo(null)}
+          >
+            <div
+              className="relative w-full max-w-5xl aspect-video rounded-lg overflow-hidden border border-white/20"
+              onClick={e => e.stopPropagation()}
+            >
+              <button
+                className="absolute top-4 right-4 text-white bg-black/80 rounded-full p-2 hover:bg-black/90"
+                onClick={() => setModalVideo(null)}
+              >
+                <FaTimes className="text-lg" />
+              </button>
+              <iframe
+                src={`https://www.youtube.com/embed/${
+                  typeof modalVideo.id === 'string' ? modalVideo.id : modalVideo.id.videoId
+                }?autoplay=1&rel=0&modestbranding=1`}
+                title={modalVideo.snippet.title}
+                className="w-full h-full"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        )}
       </div>
     </Element>
   );
 };
 
 export default YouTubeSection;
-
-const YouTubeVideoGrid = ({ videos }: { videos: YouTubeVideo[] }) => {
-  return (
-    <div className="flex flex-row justify-center">
-      <div className="w-full max-w-7xl place-content-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
-        {videos.map((video, index) => (
-          <motion.div
-            key={index}
-            className="flex flex-col bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl backdrop-blur-sm shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Video Player */}
-            <div className="relative h-48 overflow-hidden">
-              <iframe
-                src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&showinfo=0&enablejsapi=1`}
-                title={video.snippet.title || 'YouTube Video'}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                onError={e => console.error(`Iframe error for video ${video.id}:`, e)}
-              ></iframe>
-            </div>
-
-            {/* Video Info */}
-            <div className="p-5 flex flex-col flex-1">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-semibold text-white tracking-tight line-clamp-2">
-                  {video.snippet.title || 'Untitled Video'}
-                </h3>
-                <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-400">
-                  YouTube
-                </span>
-              </div>
-
-              <p className="text-sm text-gray-300 mb-4 line-clamp-3">
-                {video.snippet.description || 'No description available.'}
-              </p>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full">
-                  Video
-                </span>
-                <span className="px-2 py-0.5 bg-white/10 text-gray-200 text-xs font-medium rounded-full">
-                  {new Date(video.snippet.publishedAt).getFullYear() || 'Unknown'}
-                </span>
-              </div>
-
-              {/* Video Links */}
-              <div className="flex items-center gap-4 mt-auto">
-                <a
-                  href={`https://www.youtube.com/watch?v=${video.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  aria-label={`Watch ${video.snippet.title || 'video'} on YouTube`}
-                >
-                  <FiYoutube className="text-lg" />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-};
