@@ -166,7 +166,25 @@ const ProjectCard = ({ project }: { project: Project }) => {
 const Projects = () => {
   const [currentView, setCurrentView] = useState<'fullstack' | 'devops'>('fullstack');
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [showAll, setShowAll] = useState(false); // NEW
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const currentProjects = currentView === 'fullstack' ? fullstackProjects : devopsProjects;
+  const visibleProjects = showAll ? currentProjects : currentProjects.slice(0, 2);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 1024); // Tailwind lg breakpoint
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    setShowAll(!isMobile); // Show all projects by default on large screens
+  }, [isMobile]);
 
   const handleViewChange = (view: 'fullstack' | 'devops') => {
     if (view === currentView) return;
@@ -174,12 +192,9 @@ const Projects = () => {
     setTimeout(() => {
       setCurrentView(view);
       setIsTransitioning(false);
-      setShowAll(false); // Reset showAll on tab change
+      setShowAll(!isMobile); // Reset based on screen
     }, 150);
   };
-
-  const currentProjects = currentView === 'fullstack' ? fullstackProjects : devopsProjects;
-  const visibleProjects = showAll ? currentProjects : currentProjects.slice(0, 2); // NEW
 
   return (
     <Element name="projects" className="py-16 bg-black">
@@ -200,32 +215,25 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Toggle Bar */}
+        {/* View Toggle */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex bg-white/10 rounded-full p-1 border border-white/20">
-            <button
-              onClick={() => handleViewChange('fullstack')}
-              className={`px-6 py-2 rounded-full text-sm font-medium ${
-                currentView === 'fullstack'
-                  ? 'bg-white text-black'
-                  : 'text-white/70 hover:bg-white/20'
-              }`}
-            >
-              Full Stack
-            </button>
-            <button
-              onClick={() => handleViewChange('devops')}
-              className={`px-6 py-2 rounded-full text-sm font-medium ${
-                currentView === 'devops' ? 'bg-white text-black' : 'text-white/70 hover:bg-white/20'
-              }`}
-            >
-              DevOps
-            </button>
+            {['fullstack', 'devops'].map(view => (
+              <button
+                key={view}
+                onClick={() => handleViewChange(view as 'fullstack' | 'devops')}
+                className={`px-6 py-2 rounded-full text-sm font-medium ${
+                  currentView === view ? 'bg-white text-black' : 'text-white/70 hover:bg-white/20'
+                }`}
+              >
+                {view === 'fullstack' ? 'Full Stack' : 'DevOps'}
+              </button>
+            ))}
           </div>
         </div>
 
         {/* Projects Grid */}
-        <div className="flex justify-center place-content-center">
+        <div className="flex justify-center">
           <div
             className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-150 ${
               isTransitioning ? 'blur-sm opacity-50' : 'blur-none opacity-100'
@@ -237,8 +245,8 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Show More Button */}
-        {!showAll && currentProjects.length > 2 && (
+        {/* Show More for Mobile */}
+        {isMobile && !showAll && currentProjects.length > 2 && (
           <div className="mt-8 text-center">
             <button
               onClick={() => setShowAll(true)}
@@ -249,7 +257,7 @@ const Projects = () => {
           </div>
         )}
 
-        {/* Section Footer */}
+        {/* Footer */}
         <div className="text-center mt-12 pt-6 border-t border-white/20">
           <p className="text-white/50 text-sm">
             More projects coming soon •{' '}
