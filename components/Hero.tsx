@@ -1,21 +1,14 @@
-import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import { FaComment } from 'react-icons/fa';
 import { socialLinks, whatsappLink } from '../lib/socials';
 import Image from 'next/image';
-import Profile from '@/public/sr3x0r-icon.jpeg';
+import Profile from '@/public/sr3x0r-icon.webp';
 
 const Hero = () => {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
-
   return (
-    <section id="home" className={`bg-black py-20 -mb-10 lg:mt-20 ${loaded ? 'loaded' : ''}`}>
+    <section id="home" className="bg-black py-20 -mb-10 lg:mt-20">
       <Navbar />
-      <div className="container mx-auto px-4 sm:px-10 lg:px-16 blur-effect">
+      <div className="container mx-auto px-4 sm:px-10 lg:px-16">
         <div className="flex flex-col items-center gap-8 md:gap-12">
           {/* Profile Image */}
           <div className="w-64 sm:w-52 md:w-64 lg:w-72">
@@ -25,9 +18,8 @@ const Hero = () => {
                 alt="SreeCharan"
                 width={400}
                 height={400}
-                className="object-contain rounded-full filter"
+                className="object-cover rounded-full"
                 priority
-                placeholder="blur"
               />
             </div>
           </div>
@@ -108,15 +100,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <style jsx>{`
-        .blur-effect {
-          filter: blur(2px);
-          transition: filter 0.3s;
-        }
-        .loaded .blur-effect {
-          filter: blur(0);
-        }
-      `}</style>
     </section>
   );
 };
