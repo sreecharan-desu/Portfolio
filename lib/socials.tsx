@@ -66,16 +66,6 @@ export const fullstackProjects: Project[] = [
     status: 'online',
   },
   {
-    title: 'Schat',
-    description:
-      'Real-time posting board with Google login. Instantly see messages from everyone. No edit, no history — just raw moments.',
-    liveUrl: 'https://srees-schat.vercel.app/',
-    githubUrl: 'https://github.com/sreecharan-desu/Schat',
-    tech: ['Next.js', 'Tailwind', 'Websockets', 'TypeScript', 'Node', 'Vercel'],
-    image: '/project-images/schat.webp',
-    status: 'online',
-  },
-  {
     title: 'reX',
     description:
       'A community-first reward exchange platform built to simplify peer recognition, gamify interactions, and foster engagement.',
@@ -85,6 +75,17 @@ export const fullstackProjects: Project[] = [
     image: '/project-images/reX.webp',
     status: 'online',
   },
+  {
+    title: 'Schat',
+    description:
+      'Real-time posting board with Google login. Instantly see messages from everyone. No edit, no history — just raw moments.',
+    liveUrl: 'https://srees-schat.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/Schat',
+    tech: ['Next.js', 'Tailwind', 'Websockets', 'TypeScript', 'Node', 'Vercel'],
+    image: '/project-images/schat.webp',
+    status: 'online',
+  },
+
   {
     title: 'echo.ink',
     description:
