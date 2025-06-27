@@ -50,7 +50,8 @@ const YouTubeSection = () => {
   const MAX_RESULTS = 20;
 
   const isMobile = useIsMobile(); // 👈 detect mobile
-  const visibleVideos = isMobile ? videos.slice(0, 1) : videos;
+  videos.reverse(); // Mutates the original array
+  const visibleVideos = isMobile ? videos.slice(0, 2) : videos
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -120,7 +121,7 @@ const YouTubeSection = () => {
         });
 
         cache[CHANNEL_ID] = filteredVideos;
-        setVideos(filteredVideos);
+        setVideos(filteredVideos.reverse());
         setLoading(false);
       } catch (err: any) {
         console.error(err);
