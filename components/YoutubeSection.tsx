@@ -51,7 +51,7 @@ const YouTubeSection = () => {
 
   const isMobile = useIsMobile(); // 👈 detect mobile
   videos.reverse(); // Mutates the original array
-  const visibleVideos = isMobile ? videos.slice(0, 2) : videos
+  const visibleVideos = isMobile ? videos.slice(0, 2) : videos;
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -239,7 +239,7 @@ const YouTubeSection = () => {
           >
             <div
               className="relative w-full max-w-5xl aspect-video rounded-lg overflow-hidden border border-white/20"
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
             >
               <button
                 className="absolute top-4 right-4 text-white bg-black/80 rounded-full p-2 hover:bg-black/90"

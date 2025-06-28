@@ -32,7 +32,7 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <div key={link.name}>
                 <Link
                   to={link.to}
@@ -67,7 +67,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden flex flex-col items-start px-4 pb-4 space-y-3">
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.to}

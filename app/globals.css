@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 * {
   font-family: var(--font-jura), sans-serif;
@@ -12,9 +12,8 @@
 
 body {
   -ms-overflow-style: none; /* IE & Edge */
-  scrollbar-width: none;    /* Firefox */
+  scrollbar-width: none; /* Firefox */
 }
-
 
 html {
   scroll-behavior: smooth;
