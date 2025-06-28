@@ -13,13 +13,14 @@ import FreelanceServices from '@/components/FreelanceServices';
 import { FloatingResumeButton } from '@/components/ResumeButton';
 import SmoothMarquee from '@/components/Scrollbar';
 import Terminal from '@/components/CURL';
+import Timeline from '@/components/Timeline';
 
 export default function PortfolioPage() {
   return (
     <div className={`bg-black transition-all duration-200`}>
       <div className="bg-black text-white lg:ml-20 lg:mr-20">
         {/* Hero + Scrollbar */}
-        <Element name="home" className="m-0 p-0 bg-black">
+        <Element name="home" className="m-0 p-0 min-h-screen bg-black">
           <div className="bg-black -mt-20 pt-23">
             <Hero />
           </div>
@@ -27,7 +28,7 @@ export default function PortfolioPage() {
         </Element>
 
         {/* Core: Projects → Skills → Experience */}
-        <Element name="projects" className="m-0 p-0">
+        <Element name="projects" className="min-h-screen">
           <Projects />
         </Element>
 
@@ -44,12 +45,17 @@ export default function PortfolioPage() {
           <Testimonials />
         </Element>
 
-        <Element name="youtube" className="m-0 p-0">
+        <Element name="youtube" className="m-0 p-0 min-h-screen">
           <YouTubeSection />
         </Element>
 
         {/* Extras: Freelance + Terminal */}
-        <Element name="freelance-services" className="m-0 p-0">
+        <Element name="timeline" className="m-0 p-0 min-h-screen">
+          <Timeline />
+        </Element>
+
+        {/* Extras: Freelance + Terminal */}
+        <Element name="freelance-services" className="m-0 p-0 min-h-screen">
           <FreelanceServices />
         </Element>
 

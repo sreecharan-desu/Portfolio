@@ -17,7 +17,7 @@ const FreelanceServices = () => {
   }, []);
 
   return (
-    <section className="mt-28 mb-20 relative bg-black text-white overflow-hidden flex items-center">
+    <section className="min-h-screen mt-28 mb-20 relative bg-black text-white overflow-hidden flex items-center">
       <div className="container mx-auto px-8 max-w-5xl relative z-10">
         <div className="text-center space-y-8">
           {/* Clean typography */}
