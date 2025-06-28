@@ -8,7 +8,7 @@ const Testimonials = () => {
 
   // Memoize the interval callback to prevent re-creation
   const rotateTestimonials = useCallback(() => {
-    setActiveIndex(prevIndex => (prevIndex + 1) % testimonials.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [testimonials.length]);
 

@@ -133,7 +133,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         >
           <div
             className="relative max-w-5xl max-h-[90vh] overflow-auto rounded-lg border border-white/20"
-            onClick={e => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
@@ -218,7 +218,7 @@ const Projects = () => {
         {/* View Toggle */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex bg-white/10 rounded-full p-1 border border-white/20">
-            {['fullstack', 'devops'].map(view => (
+            {['fullstack', 'devops'].map((view) => (
               <button
                 key={view}
                 onClick={() => handleViewChange(view as 'fullstack' | 'devops')}
@@ -239,7 +239,7 @@ const Projects = () => {
               isTransitioning ? 'blur-sm opacity-50' : 'blur-none opacity-100'
             }`}
           >
-            {visibleProjects.map(project => (
+            {visibleProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>

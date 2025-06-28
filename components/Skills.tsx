@@ -125,7 +125,7 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          {skills.map(skill => (
+          {skills.map((skill) => (
             <div
               key={skill.name}
               className="relative group flex items-center justify-center w-16 h-16 rounded-lg bg-black border border-white/10 hover:border-white/30 transition-all duration-300"

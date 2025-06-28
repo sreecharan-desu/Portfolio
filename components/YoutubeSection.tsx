@@ -239,7 +239,7 @@ const YouTubeSection = () => {
           >
             <div
               className="relative w-full max-w-5xl aspect-video rounded-lg overflow-hidden border border-white/20"
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
             >
               <button
                 className="absolute top-4 right-4 text-white bg-black/80 rounded-full p-2 hover:bg-black/90"
@@ -248,8 +248,9 @@ const YouTubeSection = () => {
                 <FaTimes className="text-lg" />
               </button>
               <iframe
-                src={`https://www.youtube.com/embed/${typeof modalVideo.id === 'string' ? modalVideo.id : modalVideo.id.videoId
-                  }?autoplay=1&rel=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/${
+                  typeof modalVideo.id === 'string' ? modalVideo.id : modalVideo.id.videoId
+                }?autoplay=1&rel=0&modestbranding=1`}
                 title={modalVideo.snippet.title}
                 className="w-full h-full"
                 allow="autoplay; encrypted-media"

@@ -1,16 +1,13 @@
-                                        
-            ███████╗██████╗ ███████╗███████╗ ██████╗██╗  ██╗ █████╗ ██████╗  █████╗ ███╗   ██╗    
-            ██╔════╝██╔══██╗██╔════╝██╔════╝██╔════╝██║  ██║██╔══██╗██╔══██╗██╔══██╗████╗  ██║    
+            ███████╗██████╗ ███████╗███████╗ ██████╗██╗  ██╗ █████╗ ██████╗  █████╗ ███╗   ██╗
+            ██╔════╝██╔══██╗██╔════╝██╔════╝██╔════╝██║  ██║██╔══██╗██╔══██╗██╔══██╗████╗  ██║
             ███████╗██████╔╝█████╗  █████╗  ██║     ███████║███████║██████╔╝███████║██╔██╗ ██║
-            ╚════██║██╔══██╗██╔══╝  ██╔══╝  ██║     ██╔══██║██╔══██║██╔══██╗██╔══██║██║╚██╗██║    
-            ███████║██║  ██║███████╗███████╗╚██████╗██║  ██║██║  ██║██║  ██║██║  ██║██║ ╚████║    
-            ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    
+            ╚════██║██╔══██╗██╔══╝  ██╔══╝  ██║     ██╔══██║██╔══██║██╔══██╗██╔══██║██║╚██╗██║
+            ███████║██║  ██║███████╗███████╗╚██████╗██║  ██║██║  ██║██║  ██║██║  ██║██║ ╚████║
+            ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 
- 
-***This portfolio isn’t just a website—it's my personal corner of the internet. A place where I build, break, learn, and share. Every pixel here reflects a part of my journey—projects I've poured time into, skills I've sharpened, and the systems that keep it all running. If you're a fellow builder, feel free to peek under the hood. ***
+**_This portfolio isn’t just a website—it's my personal corner of the internet. A place where I build, break, learn, and share. Every pixel here reflects a part of my journey—projects I've poured time into, skills I've sharpened, and the systems that keep it all running. If you're a fellow builder, feel free to peek under the hood. _**
 
 If you're curious about how it all works, the technical documentation below breaks down the full architecture, workflows, and decisions behind this portfolio.
-
 
 ## Technical Documentation
 
@@ -51,9 +48,9 @@ graph LR
 
 **Explanation:**
 
-*   `app/page.tsx` is the main entry point and renders all other components.
-*   `components/Hero.tsx`, `components/Navbar.tsx`, `components/WorkExperience.tsx`, `components/Skills.tsx`, `components/Projects.tsx`, `components/YoutubeSection.tsx`, `components/Testinomials.tsx`, `components/FreelanceServices.tsx`, `components/Footer.tsx`, `components/ResumeButton.tsx`, `components/Scrollbar.tsx`, and `components/CURL.tsx` are individual components responsible for rendering specific sections of the portfolio.
-*   `lib/socials.tsx` provides data and configuration used by multiple components, such as social media links, project details, and testimonials.
+- `app/page.tsx` is the main entry point and renders all other components.
+- `components/Hero.tsx`, `components/Navbar.tsx`, `components/WorkExperience.tsx`, `components/Skills.tsx`, `components/Projects.tsx`, `components/YoutubeSection.tsx`, `components/Testinomials.tsx`, `components/FreelanceServices.tsx`, `components/Footer.tsx`, `components/ResumeButton.tsx`, `components/Scrollbar.tsx`, and `components/CURL.tsx` are individual components responsible for rendering specific sections of the portfolio.
+- `lib/socials.tsx` provides data and configuration used by multiple components, such as social media links, project details, and testimonials.
 
 ### Main Workflows and Data Flows
 
@@ -241,7 +238,7 @@ const Testimonials = () => {
 
   // Memoize the interval callback to prevent re-creation
   const rotateTestimonials = useCallback(() => {
-    setActiveIndex(prevIndex => (prevIndex + 1) % testimonials.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [testimonials.length]);
 
@@ -435,16 +432,16 @@ The `YouTubeSection` component includes error handling to gracefully handle case
 
 #### YouTube Videos Not Loading
 
-*   **Check the API key:** Verify that the `NEXT_PUBLIC_YOUTUBE_API_KEY` environment variable is set correctly.
-*   **Check the channel ID:** Verify that the `CHANNEL_ID` variable in the `YouTubeSection` component is set correctly.
-*   **Check the API quota:** Ensure that the YouTube Data API v3 quota has not been exceeded.
-*   **Check the network connection:** Verify that the client has a stable internet connection.
+- **Check the API key:** Verify that the `NEXT_PUBLIC_YOUTUBE_API_KEY` environment variable is set correctly.
+- **Check the channel ID:** Verify that the `CHANNEL_ID` variable in the `YouTubeSection` component is set correctly.
+- **Check the API quota:** Ensure that the YouTube Data API v3 quota has not been exceeded.
+- **Check the network connection:** Verify that the client has a stable internet connection.
 
 #### Images Not Displaying
 
-*   **Check the image path:** Verify that the `image` field in the project objects is set to the correct path.
-*   **Check the image file:** Ensure that the image file exists in the `public/images` directory.
-*   **Check the `next/image` attributes:** Verify that the `src`, `alt`, `width`, and `height` attributes of the `next/image` component are set correctly.
+- **Check the image path:** Verify that the `image` field in the project objects is set to the correct path.
+- **Check the image file:** Ensure that the image file exists in the `public/images` directory.
+- **Check the `next/image` attributes:** Verify that the `src`, `alt`, `width`, and `height` attributes of the `next/image` component are set correctly.
 
 ### Advanced Configuration and Customization Options
 

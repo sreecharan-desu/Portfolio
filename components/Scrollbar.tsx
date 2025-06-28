@@ -29,7 +29,7 @@ const SmoothMarquee = () => {
         className="flex-shrink-0 w-[20rem] sm:w-[26rem] md:w-[32rem] h-[12rem] sm:h-[16rem] md:h-[18rem] mx-3 relative overflow-hidden rounded-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
         onClick={handleTooltipToggle}
         tabIndex={0}
-        onKeyDown={e => {
+        onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             handleTooltipToggle(e);
           }
