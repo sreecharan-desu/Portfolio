@@ -63,7 +63,7 @@ const YouTubeSection = () => {
 
       // Use in-memory cache to prevent redundant API calls
       if (cache[CHANNEL_ID]) {
-        setVideos(cache[CHANNEL_ID]);
+        setVideos(cache[CHANNEL_ID].reverse());
         setLoading(false);
         return;
       }
