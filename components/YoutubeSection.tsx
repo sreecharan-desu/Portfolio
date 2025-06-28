@@ -51,7 +51,7 @@ const YouTubeSection = () => {
 
   const isMobile = useIsMobile(); // 👈 detect mobile
   videos.reverse(); // Mutates the original array
-  const visibleVideos = isMobile ? videos.slice(0, 2) : videos
+  const visibleVideos = isMobile ? videos.slice(0, 2) : videos;
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -248,9 +248,8 @@ const YouTubeSection = () => {
                 <FaTimes className="text-lg" />
               </button>
               <iframe
-                src={`https://www.youtube.com/embed/${
-                  typeof modalVideo.id === 'string' ? modalVideo.id : modalVideo.id.videoId
-                }?autoplay=1&rel=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/${typeof modalVideo.id === 'string' ? modalVideo.id : modalVideo.id.videoId
+                  }?autoplay=1&rel=0&modestbranding=1`}
                 title={modalVideo.snippet.title}
                 className="w-full h-full"
                 allow="autoplay; encrypted-media"
