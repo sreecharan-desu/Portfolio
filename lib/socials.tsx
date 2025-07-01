@@ -66,13 +66,13 @@ export const fullstackProjects: Project[] = [
     status: 'online',
   },
   {
-    title: 'reX',
+    title: 'reXa',
     description:
       'A community-first reward exchange platform built to simplify peer recognition, gamify interactions, and foster engagement.',
-    liveUrl: 'https://rex-beige.vercel.app/',
+    liveUrl: 'https://rexa.sreecharandesu.in/',
     githubUrl: 'https://github.com/sreecharan-desu/reX',
     tech: ['TypeScript', 'React', 'Express', 'MongoDB', 'JWT', 'Vercel'],
-    image: '/project-images/reX.webp',
+    image: '/project-images/reXa.webp',
     status: 'online',
   },
   {
