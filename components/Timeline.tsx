@@ -10,11 +10,11 @@ const Timeline = () => {
         'Member of EITP (Entrepreneurship & Innovation Training Program)',
         'Team Lead – Only O21 batch selected for Inter-University TechHackathon (2025)',
         '3× Hackathon Winner',
-        'First Prize – Hackathon 2024',
         'Office Bearer – TechXcel Club',
         'Head Representative – Helping Hands Organization (HHO)',
         'Organized multiple technical workshops and events',
         'Created and maintained a personal YouTube channel (~300 subscribers)',
+        'Gained 1.6k followers on LinkedIn',
       ],
     },
     {
@@ -24,8 +24,6 @@ const Timeline = () => {
       achievements: [
         'Top 1% in RGUKT Entrance Exam (967 out of 73,548)',
         'Achieved 97% academic score',
-        'Contributed to college events and workshops',
-        'Participated in various inter-college competitions',
       ],
     },
     {
