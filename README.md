@@ -5,9 +5,7 @@
             ███████║██║  ██║███████╗███████╗ ╚██████╗██║  ██║██║  ██║██║  ██║██║  ██║██║ ╚████║
             ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 
-
 **_This portfolio isn’t just a website—it's my personal corner of the internet. A place where I build, break, learn, and share. Every pixel here reflects a part of my journey—projects I've poured time into, skills I've sharpened, and the systems that keep it all running. If you're a fellow builder, feel free to peek under the hood._**
-
 
 If you're curious about how it all works, the technical documentation below breaks down the full architecture, workflows, and decisions behind this portfolio.
 
