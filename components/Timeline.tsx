@@ -1,47 +1,46 @@
 import React from 'react';
 
 const Timeline = () => {
-  const timelineEvents = [
-  {
-    title: 'Rajiv Gandhi University of Knowledge Technologies',
-    subtitle: 'B.Tech in Computer Science and Engineering',
-    date: '2023 – 2027',
-    achievements: [
-      'Shortlisted for Flipkart GRID 7.0 National Coding Challenge – 2025',
-      'Member of EITP (Entrepreneurship & Innovation Training Program)',
-      'Team Lead – Only O21 batch selected for Inter-University TechHackathon (2025)',
-      '3× Hackathon Winner',
-      'Office Bearer – TechXcel Club',
-      'Head Representative – Helping Hands Organization (HHO)',
-      'Organized multiple technical workshops and events',
-      'Created and maintained a personal YouTube channel (~300 subscribers)',
-      'Gained 1.6k followers on LinkedIn',
-    ],
-  },
-  {
-    title: 'RGUKT Pre-University Course',
-    subtitle: 'Specialization in Mathematics, Physics, and Chemistry',
-    date: '2021 – 2023',
-    achievements: [
-      'Top 1% in RGUKT Entrance Exam (967 out of 73,548)',
-      'Achieved 97% academic score',
-    ],
-  },
-  {
-    title: 'Pragathi High School',
-    subtitle: 'Secondary School Education (Class X)',
-    date: '2020 – 2021',
-    achievements: [
-      'School-level Chess Champion',
-      'Mandal-level Chekumuki Science Quiz Winner',
-      'District Topper – Talent Test',
-      'Perfect Attendance Award',
-      'Achieved 10/10 CGPA in Class X',
-      'Participated in various inter-school competitions',
-    ],
-  },
-];
-
+  const timelineEvents =
+    {
+      title: 'Rajiv Gandhi University of Knowledge Technologies',
+      subtitle: 'B.Tech in Computer Science and Engineering',
+      date: '2023 – 2027',
+      achievements: [
+        'Shortlisted for Flipkart GRID 7.0 National Coding Challenge – 2025',
+        'Member of EITP (Entrepreneurship & Innovation Training Program)',
+        'Team Lead – Only O21 batch selected for Inter-University TechHackathon (2025)',
+        '3× Hackathon Winner',
+        'Office Bearer – TechXcel Club',
+        'Head Representative – Helping Hands Organization (HHO)',
+        'Organized multiple technical workshops and events',
+        'Created and maintained a personal YouTube channel (~300 subscribers)',
+        'Gained 1.6k followers on LinkedIn',
+      ],
+    },
+    {
+      title: 'RGUKT Pre-University Course',
+      subtitle: 'Specialization in Mathematics, Physics, and Chemistry',
+      date: '2021 – 2023',
+      achievements: [
+        'Top 1% in RGUKT Entrance Exam (967 out of 73,548)',
+        'Achieved 97% academic score',
+      ],
+    },
+    {
+      title: 'Pragathi High School',
+      subtitle: 'Secondary School Education (Class X)',
+      date: '2020 – 2021',
+      achievements: [
+        'School-level Chess Champion',
+        'Mandal-level Chekumuki Science Quiz Winner',
+        'District Topper – Talent Test',
+        'Perfect Attendance Award',
+        'Achieved 10/10 CGPA in Class X',
+        'Participated in various inter-school competitions',
+      ],
+    },
+ ];
 
   return (
     <div className="min-h-screen bg-black text-white py-16 lg:py-24">
