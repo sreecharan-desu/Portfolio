@@ -8,7 +8,6 @@ const Timeline = () => {
       date: '2023 – 2027',
       achievements: [
         'Shortlisted for Flipkart GRID 7.0 National Coding Challenge – 2025',
-        'Member of EITP (Entrepreneurship & Innovation Training Program)',
         'Team Lead – Only O21 batch selected for Inter-University TechHackathon (2025)',
         '3× Hackathon Winner',
         'Office Bearer – TechXcel Club',
