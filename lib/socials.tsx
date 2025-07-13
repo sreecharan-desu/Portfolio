@@ -150,7 +150,7 @@ export const fullstackProjects: Project[] = [
     title: 'GradeLite',
     description:
       'Simplified grade tracking, GPA calculator, and interactive CG visuals. Built for ease of access and clarity in results.',
-    liveUrl: 'https://sreecharan-desu.github.io/Gradelite/#GradeLite',
+    liveUrl: 'https://gradelite.sreecharandesu.in',
     githubUrl: 'https://github.com/sreecharan-desu/Gradelite',
     tech: ['JavaScript', 'HTML', 'CSS', 'Chart.js', 'Bootstrap', 'GitHub Pages'],
     image: '/project-images/gradelite.webp',
