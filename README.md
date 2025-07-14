@@ -9,6 +9,7 @@
 
 If you're curious about how it all works, the technical documentation below breaks down the full architecture, workflows, and decisions behind this portfolio.
 
+
 ## Technical Documentation
 
 This document provides a comprehensive overview of the portfolio system, its architecture, workflows, and usage. It aims to equip developers with the necessary knowledge to understand, maintain, and extend the system.
