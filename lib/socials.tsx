@@ -56,6 +56,15 @@ export const fullstackProjects: Project[] = [
     status: 'online',
   },
   {
+    title: "HHO Site",
+    description : "A showcase site for the Helping Hands Organization (HHO), led by RGUKT Ongole. Built using modern web tech to highlight community initiatives, events, and volunteer opportunities.",
+    liveUrl : "https://hho.sreecharandesu.in",
+    githubUrl : "https://github.com/sreecharan-desu/hho-site",
+    tech : ["React", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
+    image: "/project-images/hho.webp",
+    status: "online"
+  },
+  {
     title: 'UniZ',
     description:
       'A smart university portal featuring outpass tracking, student dashboard, and staff roles for simplified campus management.',
