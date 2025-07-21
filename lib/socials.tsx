@@ -44,7 +44,7 @@ export const fiverr = {
   gig: 'https://www.fiverr.com/s/5re0wZE',
 };
 
-export const fullstackProjects: Project[] = [
+export const Web2Projects: Project[] = [
   {
     title: 'DocgenAI',
     description:

@@ -256,12 +256,12 @@ const Testimonials = () => {
 
 #### 3. Project View Switching
 
-This workflow describes how the `Projects` component handles switching between "fullstack" and "devops" project views.
+This workflow describes how the `Projects` component handles switching between "Web2" and "devops" project views.
 
 **Workflow:**
 
 1.  The `Projects` component mounts.
-2.  The `useState` hook initializes the `currentView` to 'fullstack'.
+2.  The `useState` hook initializes the `currentView` to 'Web2'.
 3.  The `handleViewChange` function is called when the user clicks on a view button.
 4.  The function checks if the new view is the same as the current view. If so, it returns without doing anything.
 5.  The function sets the `isTransitioning` state to `true`.
@@ -293,11 +293,11 @@ sequenceDiagram
 
 ```typescript
 const Projects = () => {
-  const [currentView, setCurrentView] = useState<'fullstack' | 'devops'>('fullstack');
+  const [currentView, setCurrentView] = useState<'Web2' | 'devops'>('Web2');
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Handle view switching with blur effect
-  const handleViewChange = (view: 'fullstack' | 'devops') => {
+  const handleViewChange = (view: 'Web2' | 'devops') => {
     if (view === currentView) return;
     setIsTransitioning(true);
 
@@ -352,7 +352,7 @@ export const socialLinks = [
 
 #### 2. Project Data Structure
 
-The `lib/socials.tsx` file also defines arrays of project data, categorized as `fullstackProjects` and `devopsProjects`. Each project object contains information such as the title, description, live URL, GitHub URL, technologies used, image, and status.
+The `lib/socials.tsx` file also defines arrays of project data, categorized as `Web2Projects` and `devopsProjects`. Each project object contains information such as the title, description, live URL, GitHub URL, technologies used, image, and status.
 
 ```typescript
 // lib/socials.tsx
@@ -366,7 +366,7 @@ export interface Project {
   status: 'online' | 'building';
 }
 
-export const fullstackProjects: Project[] = [
+export const Web2Projects: Project[] = [
   {
     title: 'Project 1',
     description: 'A full-stack web application built with React, Node.js, and MongoDB.',
@@ -397,7 +397,7 @@ export const devopsProjects: Project[] = [
 
 #### Adding a New Project
 
-1.  **Define the project data:** Create a new project object in `lib/socials.tsx` and add it to either the `fullstackProjects` or `devopsProjects` array, depending on the project type.
+1.  **Define the project data:** Create a new project object in `lib/socials.tsx` and add it to either the `Web2Projects` or `devopsProjects` array, depending on the project type.
 2.  **Provide project details:** Ensure that all required fields (title, description, liveUrl, githubUrl, tech, image, status) are populated with accurate information.
 3.  **Add the project image:** Place the project image in the `public/images` directory and update the `image` field in the project object with the correct path.
 4.  **Verify the display:** Check the `Projects` section of the portfolio to ensure that the new project is displayed correctly.
