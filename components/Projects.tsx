@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { devopsProjects, fullstackProjects } from '@/lib/socials';
+import { devopsProjects, Web2Projects } from '@/lib/socials';
 
 // Unified Project Interface
 export interface Project {
@@ -164,12 +164,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 const Projects = () => {
-  const [currentView, setCurrentView] = useState<'fullstack' | 'devops'>('fullstack');
+  const [currentView, setCurrentView] = useState<'Web2' | 'devops'>('Web2');
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const currentProjects = currentView === 'fullstack' ? fullstackProjects : devopsProjects;
+  const currentProjects = currentView === 'Web2' ? Web2Projects : devopsProjects;
   const visibleProjects = showAll ? currentProjects : currentProjects.slice(0, 2);
 
   useEffect(() => {
@@ -186,7 +186,7 @@ const Projects = () => {
     setShowAll(!isMobile); // Show all projects by default on large screens
   }, [isMobile]);
 
-  const handleViewChange = (view: 'fullstack' | 'devops') => {
+  const handleViewChange = (view: 'Web2' | 'devops') => {
     if (view === currentView) return;
     setIsTransitioning(true);
     setTimeout(() => {
@@ -218,15 +218,15 @@ const Projects = () => {
         {/* View Toggle */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex bg-white/10 rounded-full p-1 border border-white/20">
-            {['fullstack', 'devops'].map((view) => (
+            {['Web2', 'devops'].map((view) => (
               <button
                 key={view}
-                onClick={() => handleViewChange(view as 'fullstack' | 'devops')}
+                onClick={() => handleViewChange(view as 'Web2' | 'devops')}
                 className={`px-6 py-2 rounded-full text-sm font-medium ${
                   currentView === view ? 'bg-white text-black' : 'text-white/70 hover:bg-white/20'
                 }`}
               >
-                {view === 'fullstack' ? 'Full Stack' : 'DevOps'}
+                {view === 'Web2' ? 'Full Stack' : 'DevOps'}
               </button>
             ))}
           </div>

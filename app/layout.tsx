@@ -19,15 +19,15 @@ const jura = Jura({
 });
 
 export const metadata: any = {
-  title: 'SreeCharan Desu • FullStack & DevOps Engineer',
+  title: 'SreeCharan Desu • Web2 & DevOps Engineer',
   description:
-    'Official site of SreeCharan Desu – A Pre-final year student proficient FullStack & DevOps Engineer. Explore projects, blogs, and more.',
+    'Official site of SreeCharan Desu – A Pre-final year student proficient Web2 & DevOps Engineer. Explore projects, blogs, and more.',
   keywords: [
     'SreeCharan',
     'SreeCharan Desu',
     'Sr3x0r',
     'Desu',
-    'FullStack Developer',
+    'Web2 Developer',
     'DevOps Engineer',
     'Tech Portfolio',
     'Web Development',
@@ -36,9 +36,9 @@ export const metadata: any = {
     icon: '/favicon.ico',
   },
   openGraph: {
-    title: 'SreeCharan Desu – FullStack & DevOps Engineer',
+    title: 'SreeCharan Desu – Web2 & DevOps Engineer',
     description:
-      'Official site of SreeCharan Desu – A Pre-final year student proficient FullStack & DevOps Engineer. Explore projects, blogs, and more.',
+      'Official site of SreeCharan Desu – A Pre-final year student proficient Web2 & DevOps Engineer. Explore projects, blogs, and more.',
     url: 'https://sreecharandesu.in/',
     siteName: 'SreeCharan Desu',
     images: [
@@ -56,7 +56,7 @@ export const metadata: any = {
     card: 'summary_large_image',
     title: 'SreeCharan Desu',
     description:
-      'Official site of SreeCharan Desu – A pre-final year student proficient FullStack & DevOps Engineer. Explore projects, blogs, and more.',
+      'Official site of SreeCharan Desu – A pre-final year student proficient Web2 & DevOps Engineer. Explore projects, blogs, and more.',
     images: ['https://sreecharandesu.in/link-preview.png'],
   },
 };
@@ -118,13 +118,13 @@ export default function RootLayout({
                 'https://github.com/sreecharan-desu',
                 'https://linkedin.com/in/sreecharan-desu',
               ],
-              jobTitle: 'FullStack & DevOps Engineer',
+              jobTitle: 'Web2 & DevOps Engineer',
               worksFor: {
                 '@type': 'CollegeOrUniversity',
                 name: 'IIIT Andhra Pradesh',
               },
               description:
-                'CS Junior turned FullStack & DevOps Engineer. Passionate about building scalable tools and impactful tech.',
+                'CS Junior turned Web2 & DevOps Engineer. Passionate about building scalable tools and impactful tech.',
             }),
           }}
         />
