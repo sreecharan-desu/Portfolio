@@ -56,6 +56,16 @@ export const Web2Projects: Project[] = [
     status: 'online',
   },
   {
+    title: 'VisionixAI',
+    description:
+      'A zone‑based computer vision platform that uses CCTV feeds to detect presence in configurable room zones and trigger automated energy‑saving actions—turning lights/fans off in empty zones, and back on when occupied. CLI‑driven, no extra sensors needed.',
+    liveUrl: 'https://visionix.sreecharandesu.in',
+    githubUrl: 'https://github.com/VisionixAI',
+    tech: ['JavaScript', 'Python', 'CLI', 'YOLO/MediaPipe', 'CCTV integration'],
+    image: '/project-images/visionixai.webp',
+    status: 'online',
+  },
+  {
     title: 'HHO Site',
     description:
       'A showcase site for the Helping Hands Organization (HHO), led by RGUKT Ongole. Built using modern web tech to highlight community initiatives, events, and volunteer opportunities.',
@@ -95,7 +105,6 @@ export const Web2Projects: Project[] = [
     image: '/project-images/schat.webp',
     status: 'online',
   },
-
   {
     title: 'echo.ink',
     description:
@@ -176,16 +185,6 @@ export const Web2Projects: Project[] = [
     image: '/project-images/portfolio.webp',
     status: 'online',
   },
-  // {
-  //   title: 'Spay',
-  //   description:
-  //     'Simulated payment gateway mimicking real banking logic with card validation, account linking, and complete transaction flow.',
-  //   liveUrl: 'https://srees-spay.vercel.app/',
-  //   githubUrl: 'https://github.com/sreecharan-desu/Spay',
-  //   tech: ['Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB', 'TypeScript'],
-  //   image: '/project-images/Spay.webp',
-  //   status: 'building',
-  // },
 ];
 
 export const devopsProjects: Project[] = [
