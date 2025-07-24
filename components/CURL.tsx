@@ -11,13 +11,15 @@ const Terminal = () => {
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef(null);
 
-  // Typing animation
   useEffect(() => {
+    let loopTimeout: NodeJS.Timeout;
+
     const typeCommand = () => {
       if (isMinimized || copied) return;
       setIsTyping(true);
       setDisplayedCommand('');
       let i = 0;
+
       const typeInterval = setInterval(() => {
         if (i < command.length) {
           setDisplayedCommand(command.slice(0, i + 1));
@@ -25,13 +27,16 @@ const Terminal = () => {
         } else {
           clearInterval(typeInterval);
           setIsTyping(false);
+          loopTimeout = setTimeout(typeCommand, 5000); // Wait then retype
         }
       }, 100);
     };
 
     typeCommand();
-    const loopInterval = setInterval(typeCommand, 5000);
-    return () => clearInterval(loopInterval);
+
+    return () => {
+      clearTimeout(loopTimeout);
+    };
   }, [isMinimized, copied]);
 
   // Cursor blink effect
@@ -50,21 +55,6 @@ const Terminal = () => {
       console.error('Failed to copy: ', err);
     }
   };
-
-  // Keyboard shortcuts
-  useEffect(() => {
-    const handleKeyDown = (e: any) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'c') {
-        if (e.target === inputRef.current || e.target.closest('.terminal-container')) {
-          e.preventDefault();
-          copyToClipboard();
-        }
-      }
-      if (e.key === 'Escape') setIsMinimized(false);
-    };
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   return (
     <div className="bg-black flex items-center justify-center p-2 sm:p-4 md:p-6 lg:p-8 lg:min-h-screen">
@@ -148,7 +138,8 @@ const Terminal = () => {
                 <div className="ml-2 sm:ml-3 md:ml-4 flex-1 relative min-h-[1.5em]">
                   <div className="flex items-start">
                     <span
-                      className="text-white font-mono cursor-pointer hover:bg-white/10 px-1 py-0.5 rounded transition-colors duration-300 text-xs sm:text-sm md:text-base lg:text-lg break-all leading-relaxed"
+                      className="text-white font-mono cursor-pointer px-1 py-0.5 rounded text-xs sm:text-sm md:text-base lg:text-lg break-all leading-relaxed"
+                      style={{ minHeight: '1em', display: 'inline-block', whiteSpace: 'pre-wrap' }}
                       //@ts-expect-error --- IGNORE ---
                       onClick={() => inputRef.current?.focus()}
                       role="textbox"
@@ -156,17 +147,6 @@ const Terminal = () => {
                     >
                       {displayedCommand || command}
                     </span>
-
-                    {/* Cursor */}
-                    <span
-                      className={`ml-0.5 text-white inline-block text-xs sm:text-sm md:text-base lg:text-lg ${
-                        showCursor && !isTyping ? 'animate-pulse' : 'opacity-0'
-                      }`}
-                      aria-hidden="true"
-                      style={{
-                        animation: showCursor && !isTyping ? 'blink 1s step-end infinite' : 'none',
-                      }}
-                    ></span>
                   </div>
 
                   {/* Hidden Input */}
