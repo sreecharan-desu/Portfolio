@@ -181,19 +181,8 @@ const Terminal = () => {
                   />
                 </div>
               </div>
-
-      
             </div>
           </div>
-        </div>
-
-        {/* Bottom Instructions */}
-        <div className="text-center px-2 sm:px-4">
-          <p className="text-white/40 text-xs sm:text-sm font-light tracking-wide max-w-lg mx-auto leading-relaxed">
-            <span className="block sm:inline">Click anywhere in the terminal to focus</span>
-            <span className="hidden sm:inline mx-2">•</span>
-            <span className="block sm:inline mt-1 sm:mt-0">Use Cmd/Ctrl+C to copy</span>
-          </p>
         </div>
       </div>
 
