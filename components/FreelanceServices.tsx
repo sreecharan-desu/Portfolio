@@ -74,7 +74,7 @@ const FreelanceServices = () => {
               aria-label="View SreeCharan’s Fiverr profile"
             >
               <span className="relative z-10 flex items-center gap-3">
-                View Profile
+                View my profile
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
                 </svg>
