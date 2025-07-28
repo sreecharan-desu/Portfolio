@@ -226,6 +226,16 @@ export const Web2Projects: Project[] = [
     image: '/project-images/portfolio.webp',
     status: 'online',
   },
+  {
+    title: 'Spay',
+    description:
+      'Simulated payment gateway mimicking real banking logic with card validation, account linking, and complete transaction flow.',
+    liveUrl: 'https://srees-spay.vercel.app/',
+    githubUrl: 'https://github.com/sreecharan-desu/Spay',
+    tech: ['Next.js', 'Tailwind', 'Prisma', 'Postgres', 'NeonDB', 'TypeScript'],
+    image: '/project-images/Spay.webp',
+    status: 'building',
+  },
 ];
 
 export const devopsProjects: Project[] = [
