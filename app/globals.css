@@ -1,3 +1,24 @@
+@import 'tailwindcss';
+
+* {
+  font-family: var(--font-jura), sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .balloon {
   position: absolute;
   bottom: -100px;
