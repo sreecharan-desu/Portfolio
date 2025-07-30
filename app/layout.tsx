@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Jura } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
+import BalloonsOverlay from '@/components/BallonOverlay';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -130,6 +131,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${jura.variable} antialiased`}>
+        <BalloonsOverlay /> {/* 🎉 Shows only on July 30 */}
         {children}
         <Analytics />
       </body>

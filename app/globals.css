@@ -1,35 +1,55 @@
-@import 'tailwindcss';
-
-* {
-  font-family: var(--font-jura), sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 55px;
+  border-radius: 50% 50% 50% 50%;
+  background-color: red;
+  animation: float-up 10s linear infinite;
+  opacity: 0.8;
 }
 
-::-webkit-scrollbar {
-  display: none;
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: #555;
+  transform: translateX(-50%);
 }
 
-body {
-  -ms-overflow-style: none; /* IE & Edge */
-  scrollbar-width: none; /* Firefox */
+/* Different colors */
+.balloon-1 {
+  background-color: #ff4d4f;
+}
+.balloon-2 {
+  background-color: #ffa940;
+}
+.balloon-3 {
+  background-color: #ffec3d;
+}
+.balloon-4 {
+  background-color: #73d13d;
+}
+.balloon-5 {
+  background-color: #40a9ff;
+}
+.balloon-6 {
+  background-color: #9254de;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-@keyframes crawl {
+@keyframes float-up {
   0% {
-    background-position: 0% 0%;
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
   }
   100% {
-    background-position: 200% 0%;
+    transform: translateY(-120vh) rotate(0deg);
+    opacity: 0;
   }
-}
-
-.animate-crawl {
-  border-image: linear-gradient(90deg, white 0%, transparent 50%, white 100%);
-  border-image-slice: 1;
-  animation: crawl 2s linear infinite;
 }
