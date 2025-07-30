@@ -19,6 +19,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 .balloon {
   position: absolute;
   bottom: -100px;
