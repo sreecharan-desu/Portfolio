@@ -14,6 +14,7 @@ import { FloatingResumeButton } from '@/components/ResumeButton';
 import SmoothMarquee from '@/components/Scrollbar';
 import Terminal from '@/components/CURL';
 import Timeline from '@/components/Timeline';
+import AnimatedSearchBar from '@/components/OnlinePrescence';
 
 export default function PortfolioPage() {
   return (
@@ -61,6 +62,10 @@ export default function PortfolioPage() {
 
         <Element name="terminal" className="m-10 py-10">
           <Terminal />
+        </Element>
+
+        <Element name="online" className="m-10 py-10">
+          <AnimatedSearchBar />
         </Element>
 
         {/* Footer */}
