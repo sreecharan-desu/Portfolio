@@ -64,9 +64,11 @@ export default function PortfolioPage() {
           <Terminal />
         </Element>
 
+        {/* 
         <Element name="online" className="m-10 py-10">
           <AnimatedSearchBar />
         </Element>
+        */}
 
         {/* Footer */}
         <Element name="footer" className="mt-10 py-10">
