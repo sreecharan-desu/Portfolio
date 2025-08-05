@@ -9,7 +9,7 @@ const AnimatedSearchBar = () => {
     { prefix: 'chat.', icon: MessageCircle, description: 'Chat with me' },
     { prefix: 'github.', icon: Github, description: 'Code repositories' },
     { prefix: 'linkedin.', icon: Linkedin, description: 'Professional profile' },
-    { prefix: 'play.', icon: Play, description: 'Chess Profilee' },
+    { prefix: 'play.', icon: Play, description: 'Chess Profile' },
     { prefix: 'blog.', icon: BookOpen, description: 'Blog posts' },
   ];
 
