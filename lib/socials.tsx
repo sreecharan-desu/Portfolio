@@ -97,6 +97,16 @@ export const Web2Projects: Project[] = [
     status: 'online',
   },
   {
+    title: 'reXa',
+    description:
+      'A community-first reward exchange platform built to simplify peer recognition, gamify interactions, and foster engagement.',
+    liveUrl: 'https://rexa.sreecharandesu.in/',
+    githubUrl: 'https://github.com/sreecharan-desu/reX',
+    tech: ['TypeScript', 'React', 'Express', 'MongoDB', 'JWT', 'Vercel'],
+    image: '/project-images/reXa.webp',
+    status: 'online',
+  },
+  {
     title: 'VisionixAI',
     description:
       'A zone‑based computer vision platform that uses CCTV feeds to detect presence in configurable room zones and trigger automated energy‑saving actions—turning lights/fans off in empty zones, and back on when occupied. CLI‑driven, no extra sensors needed.',
@@ -124,16 +134,6 @@ export const Web2Projects: Project[] = [
     githubUrl: 'https://github.com/sreecharan-desu/uniZ',
     tech: ['TypeScript', 'Prisma', 'React', 'Node.js', 'Tailwind', 'PostgreSQL'],
     image: '/project-images/uniZ.webp',
-    status: 'online',
-  },
-  {
-    title: 'reXa',
-    description:
-      'A community-first reward exchange platform built to simplify peer recognition, gamify interactions, and foster engagement.',
-    liveUrl: 'https://rexa.sreecharandesu.in/',
-    githubUrl: 'https://github.com/sreecharan-desu/reX',
-    tech: ['TypeScript', 'React', 'Express', 'MongoDB', 'JWT', 'Vercel'],
-    image: '/project-images/reXa.webp',
     status: 'online',
   },
   {
