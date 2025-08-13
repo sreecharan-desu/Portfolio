@@ -109,7 +109,7 @@ const Terminal = () => {
             {/* Copy Button */}
             <button
               onClick={copyToClipboard}
-              className="p-1.5 sm:p-2 md:p-2.5 hover:bg-white/20 rounded-md md:rounded-lg transition-all duration-300 group"
+              className="p-1.5 sm:p-2 md:p-2.5 hover:bg-white/20 rounded-md md:rounded-lg transition-all duration-300 group cursor-pointer"
               title="Copy command (⌘C)"
               aria-label="Copy command to clipboard"
             >
